@@ -13,7 +13,7 @@ import { BlurFade, Magnetic, Spotlight } from "../motion";
 
 type PriceMode = "setup" | "both";
 
-const PLAN_KEYS = ["light", "standard", "premium", "enterprise"] as const;
+const PLAN_KEYS = ["light", "standard", "premium"] as const;
 type PlanKey = (typeof PLAN_KEYS)[number];
 
 const MODULE_COLORS = [
@@ -47,13 +47,6 @@ const TIER_STYLE = [
     card: "border-[#0088CC]/25 bg-[#F4F8FD] shadow-[0_30px_70px_-25px_rgba(0,136,204,0.15)]",
     accent: "bg-[linear-gradient(90deg,transparent,#0088CC,transparent)]",
     check: "bg-[linear-gradient(135deg,#0088CC,#2AABEE)]",
-    checkStroke: "#FFFFFF",
-    price: "text-[var(--ink)]",
-  },
-  { // 3: Enterprise — deep blue
-    card: "border-[var(--rule-2)] bg-white shadow-[0_30px_80px_-30px_rgba(42,171,238,0.12)]",
-    accent: "bg-[linear-gradient(90deg,transparent,#54A9EB,transparent)]",
-    check: "bg-[linear-gradient(135deg,#54A9EB,#2AABEE)]",
     checkStroke: "#FFFFFF",
     price: "text-[var(--ink)]",
   },
@@ -159,7 +152,7 @@ export default function Pricing() {
         </BlurFade>
 
         {/* Plan cards */}
-        <div className="mt-8 grid items-stretch gap-4 md:mt-10 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid items-stretch gap-4 md:mt-10 md:grid-cols-2 xl:grid-cols-3">
           {sp.plans.map((plan, i) => {
             const isRecommended = i === RECOMMENDED;
             const tier = TIER_STYLE[i];

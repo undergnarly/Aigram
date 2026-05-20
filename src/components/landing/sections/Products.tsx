@@ -83,7 +83,7 @@ function ProductDetail({ slug }: { slug: ProductSlug }) {
   const per = c.productsSection.perCard;
 
   return (
-    <article className="mt-8 flex flex-col overflow-hidden rounded-3xl border border-[var(--rule-2)] bg-white shadow-[0_20px_60px_-24px_rgba(42,171,238,0.15)] md:flex-row">
+    <article className="mx-auto mt-8 flex max-w-[960px] flex-col overflow-hidden rounded-3xl border border-[var(--rule-2)] bg-white shadow-[0_20px_60px_-24px_rgba(42,171,238,0.15)] md:flex-row">
       {/* Image */}
       <div
         className="relative h-[220px] shrink-0 overflow-hidden md:h-auto md:w-[380px] lg:w-[440px]"
@@ -95,7 +95,7 @@ function ProductDetail({ slug }: { slug: ProductSlug }) {
           fill
           sizes="(max-width: 768px) 100vw, 440px"
           className="object-cover opacity-90"
-          style={{ filter: "invert(1) hue-rotate(180deg) brightness(1.2) saturate(0.6)" }}
+          style={{  }}
         />
         <div
           aria-hidden

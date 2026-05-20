@@ -49,7 +49,7 @@ export default function Hero() {
             className="object-contain object-top transition-[opacity,filter] duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             style={{
               opacity: i === activeIdx ? 1 : 0,
-              filter: `invert(1) hue-rotate(180deg) brightness(1.15) saturate(0.7) blur(${i === activeIdx ? 0 : 16}px)`,
+              filter: `blur(${i === activeIdx ? 0 : 16}px)`,
               maskImage:
                 "linear-gradient(to bottom, black 0%, black 62%, rgba(0,0,0,0.7) 82%, transparent 100%)",
               WebkitMaskImage:
@@ -93,7 +93,7 @@ export default function Hero() {
             priority={i === 0}
             sizes="(min-width: 1024px) calc(100vw - 100px), 0px"
             className="object-cover object-right transition-opacity duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-            style={{ opacity: i === activeIdx ? 1 : 0, filter: "invert(1) hue-rotate(180deg) brightness(1.15) saturate(0.7)" }}
+            style={{ opacity: i === activeIdx ? 1 : 0 }}
           />
         ))}
         {/* progressive blur where text overlaps */}

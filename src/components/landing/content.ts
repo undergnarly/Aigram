@@ -34,7 +34,7 @@ type SubscriptionPlanSection = {
   plans: SubscriptionPlan[];
   compatTitle: string;
   compatCaption: string;
-  compatRows: { module: string; light: string; standard: string; premium: string; enterprise: string }[];
+  compatRows: { module: string; light: string; standard: string; premium: string }[];
 };
 
 export const PRODUCT_ORDER: ProductSlug[] = [
@@ -453,12 +453,13 @@ const EN: LangContent = {
   },
   process: {
     eyebrow: "Process",
-    h2: "Discovery → 24h Setup → Start Using.",
-    sub: "Three steps. No long-tail onboarding. You leave with a working AI team, not a deck.",
+    h2: "Discovery → 24h Setup → Start Using → Support.",
+    sub: "Four steps. No long-tail onboarding. You leave with a working AI team — and we keep it running.",
     steps: [
-      { step: "01", title: "Discovery Call", body: "We learn your workflow and configure the perfect topic structure for your business. Free, 30 minutes, no deck." },
-      { step: "02", title: "24h Setup", body: "We deploy your AI infrastructure, connect your Telegram group, configure all agents, and load your knowledge base. You watch progress in real time." },
-      { step: "03", title: "Start Using", body: "Your team starts immediately. AI learns your patterns, your tone, and your decisions over the first weeks — getting sharper without any tuning from you." },
+      { step: "01", title: "Discovery Call", body: "We study your workflow and design the ideal topic structure for your Telegram group. Free, thirty minutes, zero commitment." },
+      { step: "02", title: "24h Setup", body: "We deploy your AI infrastructure, connect your Telegram group, configure every agent, and load your knowledge base. You follow progress live." },
+      { step: "03", title: "Start Using", body: "Your team starts day one. The AI picks up your patterns, tone, and decisions in the first weeks — it gets sharper without manual tuning." },
+      { step: "04", title: "Ongoing Support", body: "Dedicated human support and regular tuning. We monitor your agents around the clock, fix edge cases, and keep everything at peak performance." },
     ],
   },
   pricing: {
@@ -655,11 +656,11 @@ const EN: LangContent = {
     compatCaption:
       "Each plan includes a different combination of agents and skills. The recommended tier depends on your team size and bottlenecks. We help you pick on the Discovery Call.",
     compatRows: [
-      { module: "AI Planner", light: "Yes", standard: "Yes", premium: "Yes", enterprise: "Yes" },
-      { module: "AI Researcher", light: "Basic", standard: "Full", premium: "Full", enterprise: "Full" },
-      { module: "AI Automator", light: "—", standard: "10 workflows", premium: "Unlimited", enterprise: "Custom" },
-      { module: "AI Analyst", light: "Daily digest", standard: "Anomaly alerts", premium: "Custom mini-app", enterprise: "Custom" },
-      { module: "AI Concierge (white-label)", light: "—", standard: "—", premium: "Yes", enterprise: "Yes" },
+      { module: "AI Planner", light: "Yes", standard: "Yes", premium: "Yes" },
+      { module: "AI Researcher", light: "Basic", standard: "Full", premium: "Full" },
+      { module: "AI Automator", light: "—", standard: "10 workflows", premium: "Unlimited" },
+      { module: "AI Analyst", light: "Daily digest", standard: "Anomaly alerts", premium: "Custom mini-app" },
+      { module: "AI Concierge (white-label)", light: "—", standard: "—", premium: "Yes" },
     ],
   },
 };
@@ -919,12 +920,13 @@ const RU: LangContent = {
   },
   process: {
     eyebrow: "Процесс",
-    h2: "Знакомство → Запуск 24ч → Начало работы.",
-    sub: "Три шага. Без долгого онбординга. Уходите с работающей AI-командой, а не с презентацией.",
+    h2: "Знакомство → Запуск 24ч → Работа → Поддержка.",
+    sub: "Четыре шага. Без долгого онбординга. Уходите с работающей AI-командой — а мы держим её в форме.",
     steps: [
-      { step: "01", title: "Звонок-знакомство", body: "Мы изучаем твой процесс и подбираем идеальную структуру топиков под бизнес. Бесплатно, тридцать минут, без презентации." },
-      { step: "02", title: "Настройка за 24ч", body: "Разворачиваем твою AI-инфраструктуру, подключаем группу в Telegram, настраиваем всех агентов, загружаем базу знаний. Ты следишь за прогрессом в реальном времени." },
-      { step: "03", title: "Начните использовать", body: "Команда работает сразу. ИИ учится твоим паттернам, тону и решениям в первые недели — становится точнее без твоей настройки." },
+      { step: "01", title: "Звонок-знакомство", body: "Изучаем твой процесс и проектируем идеальную структуру топиков для группы Telegram. Бесплатно, тридцать минут, без обязательств." },
+      { step: "02", title: "Настройка за 24ч", body: "Разворачиваем AI-инфраструктуру, подключаем группу Telegram, настраиваем каждого агента и загружаем базу знаний. Ты следишь за прогрессом онлайн." },
+      { step: "03", title: "Начало работы", body: "Команда начинает в первый же день. ИИ осваивает твои паттерны, тон и решения за первые недели — становится точнее без ручной настройки." },
+      { step: "04", title: "Поддержка", body: "Персональная поддержка и регулярные аудиты. Мы мониторим агентов круглосуточно, устраняем баги и держим всё на пиковой эффективности." },
     ],
   },
   pricing: {
@@ -1121,11 +1123,11 @@ const RU: LangContent = {
     compatCaption:
       "Каждый тариф включает свою комбинацию агентов и навыков. Подходящий тариф зависит от размера команды и узких мест. На звонке помогаем выбрать.",
     compatRows: [
-      { module: "AI Planner", light: "Да", standard: "Да", premium: "Да", enterprise: "Да" },
-      { module: "AI Researcher", light: "Базовый", standard: "Полный", premium: "Полный", enterprise: "Полный" },
-      { module: "AI Automator", light: "—", standard: "10 процессов", premium: "Без лимита", enterprise: "Кастом" },
-      { module: "AI Analyst", light: "Дайджест", standard: "Алерты", premium: "Кастомное приложение", enterprise: "Кастом" },
-      { module: "AI Concierge (white-label)", light: "—", standard: "—", premium: "Да", enterprise: "Да" },
+      { module: "AI Planner", light: "Да", standard: "Да", premium: "Да" },
+      { module: "AI Researcher", light: "Базовый", standard: "Полный", premium: "Полный" },
+      { module: "AI Automator", light: "—", standard: "10 процессов", premium: "Без лимита" },
+      { module: "AI Analyst", light: "Дайджест", standard: "Алерты", premium: "Кастомное приложение" },
+      { module: "AI Concierge (white-label)", light: "—", standard: "—", premium: "Да" },
     ],
   },
 };

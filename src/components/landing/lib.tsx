@@ -305,6 +305,7 @@ export function LinkButton({
   return (
     <a
       {...rest}
+      style={variant === "primary" ? { color: "#FFFFFF" } : undefined}
       className={[BUTTON_BASE, BUTTON_SIZE[size], BUTTON_VARIANT[variant], className ?? ""].join(" ")}
     >
       {children}
