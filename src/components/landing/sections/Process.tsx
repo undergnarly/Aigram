@@ -152,8 +152,8 @@ export default function Process() {
                           className={[
                             "relative grid size-14 place-items-center rounded-full font-mono text-[12px] font-bold transition-all duration-500 group-hover:scale-105",
                             isActive
-                              ? "bg-[linear-gradient(135deg,#2AABEE,#0088CC)] shadow-[0_8px_28px_-6px_rgba(42,171,238,0.5)] scale-110"
-                              : "border border-white/15 bg-[#0E2A4A] backdrop-blur-md shadow-[0_8px_24px_-12px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.15)]",
+                              ? "bg-[linear-gradient(135deg,#54A9EB,#2AABEE,#0088CC)] shadow-[0_10px_32px_-4px_rgba(84,169,235,0.7),inset_0_1px_0_rgba(255,255,255,0.35)] scale-110"
+                              : "bg-[linear-gradient(135deg,#2AABEE,#0088CC)] shadow-[0_6px_20px_-6px_rgba(42,171,238,0.5),inset_0_1px_0_rgba(255,255,255,0.25)]",
                           ].join(" ")}
                           style={{ color: "#FFFFFF" }}
                         >
@@ -168,10 +168,10 @@ export default function Process() {
                         {/* icon chip */}
                         <div
                           className={[
-                            "absolute -right-1.5 -top-1.5 grid size-7 place-items-center rounded-full border transition-all duration-500",
+                            "absolute -right-1.5 -top-1.5 grid size-7 place-items-center rounded-full transition-all duration-500",
                             isActive
-                              ? "border-[#54A9EB]/60 bg-[#0E2A4A] text-[#54A9EB] shadow-[0_4px_18px_-3px_rgba(84,169,235,0.5)]"
-                              : "border-white/15 bg-[#0E2A4A] text-[#54A9EB] backdrop-blur-md shadow-[0_4px_16px_-6px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.12)] group-hover:border-white/30",
+                              ? "bg-[linear-gradient(135deg,#54A9EB,#2AABEE)] text-white shadow-[0_4px_18px_-3px_rgba(84,169,235,0.6),inset_0_1px_0_rgba(255,255,255,0.35)]"
+                              : "bg-[linear-gradient(135deg,#2AABEE,#0088CC)] text-white shadow-[0_4px_14px_-4px_rgba(42,171,238,0.5),inset_0_1px_0_rgba(255,255,255,0.25)]",
                           ].join(" ")}
                         >
                           <Icon className="size-3.5" />
