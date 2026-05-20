@@ -30,7 +30,24 @@ export default function Products() {
   }
 
   return (
-    <Section id="products">
+    <Section
+      id="products"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#FFFFFF_0%,#F4F8FD_30%,#E8F2FB_60%,#F4F8FD_100%)]"
+    >
+      {/* halo glow just BEHIND the H2 title — gives the heading a soft aura */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-[clamp(40px,10vw,140px)] left-1/2 -translate-x-1/2 h-[360px] w-[720px] rounded-full bg-[radial-gradient(ellipse,rgba(42,171,238,0.30),rgba(84,169,235,0.10)_45%,transparent_70%)] blur-3xl"
+      />
+      {/* deeper ambient glow behind the showcase card → makes white card float */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-[10%] left-1/2 -translate-x-1/2 h-[480px] w-[860px] rounded-full bg-[radial-gradient(ellipse,rgba(42,171,238,0.16),transparent_70%)] blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-32 -right-32 h-[440px] w-[440px] rounded-full bg-[radial-gradient(circle,rgba(84,169,235,0.10),transparent_70%)] blur-3xl"
+      />
       <Container>
         <div className="mx-auto max-w-[760px] text-center">
           <BlurFade delay={0.08}>
@@ -87,7 +104,7 @@ function ProductDetail({ slug }: { slug: ProductSlug }) {
   const per = c.productsSection.perCard;
 
   return (
-    <article className="mx-auto mt-8 flex max-w-[960px] flex-col overflow-hidden rounded-3xl border border-[var(--rule-2)] bg-white shadow-[0_20px_60px_-24px_rgba(42,171,238,0.15)] md:flex-row">
+    <article className="relative mx-auto mt-8 flex max-w-[960px] flex-col overflow-hidden rounded-3xl border border-white bg-white shadow-[0_50px_120px_-30px_rgba(27,27,66,0.30),0_20px_50px_-15px_rgba(42,171,238,0.25),0_0_0_1px_rgba(255,255,255,0.6)_inset] md:flex-row">
       {/* Image */}
       <div
         className="relative h-[220px] shrink-0 overflow-hidden md:h-auto md:w-[380px] lg:w-[440px]"

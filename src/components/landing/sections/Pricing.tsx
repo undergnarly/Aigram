@@ -60,9 +60,9 @@ type TierStyle = {
 };
 
 const TIERS: TierStyle[] = [
-  // 0 · Lite — minimal, airy, gray-on-white
+  // 0 · Lite — minimal, airy, gray-on-white, soft float
   {
-    card: "border-[var(--rule-2)] bg-white",
+    card: "border-white bg-white shadow-[0_40px_100px_-30px_rgba(27,27,66,0.22),0_15px_40px_-15px_rgba(42,171,238,0.18)]",
     inkStyle: INK_DARK,
     inkStyleMuted: INK_DARK_MUTED,
     inkStyleBody: INK_DARK_2,
@@ -80,7 +80,7 @@ const TIERS: TierStyle[] = [
   // 1 · Standard — recommended, Telegram blue glow
   {
     card:
-      "border-[var(--indigo)]/60 bg-white shadow-[0_0_0_1px_rgba(42,171,238,0.18),0_30px_80px_-25px_rgba(42,171,238,0.5)] md:-translate-y-3",
+      "border-[var(--indigo)]/70 bg-white shadow-[0_0_0_1px_rgba(42,171,238,0.22),0_60px_140px_-30px_rgba(0,136,204,0.45),0_25px_60px_-15px_rgba(42,171,238,0.35)] md:-translate-y-3",
     inkStyle: INK_DARK,
     inkStyleMuted: INK_DARK_MUTED,
     inkStyleBody: INK_DARK_2,
@@ -171,7 +171,24 @@ export default function Pricing() {
   ];
 
   return (
-    <Section id="pricing" className="bg-[var(--bg-soft)]">
+    <Section
+      id="pricing"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#FFFFFF_0%,#F4F8FD_28%,#E8F2FB_60%,#F4F8FD_100%)]"
+    >
+      {/* halo glow behind the H2 title — soft aura on the heading */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-[clamp(40px,10vw,140px)] left-1/2 -translate-x-1/2 h-[360px] w-[720px] rounded-full bg-[radial-gradient(ellipse,rgba(42,171,238,0.30),rgba(84,169,235,0.10)_45%,transparent_70%)] blur-3xl"
+      />
+      {/* ambient blue glow → makes the table & plan cards float in space */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 h-[640px] w-[960px] rounded-full bg-[radial-gradient(ellipse,rgba(42,171,238,0.14),transparent_70%)] blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-40 -left-40 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(84,169,235,0.10),transparent_70%)] blur-3xl"
+      />
       <Container>
         <div className="mx-auto max-w-[720px] text-center">
           <BlurFade>
@@ -191,7 +208,7 @@ export default function Pricing() {
 
         {/* Compatibility table (now FIRST — context before toggle) */}
         <BlurFade delay={0.2}>
-          <div className="mt-10 overflow-hidden rounded-3xl border border-[var(--rule-2)] bg-white shadow-[0_30px_80px_-40px_rgba(42,171,238,0.25)]">
+          <div className="relative mt-10 overflow-hidden rounded-3xl border border-white bg-white shadow-[0_50px_120px_-30px_rgba(27,27,66,0.30),0_20px_50px_-15px_rgba(42,171,238,0.25),0_0_0_1px_rgba(255,255,255,0.6)_inset]">
             <div className="border-b border-[var(--rule)] px-6 py-5">
               <p className="text-[14px] font-bold tracking-[-0.01em] text-[var(--ink)]" style={INK_DARK}>
                 {sp.compatTitle}
@@ -416,12 +433,41 @@ export default function Pricing() {
                         >
                           Setup
                         </div>
-                        <div
-                          style={tier.priceStyle}
-                          className="mt-1 text-[30px] font-extrabold leading-tight tracking-[-0.025em] [font-variant-numeric:tabular-nums]"
-                        >
-                          {plan.setupPrice}
-                        </div>
+                        {(() => {
+                          const match = plan.setupPrice.match(/^([^(]+?)\s*\((.+)\)\s*$/);
+                          const main = match ? match[1].trim() : plan.setupPrice;
+                          const offer = match ? match[2].trim() : null;
+                          return (
+                            <>
+                              <div
+                                style={tier.priceStyle}
+                                className="mt-1 text-[30px] font-extrabold leading-tight tracking-[-0.025em] [font-variant-numeric:tabular-nums]"
+                              >
+                                {main}
+                              </div>
+                              {offer && (
+                                <div
+                                  className={[
+                                    "mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10.5px] font-semibold leading-tight tracking-tight",
+                                    isPremium
+                                      ? "bg-[#FFE39A]/20 ring-1 ring-[#FFE39A]/40"
+                                      : isRecommended
+                                      ? "bg-[var(--indigo-soft)] ring-1 ring-[var(--indigo)]/30"
+                                      : "bg-[var(--indigo-soft)] ring-1 ring-[var(--indigo)]/25",
+                                  ].join(" ")}
+                                  style={
+                                    isPremium
+                                      ? { color: "#FFE39A" }
+                                      : { color: "#0077B5" }
+                                  }
+                                >
+                                  <span aria-hidden className="text-[10px]">✦</span>
+                                  {offer}
+                                </div>
+                              )}
+                            </>
+                          );
+                        })()}
                         {mode === "both" && (
                           <>
                             <div
