@@ -87,15 +87,14 @@ function ProductDetail({ slug }: { slug: ProductSlug }) {
       {/* Image */}
       <div
         className="relative h-[220px] shrink-0 overflow-hidden md:h-auto md:w-[380px] lg:w-[440px]"
-        style={{ backgroundColor: "#E8F4FD" }}
+        style={{ backgroundColor: "#F0F7FE" }}
       >
         <Image
           src={p.image}
           alt=""
           fill
           sizes="(max-width: 768px) 100vw, 440px"
-          className="object-cover opacity-90"
-          style={{ filter: "invert(1) hue-rotate(180deg) saturate(0.8) brightness(1.1)" }}
+          className="object-cover opacity-95"
         />
         <div
           aria-hidden
