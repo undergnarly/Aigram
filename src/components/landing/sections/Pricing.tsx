@@ -31,9 +31,9 @@ function shortName(s: string) {
  * dark/saturated backgrounds.
  * ---------------------------------------------------------------- */
 
-const INK_DARK: CSSProperties = { color: "#1C1C1E" };
-const INK_DARK_MUTED: CSSProperties = { color: "#6B6B70" };
-const INK_DARK_2: CSSProperties = { color: "#3D3D3D" };
+const INK_DARK: CSSProperties = { color: "#1b1b42" };
+const INK_DARK_MUTED: CSSProperties = { color: "#545470" };
+const INK_DARK_2: CSSProperties = { color: "#2E2E55" };
 const INK_WHITE: CSSProperties = { color: "#FFFFFF" };
 const INK_WHITE_70: CSSProperties = { color: "rgba(255,255,255,0.72)" };
 const INK_WHITE_85: CSSProperties = { color: "rgba(255,255,255,0.88)" };
@@ -70,7 +70,7 @@ const TIERS: TierStyle[] = [
     accentBar: "",
     badge: null,
     check: "bg-[var(--bg-soft)] ring-1 ring-[var(--rule-2)]",
-    checkStroke: "#6B6B70",
+    checkStroke: "#545470",
     modulePill: "bg-[var(--bg-soft)] ring-1 ring-[var(--rule-2)]",
     modulePillTextStyle: INK_DARK_2,
     divider: "bg-[var(--rule)]",

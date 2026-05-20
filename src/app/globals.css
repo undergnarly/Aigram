@@ -50,10 +50,10 @@
   --bg: #FFFFFF;
   --bg-soft: #F4F5F7;
   --bg-tint: #E8F4FD;
-  --ink: #1C1C1E;
-  --ink-2: #3D3D3D;
-  --muted: #8E8E93;
-  --muted-2: #6B6B70; /* WCAG AA on white */
+  --ink: #1b1b42;        /* deep navy-purple instead of pure black */
+  --ink-2: #2E2E55;      /* slightly lighter shade of ink */
+  --muted: #6E6E85;      /* darker readable gray (was #8E8E93) */
+  --muted-2: #545470;    /* darker secondary gray (was #6B6B70) */
 }
 
 /* Global focus indicator — WCAG 2.4.7 Focus Visible */
@@ -4380,10 +4380,10 @@ code, kbd, samp, pre {
 .blue-stage--alt [data-surface="light"],
 .blue-stage .light-surface,
 .blue-stage--alt .light-surface {
-  --ink: #1C1C1E;
-  --ink-2: #3D3D3D;
-  --muted: #8E8E93;
-  --muted-2: #6B6B70;
+  --ink: #1b1b42;
+  --ink-2: #2E2E55;
+  --muted: #6E6E85;
+  --muted-2: #545470;
   --rule: rgba(0,0,0,0.06);
   --rule-2: rgba(0,0,0,0.10);
   --rule-strong: rgba(0,0,0,0.18);
@@ -4409,10 +4409,10 @@ code, kbd, samp, pre {
    reset so their inner text reads as if on a normal light surface. */
 .dark-stage [data-surface="light"],
 .dark-stage .light-surface {
-  --ink: #1C1C1E;
-  --ink-2: #3D3D3D;
-  --muted: #8E8E93;
-  --muted-2: #6B6B70;
+  --ink: #1b1b42;
+  --ink-2: #2E2E55;
+  --muted: #6E6E85;
+  --muted-2: #545470;
   --rule: rgba(0,0,0,0.06);
   --rule-2: rgba(0,0,0,0.10);
   --rule-strong: rgba(0,0,0,0.18);
