@@ -1,0 +1,23 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Lead {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?
+  phone         String?
+  preferredAt   DateTime?
+  message       String?
+  source        String?
+  lang          String?
+  status        String    @default("new")
+  notes         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
