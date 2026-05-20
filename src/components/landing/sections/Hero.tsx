@@ -32,13 +32,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="isolate relative overflow-hidden bg-black" id="main">
-      {/* MOBILE bg hero image — natural 16:9, no zoom, blur kicks in at text band */}
+    <section className="isolate relative overflow-hidden bg-white" id="main">
+      {/* MOBILE bg hero image */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[58vw] max-h-[440px] lg:hidden"
       >
-        {/* rotating image stack — crossfade + blur transition */}
         {HERO_IMAGES.map((src, i) => (
           <Image
             key={src}
@@ -50,7 +49,7 @@ export default function Hero() {
             className="object-contain object-top transition-[opacity,filter] duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             style={{
               opacity: i === activeIdx ? 1 : 0,
-              filter: `saturate(1.05) blur(${i === activeIdx ? 0 : 16}px)`,
+              filter: `saturate(0.85) brightness(1.1) blur(${i === activeIdx ? 0 : 16}px)`,
               maskImage:
                 "linear-gradient(to bottom, black 0%, black 62%, rgba(0,0,0,0.7) 82%, transparent 100%)",
               WebkitMaskImage:
@@ -58,7 +57,7 @@ export default function Hero() {
             }}
           />
         ))}
-        {/* progressive blur overlay — kicks in around the text band */}
+        {/* progressive blur overlay */}
         <div
           className="absolute inset-0"
           style={{
@@ -70,17 +69,17 @@ export default function Hero() {
               "linear-gradient(to bottom, transparent 0%, transparent 52%, rgba(0,0,0,0.6) 68%, black 82%, black 100%)",
           }}
         />
-        {/* tint overlay — readability, sits above blur */}
+        {/* white tint overlay — readability */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(10,10,12,0) 0%, rgba(10,10,12,0.1) 50%, rgba(10,10,12,0.55) 72%, rgba(10,10,12,1) 96%)",
+              "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.6) 72%, rgba(255,255,255,1) 96%)",
           }}
         />
       </div>
 
-      {/* DESKTOP bg image — right-aligned, 100px from viewport edge, text-overlap region blurred */}
+      {/* DESKTOP bg image — right-aligned */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-y-0 left-0 right-[100px] z-0 hidden overflow-hidden lg:block"
@@ -94,27 +93,27 @@ export default function Hero() {
             priority={i === 0}
             sizes="(min-width: 1024px) calc(100vw - 100px), 0px"
             className="object-cover object-right transition-opacity duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-            style={{ opacity: i === activeIdx ? 1 : 0 }}
+            style={{ opacity: i === activeIdx ? 1 : 0, filter: "saturate(0.85) brightness(1.1)" }}
           />
         ))}
-        {/* progressive blur — heavy where text overlaps, fades to none past the text */}
+        {/* progressive blur where text overlaps */}
         <div
           className="absolute inset-0"
           style={{
-            backdropFilter: "blur(20px) saturate(1.05)",
-            WebkitBackdropFilter: "blur(20px) saturate(1.05)",
+            backdropFilter: "blur(20px) saturate(0.9)",
+            WebkitBackdropFilter: "blur(20px) saturate(0.9)",
             maskImage:
               "linear-gradient(to right, black 0%, black 42%, transparent 60%)",
             WebkitMaskImage:
               "linear-gradient(to right, black 0%, black 42%, transparent 60%)",
           }}
         />
-        {/* tint — readability under text, transparent past the fade */}
+        {/* white tint — text readability on left */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, rgba(10,10,12,0.92) 0%, rgba(10,10,12,0.6) 40%, rgba(10,10,12,0.15) 58%, transparent 72%)",
+              "linear-gradient(to right, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.15) 58%, transparent 72%)",
           }}
         />
       </div>
@@ -124,7 +123,7 @@ export default function Hero() {
           {/* TEXT COLUMN */}
           <div className="max-w-[640px]">
             <BlurFade delay={0.08}>
-              <h1 className="text-balance text-[clamp(40px,7.2vw,84px)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white">
+              <h1 className="text-balance text-[clamp(40px,7.2vw,84px)] font-extrabold leading-[1.02] tracking-[-0.035em] text-[var(--ink)]">
                 {c.hero.h1Lines.slice(0, -1).map((line, i) => (
                   <span key={i} className="block">
                     {line}
@@ -137,7 +136,7 @@ export default function Hero() {
             </BlurFade>
 
             <BlurFade delay={0.16}>
-              <p className="mt-6 max-w-[560px] text-pretty text-[17px] leading-[1.55] text-white/70 md:text-[18px]">
+              <p className="mt-6 max-w-[560px] text-pretty text-[17px] leading-[1.55] text-[var(--muted)] md:text-[18px]">
                 {c.hero.lead}
               </p>
             </BlurFade>
@@ -166,19 +165,17 @@ export default function Hero() {
             </BlurFade>
 
             <BlurFade delay={0.32}>
-              <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 text-[12px] font-medium text-white/55">
-                <span className="text-white/45">{c.hero.trustLabel}</span>
+              <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 text-[12px] font-medium text-[var(--muted)]">
+                <span className="text-[var(--muted)]">{c.hero.trustLabel}</span>
                 {c.hero.trustItems.map((item, i) => (
                   <span key={item} className="flex items-center gap-3">
-                    {i > 0 && <span className="size-1 rounded-full bg-white/15" />}
-                    <span className="text-white/75">{item}</span>
+                    {i > 0 && <span className="size-1 rounded-full bg-[var(--rule-2)]" />}
+                    <span className="text-[var(--ink-2)]">{item}</span>
                   </span>
                 ))}
               </div>
             </BlurFade>
           </div>
-
-          {/* Right column intentionally empty on desktop — the bg image fills it; on mobile the grid collapses to one column */}
         </div>
       </Container>
     </section>

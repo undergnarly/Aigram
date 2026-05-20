@@ -64,7 +64,7 @@ function BrandHeader({ compact = false }: { compact?: boolean }) {
         R
       </span>
       <span className="flex flex-col leading-none">
-        <span className="text-sm font-bold tracking-tight">Rewired</span>
+        <span className="text-sm font-bold tracking-tight">AiGram</span>
         <span className="mt-1 text-[10px] font-mono uppercase tracking-[0.18em] text-white/40">
           Admin
         </span>

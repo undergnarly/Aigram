@@ -22,12 +22,12 @@ export default function FAQ() {
               <Eyebrow>{c.faq.eyebrow}</Eyebrow>
             </BlurFade>
             <BlurFade delay={0.08}>
-              <h2 className="mt-5 text-balance text-[clamp(30px,4.4vw,48px)] font-extrabold leading-[1.05] tracking-[-0.03em] text-white">
+              <h2 className="mt-5 text-balance text-[clamp(30px,4.4vw,48px)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[var(--ink)]">
                 {c.faq.h2}
               </h2>
             </BlurFade>
             <BlurFade delay={0.16}>
-              <p className="mt-5 text-pretty text-[16px] leading-relaxed text-white/65 md:text-[17px]">
+              <p className="mt-5 text-pretty text-[16px] leading-relaxed text-[var(--muted)] md:text-[17px]">
                 {c.faq.sub}
               </p>
             </BlurFade>
@@ -41,10 +41,10 @@ export default function FAQ() {
                   <details
                     open={isOpen}
                     className={[
-                      "group rounded-2xl border bg-[#0E0E12] transition-colors",
+                      "group rounded-2xl border bg-white transition-colors",
                       isOpen
-                        ? "border-white/[0.18]"
-                        : "border-white/[0.08] hover:border-white/[0.14]",
+                        ? "border-[var(--indigo)]/40 shadow-[0_8px_24px_-12px_rgba(42,171,238,0.2)]"
+                        : "border-[var(--rule)] hover:border-[var(--rule-2)]",
                     ].join(" ")}
                   >
                     <summary
@@ -54,15 +54,15 @@ export default function FAQ() {
                       }}
                       className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 md:p-6 [&::-webkit-details-marker]:hidden"
                     >
-                      <h3 className="text-[16px] font-semibold tracking-tight text-white md:text-[18px]">
+                      <h3 className="text-[16px] font-semibold tracking-tight text-[var(--ink)] md:text-[18px]">
                         {it.q}
                       </h3>
                       <span
                         className={[
                           "grid size-9 shrink-0 place-items-center rounded-full border transition-all",
                           isOpen
-                            ? "border-transparent bg-[linear-gradient(135deg,#2AABEE,#FFE100)] text-[#0A0A0A]"
-                            : "border-white/15 text-white",
+                            ? "border-transparent bg-[linear-gradient(135deg,#2AABEE,#0088CC)] text-white"
+                            : "border-[var(--rule-2)] text-[var(--muted)] hover:border-[var(--indigo)]/40 hover:text-[var(--indigo)]",
                         ].join(" ")}
                         aria-hidden
                       >
@@ -84,7 +84,7 @@ export default function FAQ() {
                       ].join(" ")}
                     >
                       <div className="overflow-hidden">
-                        <p className="px-5 pb-6 pr-12 text-[15px] leading-relaxed text-white/65 md:px-6 md:pr-16">
+                        <p className="px-5 pb-6 pr-12 text-[15px] leading-relaxed text-[var(--muted)] md:px-6 md:pr-16">
                           {it.a}
                         </p>
                       </div>

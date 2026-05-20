@@ -48,12 +48,12 @@ export default function FinalCTA() {
       {/* glow background */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[60%] bg-[radial-gradient(ellipse_at_top,rgba(192,255,31,0.12),transparent_70%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[60%] bg-[radial-gradient(ellipse_at_top,rgba(42,171,238,0.08),transparent_70%)]"
       />
 
       <Container>
-        <Spotlight className="rounded-[36px]" color="rgba(192,255,31,0.18)" size={500}>
-        <div className="overflow-hidden rounded-[36px] border border-white/[0.08] bg-[#0E0E12]">
+        <Spotlight className="rounded-[36px]" color="rgba(42,171,238,0.12)" size={500}>
+        <div className="overflow-hidden rounded-[36px] border border-[var(--rule-2)] bg-white shadow-[0_24px_80px_-32px_rgba(42,171,238,0.18)]">
           <div className="grid gap-0 lg:grid-cols-[1.1fr_1fr]">
             {/* LEFT — pitch */}
             <div className="relative isolate p-7 md:p-12 lg:p-14">
@@ -62,30 +62,29 @@ export default function FinalCTA() {
                 className="pointer-events-none absolute inset-0 -z-10"
                 style={{
                   background:
-                    "radial-gradient(ellipse 80% 100% at 0% 0%, rgba(192,255,31,0.12), transparent 60%)",
+                    "radial-gradient(ellipse 80% 100% at 0% 0%, rgba(42,171,238,0.08), transparent 60%)",
                 }}
               />
               <BlurFade>
                 <Eyebrow>{c.finalCta.eyebrow}</Eyebrow>
               </BlurFade>
               <BlurFade delay={0.08}>
-                <h2 className="mt-4 text-balance text-[clamp(26px,4vw,48px)] font-extrabold leading-[1.05] tracking-[-0.03em] text-white md:mt-5 md:text-[clamp(30px,4.6vw,52px)]">
+                <h2 className="mt-4 text-balance text-[clamp(26px,4vw,48px)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[var(--ink)] md:mt-5 md:text-[clamp(30px,4.6vw,52px)]">
                   {c.finalCta.h2}
                 </h2>
               </BlurFade>
               <BlurFade delay={0.16}>
-                <p className="mt-3 text-pretty text-[15px] leading-relaxed text-white/60 md:mt-5 md:text-[17px]">
+                <p className="mt-3 text-pretty text-[15px] leading-relaxed text-[var(--muted)] md:mt-5 md:text-[17px]">
                   {c.finalCta.sub}
                 </p>
               </BlurFade>
 
-              {/* Reassurance — hidden on mobile, visible on md+ */}
               <BlurFade delay={0.24}>
-                <ul className="mt-6 hidden space-y-3 text-[14px] text-white/80 md:block md:mt-8">
+                <ul className="mt-6 hidden space-y-3 text-[14px] text-[var(--ink-2)] md:block md:mt-8">
                   {c.finalCta.reassurance.map((r, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span
-                        className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[linear-gradient(135deg,#2AABEE,#FFE100)]"
+                        className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[linear-gradient(135deg,#2AABEE,#0088CC)]"
                         aria-hidden
                       >
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -100,16 +99,16 @@ export default function FinalCTA() {
             </div>
 
             {/* RIGHT — form */}
-            <div className="border-t border-white/[0.06] bg-[#0A0A0E] p-5 md:p-10 lg:border-l lg:border-t-0 lg:p-12">
+            <div className="border-t border-[var(--rule)] bg-[var(--bg-soft)] p-5 md:p-10 lg:border-l lg:border-t-0 lg:p-12">
               <BlurFade>
-                <h3 className="text-[16px] font-bold tracking-tight text-white md:text-[18px]">
+                <h3 className="text-[16px] font-bold tracking-tight text-[var(--ink)] md:text-[18px]">
                   {c.finalCta.formTitle}
                 </h3>
               </BlurFade>
 
               {status === "ok" ? (
                 <BlurFade>
-                  <div className="mt-6 rounded-2xl border border-[var(--indigo)]/30 bg-[var(--indigo-soft)]/50 p-5">
+                  <div className="mt-6 rounded-2xl border border-[var(--indigo)]/30 bg-[var(--indigo-soft)] p-5">
                     <div className="flex items-center gap-3 text-[var(--indigo-2)]">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                         <circle cx="9" cy="9" r="8" stroke="currentColor" strokeWidth="1.5" />
@@ -121,7 +120,6 @@ export default function FinalCTA() {
                 </BlurFade>
               ) : (
                 <form onSubmit={onSubmit} className="mt-4 space-y-3 md:mt-6 md:space-y-4" noValidate>
-                  {/* Honeypot */}
                   <div aria-hidden className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
                     <label htmlFor="website">Website</label>
                     <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
@@ -140,7 +138,6 @@ export default function FinalCTA() {
                     required
                   />
 
-                  {/* Context — hidden on mobile */}
                   <div className="hidden md:block">
                     <Field
                       label={c.finalCta.fields.contextLabel}
@@ -166,7 +163,7 @@ export default function FinalCTA() {
                   {status === "error" && (
                     <p
                       role="alert"
-                      className="rounded-xl border border-[#FFB454]/30 bg-[#FFB454]/[0.06] p-3 text-[13px] text-[#FFB454]"
+                      className="rounded-xl border border-[#FFB454]/30 bg-[#FFB454]/[0.06] p-3 text-[13px] text-[#d97706]"
                     >
                       {c.finalCta.error}
                     </p>
@@ -198,12 +195,12 @@ function Field({
   textarea?: boolean;
 }) {
   const baseCls =
-    "w-full rounded-2xl border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-[15px] text-white placeholder:text-white/30 transition-colors focus:border-[var(--indigo)]/40 focus:bg-white/[0.04] focus:outline-none";
+    "w-full rounded-2xl border border-[var(--rule-2)] bg-white px-4 py-3 text-[15px] text-[var(--ink)] placeholder:text-[var(--muted)] transition-colors focus:border-[var(--indigo)]/60 focus:bg-[var(--indigo-soft)] focus:outline-none";
   return (
     <div>
       <label
         htmlFor={name}
-        className="mb-2 block text-[12px] font-bold uppercase tracking-[0.1em] text-white/55"
+        className="mb-2 block text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--muted-2)]"
       >
         {label}
         {required && <span className="ml-1 text-[var(--indigo-2)]">*</span>}

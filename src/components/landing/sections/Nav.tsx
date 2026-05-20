@@ -25,7 +25,6 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open.
   useEffect(() => {
     document.documentElement.style.overflow = open ? "hidden" : "";
     return () => {
@@ -44,7 +43,7 @@ export default function Nav() {
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-[var(--indigo)] focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-black"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-[var(--indigo)] focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-white"
       >
         {c.meta.skipToContent}
       </a>
@@ -53,15 +52,15 @@ export default function Nav() {
         className={[
           "sticky top-0 z-[80] w-full transition-colors duration-300",
           scrolled
-            ? "border-b border-white/10 bg-black/70 backdrop-blur-xl backdrop-saturate-150"
-            : "border-b border-transparent bg-black/30 backdrop-blur-md",
+            ? "border-b border-[rgba(0,0,0,0.08)] bg-white/92 backdrop-blur-xl backdrop-saturate-150 shadow-sm"
+            : "border-b border-transparent bg-white/70 backdrop-blur-md",
         ].join(" ")}
       >
         <Container className="flex h-[68px] items-center justify-between gap-3 md:gap-4">
           <Link
             href="/"
-            aria-label="Rewired"
-            className="group flex min-w-0 items-center gap-2.5 text-[17px] font-bold tracking-tight"
+            aria-label="AiGram"
+            className="group flex min-w-0 items-center gap-2.5 text-[17px] font-bold tracking-tight text-[var(--ink)]"
           >
             <Image
               src="/logo.webp"
@@ -71,7 +70,7 @@ export default function Nav() {
               priority
               className="size-8 shrink-0 transition-transform duration-300 group-hover:scale-[1.06]"
             />
-            <span className="truncate">Rewired</span>
+            <span className="truncate">AiGram</span>
           </Link>
 
           {/* desktop nav */}
@@ -83,7 +82,7 @@ export default function Nav() {
               <a
                 key={l.href}
                 href={l.href}
-                className="group relative text-white/75 transition-colors hover:text-white"
+                className="group relative text-[var(--ink-2)] transition-colors hover:text-[var(--ink)]"
               >
                 {l.label}
                 <span
@@ -98,7 +97,7 @@ export default function Nav() {
             <div
               role="tablist"
               aria-label="Language"
-              className="hidden items-center gap-0.5 rounded-full border border-white/10 bg-white/[0.03] p-0.5 md:flex"
+              className="hidden items-center gap-0.5 rounded-full border border-[var(--rule-2)] bg-[var(--bg-soft)] p-0.5 md:flex"
             >
               {LANGS.map((l) => {
                 const active = l === lang;
@@ -112,8 +111,8 @@ export default function Nav() {
                     className={[
                       "h-8 min-w-[40px] rounded-full px-2.5 text-[11px] font-bold tracking-[0.08em] transition-all",
                       active
-                        ? "bg-[linear-gradient(135deg,#2AABEE,#FFE100)] text-[#0A0A0A] shadow-[0_4px_12px_-4px_rgba(192,255,31,0.5)]"
-                        : "text-white/55 hover:text-white",
+                        ? "bg-[linear-gradient(135deg,#2AABEE,#0088CC)] text-white shadow-[0_4px_12px_-4px_rgba(42,171,238,0.5)]"
+                        : "text-[var(--muted)] hover:text-[var(--ink)]",
                     ].join(" ")}
                   >
                     {LANG_LABEL[l]}
@@ -126,7 +125,7 @@ export default function Nav() {
               href={c.nav.telegramHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-[13px] font-semibold text-white/75 transition-colors hover:bg-white/[0.08] hover:text-white md:inline-flex"
+              className="hidden items-center gap-2 rounded-full border border-[var(--rule-2)] bg-[var(--bg-soft)] px-4 py-2 text-[13px] font-semibold text-[var(--ink-2)] transition-colors hover:bg-[var(--indigo-soft)] hover:text-[var(--indigo-2)] md:inline-flex"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-17 7.571a2.244 2.244 0 00.243 4.199l3.795 1.058 1.427 4.436a.5.5 0 00.851.162l2.294-2.515 4.433 3.267a2.244 2.244 0 003.438-1.347l3.046-14.96a2.24 2.24 0 00-2.505-2.086z" />
@@ -148,7 +147,7 @@ export default function Nav() {
               aria-label={open ? c.meta.closeMenu : c.meta.openMenu}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="grid size-11 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-white transition-colors hover:bg-white/[0.07] md:hidden"
+              className="grid size-11 shrink-0 place-items-center rounded-full border border-[var(--rule-2)] bg-[var(--bg-soft)] text-[var(--ink)] transition-colors hover:bg-[var(--indigo-soft)] md:hidden"
             >
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                 {open ? (
@@ -175,13 +174,13 @@ export default function Nav() {
         <div
           onClick={() => setOpen(false)}
           className={[
-            "absolute inset-0 bg-black/70 backdrop-blur-md transition-opacity duration-300",
+            "absolute inset-0 bg-black/40 backdrop-blur-md transition-opacity duration-300",
             open ? "opacity-100" : "opacity-0",
           ].join(" ")}
         />
         <div
           className={[
-            "absolute left-0 right-0 top-[68px] origin-top border-b border-white/10 bg-[#0A0A0A] transition-all duration-300",
+            "absolute left-0 right-0 top-[68px] origin-top border-b border-[var(--rule)] bg-white transition-all duration-300",
             open ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0",
           ].join(" ")}
         >
@@ -191,21 +190,21 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="flex h-14 items-center justify-between rounded-2xl px-4 text-lg font-semibold text-white transition-colors hover:bg-white/[0.04]"
+                className="flex h-14 items-center justify-between rounded-2xl px-4 text-lg font-semibold text-[var(--ink)] transition-colors hover:bg-[var(--indigo-soft)]"
               >
                 <span>{l.label}</span>
-                <Arrow className="opacity-50" />
+                <Arrow className="opacity-50 text-[var(--indigo)]" />
               </a>
             ))}
 
-            <div className="mt-4 flex items-center justify-between rounded-2xl border border-white/[0.06] bg-white/[0.02] px-4 py-3">
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/40">
+            <div className="mt-4 flex items-center justify-between rounded-2xl border border-[var(--rule)] bg-[var(--bg-soft)] px-4 py-3">
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
                 {c.meta.language}
               </span>
               <div
                 role="tablist"
                 aria-label="Language"
-                className="flex items-center gap-0.5 rounded-full border border-white/10 bg-white/[0.03] p-0.5"
+                className="flex items-center gap-0.5 rounded-full border border-[var(--rule-2)] bg-white p-0.5"
               >
                 {LANGS.map((l) => {
                   const active = l === lang;
@@ -219,8 +218,8 @@ export default function Nav() {
                       className={[
                         "h-8 min-w-[44px] rounded-full px-3 text-[12px] font-bold tracking-[0.08em] transition-all",
                         active
-                          ? "bg-[linear-gradient(135deg,#2AABEE,#FFE100)] text-[#0A0A0A] shadow-[0_4px_12px_-4px_rgba(192,255,31,0.5)]"
-                          : "text-white/55 hover:text-white",
+                          ? "bg-[linear-gradient(135deg,#2AABEE,#0088CC)] text-white shadow-[0_4px_12px_-4px_rgba(42,171,238,0.5)]"
+                          : "text-[var(--muted)] hover:text-[var(--ink)]",
                       ].join(" ")}
                     >
                       {LANG_LABEL[l]}
@@ -235,10 +234,10 @@ export default function Nav() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="flex h-14 items-center justify-between rounded-2xl border border-white/[0.06] bg-white/[0.02] px-4 text-[17px] font-semibold text-white/80 transition-colors hover:bg-white/[0.04]"
+              className="flex h-14 items-center justify-between rounded-2xl border border-[var(--rule)] bg-[var(--bg-soft)] px-4 text-[17px] font-semibold text-[var(--ink-2)] transition-colors hover:bg-[var(--indigo-soft)]"
             >
               <span>{c.nav.telegram}</span>
-              <Arrow className="opacity-50" />
+              <Arrow className="opacity-50 text-[var(--indigo)]" />
             </a>
 
             <div className="mt-2">

@@ -60,7 +60,7 @@ function PageHeader() {
           Dashboard
         </h1>
         <p className="mt-1 text-sm text-white/55">
-          Quick pulse on Rewired pipeline activity.
+          Quick pulse on AiGram pipeline activity.
         </p>
       </div>
       <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5 text-xs text-white/60">

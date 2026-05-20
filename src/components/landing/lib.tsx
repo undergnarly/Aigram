@@ -26,7 +26,7 @@ const LangContext = createContext<{
   setLang: (l: Lang) => void;
 }>({ lang: "en", setLang: () => {} });
 
-const STORAGE_KEY = "rewired.lang";
+const STORAGE_KEY = "aigram.lang";
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
@@ -205,11 +205,11 @@ export function Eyebrow({
   return (
     <span
       className={[
-        "inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white/70",
+        "inline-flex items-center gap-2 rounded-full border border-[var(--rule-2)] bg-[var(--indigo-soft)] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--indigo-2)]",
         className ?? "",
       ].join(" ")}
     >
-      <span className="size-1.5 rounded-full bg-[var(--indigo)] shadow-[0_0_10px_rgba(192,255,31,0.7)]" />
+      <span className="size-1.5 rounded-full bg-[var(--indigo)] shadow-[0_0_10px_rgba(42, 171, 238,0.7)]" />
       {children}
     </span>
   );
@@ -271,11 +271,11 @@ const BUTTON_VARIANT: Record<NonNullable<ButtonProps["variant"]>, string> = {
   // !text-[#FFFFFF] forces black over the legacy `a { color: inherit }` rule
   // primary CTAs get a pulsing glow (cta-pulse) + sweep highlight on hover
   primary:
-    "!text-[#FFFFFF] bg-[linear-gradient(135deg,#2AABEE_0%,#0088CC_50%,#FFE100_100%)] animate-[cta-pulse_3.6s_ease-in-out_infinite] hover:-translate-y-0.5 hover:animate-none hover:shadow-[0_18px_44px_-10px_rgba(192,255,31,0.85),inset_0_1px_0_rgba(255,255,255,0.4)] active:translate-y-0 active:scale-[0.98] before:absolute before:inset-0 before:rounded-full before:bg-[linear-gradient(110deg,transparent_35%,rgba(255,255,255,0.55)_50%,transparent_65%)] before:bg-[length:200%_100%] before:bg-[position:200%_50%] hover:before:bg-[position:-100%_50%] before:transition-[background-position] before:duration-700 before:ease-out before:pointer-events-none overflow-hidden",
+    "!text-[#FFFFFF] bg-[linear-gradient(135deg,#2AABEE_0%,#0088CC_50%,#0088CC_100%)] animate-[cta-pulse_3.6s_ease-in-out_infinite] hover:-translate-y-0.5 hover:animate-none hover:shadow-[0_18px_44px_-10px_rgba(42, 171, 238,0.85),inset_0_1px_0_rgba(255,255,255,0.4)] active:translate-y-0 active:scale-[0.98] before:absolute before:inset-0 before:rounded-full before:bg-[linear-gradient(110deg,transparent_35%,rgba(255,255,255,0.55)_50%,transparent_65%)] before:bg-[length:200%_100%] before:bg-[position:200%_50%] hover:before:bg-[position:-100%_50%] before:transition-[background-position] before:duration-700 before:ease-out before:pointer-events-none overflow-hidden",
   ghost:
-    "text-white bg-white/[0.04] border border-white/10 hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-0.5 active:translate-y-0 backdrop-blur-md",
+    "text-[var(--ink-2)] bg-white border border-[var(--rule-2)] hover:bg-[var(--indigo-soft)] hover:border-[rgba(42,171,238,0.3)] hover:text-[var(--indigo-2)] hover:-translate-y-0.5 active:translate-y-0",
   outline:
-    "text-white border border-white/15 hover:border-white/30 hover:bg-white/[0.04] hover:-translate-y-0.5 active:translate-y-0",
+    "text-[var(--ink-2)] border border-[var(--rule-2)] hover:border-[rgba(42,171,238,0.3)] hover:bg-[var(--indigo-soft)] hover:text-[var(--indigo-2)] hover:-translate-y-0.5 active:translate-y-0",
 };
 
 export function Button({
@@ -509,7 +509,7 @@ export function BookingModal() {
   }
 
   const fieldBase =
-    "w-full rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-[16px] text-white placeholder:text-white/30 transition-colors focus:border-[#2AABEE]/45 focus:bg-white/[0.06] focus:outline-none";
+    "w-full rounded-2xl border border-[var(--rule)] bg-[var(--bg-soft)] px-4 py-3.5 text-[16px] text-white placeholder:text-white/30 transition-colors focus:border-[#2AABEE]/45 focus:bg-white/[0.06] focus:outline-none";
 
   const productData = c.products[product];
   const slots = TIME_SLOTS[lang] ?? TIME_SLOTS.en;
@@ -537,20 +537,20 @@ export function BookingModal() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 28, stiffness: 320, mass: 0.9 }}
-            className="relative w-full sm:w-[calc(100%-32px)] max-w-[480px] max-h-[94dvh] overflow-y-auto rounded-t-[28px] sm:rounded-3xl border border-white/10 bg-[#0E0E12] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.85)]"
+            className="relative w-full sm:w-[calc(100%-32px)] max-w-[480px] max-h-[94dvh] overflow-y-auto rounded-t-[28px] sm:rounded-3xl border border-[var(--rule)] bg-white shadow-[0_40px_80px_-20px_rgba(42,171,238,0.25)]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Background glow */}
             <div
               aria-hidden
               className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-[28px] sm:rounded-t-3xl"
-              style={{ background: "radial-gradient(ellipse 90% 100% at 50% 0%, rgba(192,255,31,0.13), transparent 65%)" }}
+              style={{ background: "radial-gradient(ellipse 90% 100% at 50% 0%, rgba(42, 171, 238,0.13), transparent 65%)" }}
             />
 
             {/* Close */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute right-4 top-4 z-20 grid size-9 place-items-center rounded-full bg-white/[0.04] text-white/55 transition-all hover:rotate-90 hover:bg-white/10 hover:text-white"
+              className="absolute right-4 top-4 z-20 grid size-9 place-items-center rounded-full bg-[var(--bg-soft)] text-[var(--muted)] transition-all hover:rotate-90 hover:bg-[var(--indigo-soft)] hover:text-[var(--ink)]"
               aria-label="Close"
             >
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
@@ -560,52 +560,52 @@ export function BookingModal() {
 
             {/* HEADER — tier-aware */}
             <div className="px-6 pt-7 pb-3 sm:px-7 sm:pt-8">
-              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--muted-2)]">
                 {tier ? c.finalCta.modal.tierEyebrow : c.finalCta.modal.eyebrow}
               </span>
 
               {tier ? (
                 <>
-                  <h3 id="booking-modal-title" className="mt-1.5 text-[22px] font-extrabold leading-tight tracking-tight text-white">
-                    <span className="bg-[linear-gradient(135deg,#2AABEE,#FFE100)] bg-clip-text text-transparent">{productData.name}</span>
-                    <span className="ml-1.5 text-white/35">·</span>
-                    <span className="ml-1.5 text-white">{tier.name}</span>
+                  <h3 id="booking-modal-title" className="mt-1.5 text-[22px] font-extrabold leading-tight tracking-tight text-[var(--ink)]">
+                    <span className="bg-[linear-gradient(135deg,#2AABEE,#0088CC)] bg-clip-text text-transparent">{productData.name}</span>
+                    <span className="ml-1.5 text-[var(--muted)]">·</span>
+                    <span className="ml-1.5 text-[var(--ink)]">{tier.name}</span>
                   </h3>
 
                   {priceMath ? (
                     <div className="mt-3 flex items-end gap-3">
                       <div>
-                        <div className="text-[9.5px] font-bold uppercase tracking-[0.14em] text-white/40">
+                        <div className="text-[9.5px] font-bold uppercase tracking-[0.14em] text-[var(--muted-2)]">
                           {c.finalCta.modal.regularPrice}
                         </div>
-                        <div className="font-mono text-[15px] font-semibold text-white/40 line-through [font-variant-numeric:tabular-nums]">
+                        <div className="font-mono text-[15px] font-semibold text-[var(--muted-2)] line-through [font-variant-numeric:tabular-nums]">
                           {priceMath.regular}
                         </div>
                       </div>
                       <div>
                         <div className="text-[9.5px] font-bold uppercase tracking-[0.14em] text-[#2AABEE]">
-                          {c.finalCta.modal.yourPrice}<span className="ml-1 text-white/40">· −10%</span>
+                          {c.finalCta.modal.yourPrice}<span className="ml-1 text-[var(--muted-2)]">· −10%</span>
                         </div>
-                        <div className="font-mono text-[26px] font-extrabold leading-none tracking-tight text-white [font-variant-numeric:tabular-nums]">
+                        <div className="font-mono text-[26px] font-extrabold leading-none tracking-tight text-[var(--ink)] [font-variant-numeric:tabular-nums]">
                           {priceMath.discounted}
                         </div>
                       </div>
-                      <div className="ml-auto text-right text-[10.5px] text-white/45">
+                      <div className="ml-auto text-right text-[10.5px] text-[var(--muted)]">
                         {tier.delivery}
                       </div>
                     </div>
                   ) : (
-                    <div className="mt-3 flex items-baseline gap-2 font-mono text-[24px] font-extrabold text-white [font-variant-numeric:tabular-nums]">
+                    <div className="mt-3 flex items-baseline gap-2 font-mono text-[24px] font-extrabold text-[var(--ink)] [font-variant-numeric:tabular-nums]">
                       {tier.price}
-                      <span className="text-[12px] font-semibold text-white/45">· {tier.delivery}</span>
+                      <span className="text-[12px] font-semibold text-[var(--muted)]">· {tier.delivery}</span>
                     </div>
                   )}
 
                   {tier.features.length > 0 && (
                     <ul className="mt-3.5 grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                       {tier.features.map((f, i) => (
-                        <li key={i} className="flex items-start gap-2 text-[12px] leading-snug text-white/75">
-                          <span className="mt-0.5 grid size-3.5 shrink-0 place-items-center rounded bg-[linear-gradient(135deg,#2AABEE,#FFE100)]" aria-hidden>
+                        <li key={i} className="flex items-start gap-2 text-[12px] leading-snug text-[var(--ink-2)]">
+                          <span className="mt-0.5 grid size-3.5 shrink-0 place-items-center rounded bg-[linear-gradient(135deg,#2AABEE,#0088CC)]" aria-hidden>
                             <svg width="8" height="8" viewBox="0 0 10 10" fill="none">
                               <path d="M2 5l2 2 4-4.5" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -618,12 +618,12 @@ export function BookingModal() {
                 </>
               ) : (
                 <>
-                  <h3 id="booking-modal-title" className="mt-1.5 flex items-baseline gap-2 text-[22px] font-extrabold leading-tight tracking-tight text-white">
-                    <span className="bg-[linear-gradient(135deg,#2AABEE,#FFE100)] bg-clip-text text-transparent">{productData.name}</span>
-                    <span className="text-[13px] font-semibold text-white/35">·</span>
-                    <span className="text-[14px] font-semibold text-white/50">{productData.fromPrice}+</span>
+                  <h3 id="booking-modal-title" className="mt-1.5 flex items-baseline gap-2 text-[22px] font-extrabold leading-tight tracking-tight text-[var(--ink)]">
+                    <span className="bg-[linear-gradient(135deg,#2AABEE,#0088CC)] bg-clip-text text-transparent">{productData.name}</span>
+                    <span className="text-[13px] font-semibold text-[var(--muted)]">·</span>
+                    <span className="text-[14px] font-semibold text-[var(--muted)]">{productData.fromPrice}+</span>
                   </h3>
-                  <p className="mt-1 text-[13.5px] leading-snug text-white/50">
+                  <p className="mt-1 text-[13.5px] leading-snug text-[var(--muted)]">
                     {c.finalCta.modal.sub}
                   </p>
                 </>
@@ -637,19 +637,19 @@ export function BookingModal() {
                   initial={{ opacity: 0, scale: 0.92 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ type: "spring", damping: 18, stiffness: 280 }}
-                  className="rounded-2xl border border-[#2AABEE]/30 bg-[linear-gradient(135deg,rgba(192,255,31,0.12),rgba(255,225,0,0.04))] p-6 text-center"
+                  className="rounded-2xl border border-[#2AABEE]/30 bg-[linear-gradient(135deg,rgba(42, 171, 238,0.12),rgba(255,225,0,0.04))] p-6 text-center"
                 >
-                  <div className="mx-auto grid size-12 place-items-center rounded-full bg-[linear-gradient(135deg,#2AABEE,#FFE100)]">
+                  <div className="mx-auto grid size-12 place-items-center rounded-full bg-[linear-gradient(135deg,#2AABEE,#0088CC)]">
                     <svg width="22" height="22" viewBox="0 0 18 18" fill="none" aria-hidden>
                       <path d="M4 9.5l3 3 7-7.5" stroke="#FFFFFF" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <h4 className="mt-3 text-[20px] font-extrabold tracking-tight text-white">{c.finalCta.success}</h4>
-                  <p className="mt-1 text-[13.5px] text-white/55">{c.finalCta.successSub}</p>
+                  <h4 className="mt-3 text-[20px] font-extrabold tracking-tight text-[var(--ink)]">{c.finalCta.success}</h4>
+                  <p className="mt-1 text-[13.5px] text-[var(--muted)]">{c.finalCta.successSub}</p>
                   <button
                     type="button"
                     onClick={() => setOpen(false)}
-                    className="mt-4 inline-flex h-9 items-center justify-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/80 transition-colors hover:border-white/30 hover:text-white"
+                    className="mt-4 inline-flex h-9 items-center justify-center rounded-full border border-[var(--rule-2)] px-5 text-[13px] font-semibold text-[var(--ink-2)] transition-colors hover:border-[rgba(42,171,238,0.3)] hover:text-[var(--ink)]"
                   >
                     {c.finalCta.modal.backToProduct}
                   </button>
@@ -664,7 +664,7 @@ export function BookingModal() {
 
                   {/* Name */}
                   <div>
-                    <label htmlFor="m-name" className="mb-1.5 block text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/50">
+                    <label htmlFor="m-name" className="mb-1.5 block text-[10.5px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
                       {c.finalCta.fields.nameLabel} <span className="text-[#2AABEE]">*</span>
                     </label>
                     <input id="m-name" name="name" required placeholder={c.finalCta.fields.namePh} autoComplete="name" className={fieldBase} />
@@ -672,7 +672,7 @@ export function BookingModal() {
 
                   {/* Phone or email — auto-detected on submit */}
                   <div>
-                    <label htmlFor="m-contact" className="mb-1.5 block text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/50">
+                    <label htmlFor="m-contact" className="mb-1.5 block text-[10.5px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
                       {isRu ? "Телефон или почта" : "Phone or email"} <span className="text-[#2AABEE]">*</span>
                     </label>
                     <input
@@ -688,7 +688,7 @@ export function BookingModal() {
 
                   {/* Time of day chips */}
                   <div>
-                    <p className="mb-1.5 text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/50">
+                    <p className="mb-1.5 text-[10.5px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
                       {isRu ? "Удобное время" : "Best time to call"}
                     </p>
                     <div className="grid grid-cols-3 gap-2">
@@ -700,8 +700,8 @@ export function BookingModal() {
                           className={[
                             "rounded-2xl border py-2.5 text-[12px] font-semibold transition-all duration-200",
                             timeSlot === slot
-                              ? "border-transparent bg-[linear-gradient(135deg,#2AABEE,#FFE100)] text-[#FFFFFF] shadow-[0_4px_12px_-4px_rgba(192,255,31,0.4)]"
-                              : "border-white/15 text-white/65 hover:border-white/30 hover:text-white",
+                              ? "border-transparent bg-[linear-gradient(135deg,#2AABEE,#0088CC)] text-[#FFFFFF] shadow-[0_4px_12px_-4px_rgba(42, 171, 238,0.4)]"
+                              : "border-[var(--rule-2)] text-[var(--muted)] hover:border-[rgba(42,171,238,0.3)] hover:text-[var(--ink)]",
                           ].join(" ")}
                         >
                           {slot}
@@ -715,7 +715,7 @@ export function BookingModal() {
                     {status !== "submitting" && <Arrow />}
                   </Button>
 
-                  <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-white/35">
+                  <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-[var(--muted)]">
                     {c.finalCta.reassurance.slice(0, 2).map((r) => (
                       <li key={r} className="inline-flex items-center gap-1.5">
                         <span className="size-1 rounded-full bg-[#2AABEE]/60" aria-hidden />
