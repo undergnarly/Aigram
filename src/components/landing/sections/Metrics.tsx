@@ -81,10 +81,9 @@ export default function Metrics() {
             const Icon = ICONS[i] ?? IconClock;
             return (
               <BlurFade key={i} delay={i * 0.08} className="h-full">
-                <Spotlight className="h-full rounded-3xl" color="rgba(255,255,255,0.18)">
+                <Spotlight className="h-full rounded-3xl" color="rgba(255,255,255,0.20)">
                   <div
-                    data-surface="light"
-                    className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/15 bg-white p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.55)] md:min-h-[240px] md:p-6"
+                    className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/12 bg-white/[0.06] backdrop-blur-2xl p-5 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-500 hover:bg-white/[0.10] hover:border-white/20 hover:-translate-y-1 hover:shadow-[0_40px_100px_-25px_rgba(0,0,0,0.75),inset_0_1px_0_rgba(255,255,255,0.18)] md:min-h-[240px] md:p-6"
                   >
                     <div
                       aria-hidden
@@ -95,8 +94,18 @@ export default function Metrics() {
                       className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[radial-gradient(circle,rgba(42,171,238,0.12),transparent_70%)] opacity-60 transition-opacity duration-500 group-hover:opacity-100 md:h-28 md:w-28"
                     />
                     <div className="flex items-start justify-between gap-3">
-                      <div className="text-[clamp(44px,6vw,68px)] font-extrabold leading-[1] tracking-[-0.04em] text-[var(--ink)] [font-variant-numeric:tabular-nums]">
-                        <span className="grad-strong">{m.value}</span>
+                      <div
+                        className="text-[clamp(44px,6vw,68px)] font-extrabold leading-[1] tracking-[-0.04em] [font-variant-numeric:tabular-nums]"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #FFFFFF 0%, #BFDDF5 40%, #54A9EB 100%)",
+                          WebkitBackgroundClip: "text",
+                          backgroundClip: "text",
+                          color: "transparent",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                      >
+                        {m.value}
                       </div>
                       <div className="relative mt-1 h-10 w-10 shrink-0 md:h-12 md:w-12">
                         <Icon />

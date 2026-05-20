@@ -180,12 +180,11 @@ export default function Process() {
                       {/* Card body */}
                       <div
                         ref={(el) => { cardRefs.current[i] = el; }}
-                        data-surface="light"
                         className={[
-                          "flex-1 rounded-2xl border p-4 transition-all duration-500 md:p-5 lg:flex-none",
+                          "flex-1 rounded-2xl border backdrop-blur-2xl p-4 transition-all duration-500 md:p-5 lg:flex-none",
                           isActive
-                            ? "border-white/40 bg-white shadow-[0_20px_50px_-15px_rgba(0,0,0,0.4)] -translate-y-0.5"
-                            : "border-white/15 bg-white/95 hover:bg-white hover:-translate-y-0.5",
+                            ? "border-white/25 bg-white/[0.10] shadow-[0_30px_80px_-25px_rgba(0,0,0,0.7),inset_0_1px_0_rgba(255,255,255,0.18)] -translate-y-0.5"
+                            : "border-white/12 bg-white/[0.06] shadow-[0_20px_50px_-25px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.10)] hover:bg-white/[0.10] hover:border-white/20 hover:-translate-y-0.5",
                         ].join(" ")}
                       >
                         <div className="flex items-baseline justify-between gap-3">
