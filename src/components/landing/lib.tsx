@@ -509,7 +509,7 @@ export function BookingModal() {
   }
 
   const fieldBase =
-    "w-full rounded-2xl border border-[var(--rule)] bg-[var(--bg-soft)] px-4 py-3.5 text-[16px] text-white placeholder:text-white/30 transition-colors focus:border-[#2AABEE]/45 focus:bg-white/[0.06] focus:outline-none";
+    "w-full rounded-2xl border border-[var(--rule)] bg-white px-4 py-3.5 text-[16px] text-[var(--ink)] placeholder:text-[var(--muted)] transition-colors focus:border-[#2AABEE]/45 focus:bg-white focus:outline-none";
 
   const productData = c.products[product];
   const slots = TIME_SLOTS[lang] ?? TIME_SLOTS.en;

@@ -49,7 +49,7 @@ export default function Hero() {
             className="object-contain object-top transition-[opacity,filter] duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             style={{
               opacity: i === activeIdx ? 1 : 0,
-              filter: `saturate(0.85) brightness(1.1) blur(${i === activeIdx ? 0 : 16}px)`,
+              filter: `invert(1) hue-rotate(180deg) brightness(1.15) saturate(0.7) blur(${i === activeIdx ? 0 : 16}px)`,
               maskImage:
                 "linear-gradient(to bottom, black 0%, black 62%, rgba(0,0,0,0.7) 82%, transparent 100%)",
               WebkitMaskImage:
@@ -74,7 +74,7 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.6) 72%, rgba(255,255,255,1) 96%)",
+              "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.95) 65%, rgba(255,255,255,1) 85%)",
           }}
         />
       </div>
@@ -93,7 +93,7 @@ export default function Hero() {
             priority={i === 0}
             sizes="(min-width: 1024px) calc(100vw - 100px), 0px"
             className="object-cover object-right transition-opacity duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-            style={{ opacity: i === activeIdx ? 1 : 0, filter: "saturate(0.85) brightness(1.1)" }}
+            style={{ opacity: i === activeIdx ? 1 : 0, filter: "invert(1) hue-rotate(180deg) brightness(1.15) saturate(0.7)" }}
           />
         ))}
         {/* progressive blur where text overlaps */}
@@ -113,7 +113,7 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.15) 58%, transparent 72%)",
+              "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.99) 45%, rgba(255,255,255,1) 55%, rgba(255,255,255,0.15) 70%, transparent 80%)",
           }}
         />
       </div>

@@ -16,7 +16,7 @@ import MobileStickyCTA from "./sections/MobileStickyCTA";
 export default function LandingPage() {
   return (
     <LangProvider>
-      <div className="relative min-h-screen bg-[#0A0A0A] text-white">
+      <div className="relative min-h-screen bg-white text-[var(--ink)]">
         <Nav />
         <main>
           <Hero />
