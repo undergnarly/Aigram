@@ -53,17 +53,17 @@ function PageHeader() {
   return (
     <header className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <div className="mb-2 text-[11px] font-mono uppercase tracking-[0.18em] text-white/40">
+        <div className="mb-2 text-[11px] font-mono uppercase tracking-[0.18em] text-slate-500">
           Overview
         </div>
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Dashboard
         </h1>
-        <p className="mt-1 text-sm text-white/55">
+        <p className="mt-1 text-sm text-slate-600">
           Quick pulse on AiGram pipeline activity.
         </p>
       </div>
-      <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5 text-xs text-white/60">
+      <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5 text-xs text-slate-600">
         <span className="h-1.5 w-1.5 rounded-full bg-[#0088CC] shadow-[0_0_8px_rgba(222,255,0,0.7)]" />
         Live · synced just now
       </div>
@@ -128,7 +128,7 @@ function StatCard({
   const iconBg =
     tone === "brand"
       ? "bg-[#0088CC]/15 text-[#0088CC] ring-1 ring-[#0088CC]/30"
-      : "bg-white/5 text-white/70 ring-1 ring-white/10";
+      : "bg-white/5 text-slate-700 ring-1 ring-white/10";
 
   return (
     <div
@@ -136,10 +136,10 @@ function StatCard({
     >
       <div className="flex items-start justify-between gap-3">
         <div>
-          <div className="text-xs font-medium uppercase tracking-wider text-white/45">
+          <div className="text-xs font-medium uppercase tracking-wider text-slate-500">
             {label}
           </div>
-          <div className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <div className="mt-2 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
             {value}
           </div>
         </div>
@@ -147,7 +147,7 @@ function StatCard({
           {icon}
         </span>
       </div>
-      <div className="mt-4 flex items-center gap-2 text-xs text-white/50">
+      <div className="mt-4 flex items-center gap-2 text-xs text-slate-500">
         <span className="h-1 w-1 rounded-full bg-white/30" />
         {delta}
       </div>
@@ -173,7 +173,7 @@ function RecentActivity({ leads }: { leads: RecentLead[] }) {
             <SparkleIcon />
           </div>
           <div className="text-base font-semibold">Quiet on the wire</div>
-          <p className="mx-auto mt-1.5 max-w-sm text-sm text-white/55">
+          <p className="mx-auto mt-1.5 max-w-sm text-sm text-slate-600">
             No activity yet. New Discovery-Call requests will land here in real time.
           </p>
         </div>
@@ -194,7 +194,7 @@ function RecentLeadRow({ lead }: { lead: RecentLead }) {
     new: "bg-[#0088CC]/15 text-[#0088CC] ring-[#0088CC]/25",
     contacted: "bg-sky-400/15 text-sky-300 ring-sky-400/25",
     qualified: "bg-emerald-400/15 text-emerald-300 ring-emerald-400/25",
-    closed: "bg-white/5 text-white/45 ring-white/10",
+    closed: "bg-white/5 text-slate-500 ring-white/10",
   };
   const pillClass = statusColors[lead.status] ?? statusColors.new;
 
@@ -204,10 +204,10 @@ function RecentLeadRow({ lead }: { lead: RecentLead }) {
         {initials}
       </span>
       <div className="min-w-0 flex-1">
-        <div className="truncate text-sm font-medium text-white">
-          {lead.name ?? <span className="italic text-white/50">No name</span>}
+        <div className="truncate text-sm font-medium text-slate-900">
+          {lead.name ?? <span className="italic text-slate-500">No name</span>}
         </div>
-        <div className="truncate text-xs text-white/50">{lead.email}</div>
+        <div className="truncate text-xs text-slate-500">{lead.email}</div>
       </div>
       <span
         className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ring-1 ${pillClass}`}
@@ -217,7 +217,7 @@ function RecentLeadRow({ lead }: { lead: RecentLead }) {
       </span>
       <time
         dateTime={lead.createdAt.toISOString()}
-        className="shrink-0 text-xs text-white/40"
+        className="shrink-0 text-xs text-slate-500"
       >
         {lead.createdAt.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
       </time>

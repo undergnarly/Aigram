@@ -38,7 +38,7 @@ export function ExportButton({ leads }: { leads: Lead[] }) {
     <button
       type="button"
       onClick={handleExport}
-      className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/[0.02] px-3.5 py-1.5 text-xs font-medium text-white/70 transition-colors hover:border-[#0088CC]/30 hover:bg-[#0088CC]/5 hover:text-white sm:self-auto"
+      className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/[0.02] px-3.5 py-1.5 text-xs font-medium text-slate-700 transition-colors hover:border-[#0088CC]/30 hover:bg-[#0088CC]/5 hover:text-slate-900 sm:self-auto"
     >
       <ExportIcon /> Export CSV
     </button>

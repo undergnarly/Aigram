@@ -44,16 +44,23 @@ export default function FinalCTA() {
   }
 
   return (
-    <Section id="book" className="relative overflow-hidden">
-      {/* glow background */}
+    <Section id="book" className="dark-stage relative overflow-hidden">
+      {/* extra aurora glows for depth */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[60%] bg-[radial-gradient(ellipse_at_top,rgba(42,171,238,0.08),transparent_70%)]"
+        className="pointer-events-none absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(42,171,238,0.30),transparent_70%)] blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-32 -left-32 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(240,183,86,0.18),transparent_70%)] blur-3xl"
       />
 
       <Container>
-        <Spotlight className="rounded-[36px]" color="rgba(42,171,238,0.12)" size={500}>
-        <div className="overflow-hidden rounded-[36px] border border-[var(--rule-2)] bg-white shadow-[0_24px_80px_-32px_rgba(42,171,238,0.18)]">
+        <Spotlight className="rounded-[36px]" color="rgba(255,255,255,0.18)" size={500}>
+        <div
+          data-surface="light"
+          className="overflow-hidden rounded-[36px] border border-white/15 bg-white shadow-[0_40px_120px_-30px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.06)]"
+        >
           <div className="grid gap-0 lg:grid-cols-[1.1fr_1fr]">
             {/* LEFT — pitch */}
             <div className="relative isolate p-7 md:p-12 lg:p-14">

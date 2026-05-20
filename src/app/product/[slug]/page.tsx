@@ -22,14 +22,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!p) notFound();
 
   return (
-    <main className="min-h-screen bg-[#FFFFFF] text-white">
+    <main className="min-h-screen bg-[#FFFFFF] text-slate-900">
       {/* Sticky top nav */}
       <header className="sticky top-0 z-20 border-b border-white/8 bg-[#FFFFFF]/85 backdrop-blur-md">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
           <Link href="/" className="font-bold text-[#0088CC]">AiGram</Link>
           <Link
             href="/#packages"
-            className="text-xs sm:text-sm text-white/60 hover:text-white"
+            className="text-xs sm:text-sm text-slate-600 hover:text-slate-900"
           >
             All packages →
           </Link>
@@ -40,16 +40,16 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         {/* Hero */}
         <div className="mb-12 sm:mb-20">
           <div className="flex items-center gap-3 mb-6 text-xs font-mono tracking-widest uppercase">
-            <span className="text-white/40">{p.num}</span>
+            <span className="text-slate-500">{p.num}</span>
             <span className="px-2 py-1 rounded-full bg-[#0088CC]/15 text-[#0088CC]">{p.badge}</span>
           </div>
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-4">
             {p.name}.
           </h1>
-          <p className="text-xl sm:text-2xl font-medium text-white/70 mb-6 italic">
+          <p className="text-xl sm:text-2xl font-medium text-slate-700 mb-6 italic">
             {p.tagline}
           </p>
-          <p className="text-lg sm:text-xl text-white/85 leading-relaxed mb-8 sm:mb-10">{p.hero}</p>
+          <p className="text-lg sm:text-xl text-slate-800 leading-relaxed mb-8 sm:mb-10">{p.hero}</p>
           {/* Product visual */}
           <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#FFFFFF] aspect-[16/9] relative">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -67,19 +67,19 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="text-xs font-mono uppercase tracking-widest text-red-400 mb-3">
               ↳ Problem
             </div>
-            <p className="text-base sm:text-lg text-white/80 leading-relaxed">{p.problem}</p>
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed">{p.problem}</p>
           </div>
           <div className="rounded-2xl border border-[#0088CC]/40 bg-[#0088CC]/5 p-6 sm:p-7">
             <div className="text-xs font-mono uppercase tracking-widest text-[#0088CC] mb-3">
               → Outcome
             </div>
-            <p className="text-base sm:text-lg text-white/90 leading-relaxed">{p.outcome}</p>
+            <p className="text-base sm:text-lg text-slate-800 leading-relaxed">{p.outcome}</p>
           </div>
         </section>
 
         {/* Business impact KPIs */}
         <section className="mb-12 sm:mb-20">
-          <div className="text-xs font-mono uppercase tracking-widest text-white/40 mb-6">
+          <div className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
             Business impact
           </div>
           <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
@@ -92,7 +92,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   {i.metric}
                 </div>
                 <div className="text-sm font-semibold mb-1">{i.label}</div>
-                <p className="text-sm text-white/55 leading-relaxed">{i.detail}</p>
+                <p className="text-sm text-slate-600 leading-relaxed">{i.detail}</p>
               </div>
             ))}
           </div>
@@ -100,12 +100,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         {/* What you get */}
         <section className="mb-12 sm:mb-20">
-          <div className="text-xs font-mono uppercase tracking-widest text-white/40 mb-6">
+          <div className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
             What you get
           </div>
           <ul className="space-y-3">
             {p.deliverables.map((d) => (
-              <li key={d} className="flex gap-3 items-start text-base sm:text-lg text-white/85">
+              <li key={d} className="flex gap-3 items-start text-base sm:text-lg text-slate-800">
                 <span className="text-[#0088CC] mt-1 shrink-0">✓</span>
                 <span>{d}</span>
               </li>
@@ -115,7 +115,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         {/* How it works */}
         <section className="mb-12 sm:mb-20">
-          <div className="text-xs font-mono uppercase tracking-widest text-white/40 mb-6">
+          <div className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
             How it works
           </div>
           <div className="space-y-4">
@@ -129,7 +129,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 </div>
                 <div>
                   <div className="text-lg sm:text-xl font-bold mb-1">{s.title}</div>
-                  <p className="text-sm sm:text-base text-white/65 leading-relaxed">{s.body}</p>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{s.body}</p>
                 </div>
               </div>
             ))}
@@ -138,19 +138,19 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         {/* Case study */}
         <section className="mb-12 sm:mb-20 rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-10">
-          <div className="text-xs font-mono uppercase tracking-widest text-white/40 mb-4">
+          <div className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-4">
             Case study
           </div>
           <div className="mb-6">
             <div className="text-lg sm:text-xl font-bold mb-1">{p.case.client}</div>
-            <div className="text-sm text-white/55">{p.case.role}</div>
+            <div className="text-sm text-slate-600">{p.case.role}</div>
           </div>
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
             <div>
               <div className="text-xs font-mono uppercase tracking-widest text-red-400 mb-2">
                 Before
               </div>
-              <p className="text-sm sm:text-base text-white/75 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                 {p.case.before}
               </p>
             </div>
@@ -158,7 +158,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <div className="text-xs font-mono uppercase tracking-widest text-[#0088CC] mb-2">
                 After
               </div>
-              <p className="text-sm sm:text-base text-white/75 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                 {p.case.after}
               </p>
             </div>
@@ -170,7 +170,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         {/* Pricing tiers */}
         <section className="mb-12 sm:mb-20">
-          <div className="text-xs font-mono uppercase tracking-widest text-white/40 mb-6">
+          <div className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
             Pricing
           </div>
           <div className="grid md:grid-cols-3 gap-4 sm:gap-5">
@@ -184,11 +184,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   <div className="text-2xl sm:text-3xl font-bold tracking-tight">
                     ${t.price.toLocaleString()}
                   </div>
-                  <div className="text-xs font-mono uppercase tracking-widest text-white/40 mt-1">
+                  <div className="text-xs font-mono uppercase tracking-widest text-slate-500 mt-1">
                     {t.delivery}
                   </div>
                 </div>
-                <ul className="space-y-2 text-sm text-white/75 flex-1">
+                <ul className="space-y-2 text-sm text-slate-700 flex-1">
                   {t.features.map((f) => (
                     <li key={f} className="flex gap-2 items-start">
                       <span className="text-[#0088CC] mt-0.5 shrink-0">·</span>
@@ -203,7 +203,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         {/* FAQ */}
         <section className="mb-12 sm:mb-20">
-          <div className="text-xs font-mono uppercase tracking-widest text-white/40 mb-6">
+          <div className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
             FAQ
           </div>
           <div className="space-y-3">
@@ -218,7 +218,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     +
                   </span>
                 </summary>
-                <p className="mt-3 text-sm sm:text-base text-white/70 leading-relaxed">{f.a}</p>
+                <p className="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">{f.a}</p>
               </details>
             ))}
           </div>
@@ -229,14 +229,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight mb-3">
             Ready for {p.name}?
           </h2>
-          <p className="text-base sm:text-lg text-white/70 mb-6 max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-700 mb-6 max-w-xl mx-auto">
             30-min Discovery Call. We map your stack and confirm fit before any build.
           </p>
           <a
             href="https://cal.com/aigram/discovery"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 rounded-full bg-[#0088CC] text-black font-bold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg hover:scale-[1.02] transition-transform"
+            className="inline-flex items-center gap-2 rounded-full bg-[#0088CC] text-white font-bold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg hover:scale-[1.02] transition-transform"
           >
             Book Discovery Call →
           </a>

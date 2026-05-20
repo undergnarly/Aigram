@@ -30,9 +30,18 @@ export default function Products() {
   }
 
   return (
-    <Section id="products">
+    <Section id="products" className="dark-stage relative overflow-hidden">
+      {/* aurora glows for premium depth */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 h-[480px] w-[680px] rounded-full bg-[radial-gradient(ellipse,rgba(42,171,238,0.28),transparent_70%)] blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-40 -right-32 h-[440px] w-[440px] rounded-full bg-[radial-gradient(circle,rgba(240,183,86,0.10),transparent_70%)] blur-3xl"
+      />
       <Container>
-        <div className="mx-auto max-w-[760px] text-center">
+        <div className="relative mx-auto max-w-[760px] text-center">
           <BlurFade delay={0.08}>
             <h2 className="mt-5 text-balance text-[clamp(32px,5.5vw,60px)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[var(--ink)]">
               {c.productsSection.h2}
@@ -46,8 +55,12 @@ export default function Products() {
         </div>
 
         {/* Product tabs */}
-        <div className="sticky top-[68px] z-40 mt-8 flex justify-center bg-white/90 py-2 backdrop-blur-xl md:mt-10 md:static md:z-auto md:bg-transparent md:py-0 md:backdrop-blur-none">
-          <div ref={tabsRef} className="product-tabs-wrap flex items-center gap-1 overflow-x-auto rounded-full border border-[var(--rule-2)] bg-[var(--bg-soft)] p-1.5 scroll-smooth md:overflow-visible">
+        <div className="relative sticky top-[68px] z-40 mt-8 flex justify-center bg-transparent py-2 md:mt-10 md:static md:z-auto md:py-0">
+          <div
+            ref={tabsRef}
+            data-surface="light"
+            className="product-tabs-wrap flex items-center gap-1 overflow-x-auto rounded-full border border-[rgba(0,0,0,0.06)] bg-white/95 p-1.5 backdrop-blur-md shadow-[0_8px_24px_-12px_rgba(0,0,0,0.4)] scroll-smooth md:overflow-visible"
+          >
             {PRODUCT_ORDER.map((slug) => {
               const p = c.products[slug];
               const isActive = slug === activeSlug;
@@ -56,10 +69,11 @@ export default function Products() {
                   key={slug}
                   type="button"
                   onClick={(e) => selectProduct(slug, e.currentTarget)}
+                  style={isActive ? { color: "#FFFFFF" } : undefined}
                   className={[
                     "shrink-0 rounded-full px-4 py-2 text-[13px] font-semibold transition-all",
                     isActive
-                      ? "bg-[var(--indigo)] text-white shadow-[0_2px_8px_-2px_rgba(42,171,238,0.5)]"
+                      ? "bg-[linear-gradient(135deg,#2AABEE,#0088CC)] !text-white shadow-[0_4px_14px_-3px_rgba(42,171,238,0.55)]"
                       : "text-[var(--muted)] hover:text-[var(--ink)]",
                   ].join(" ")}
                 >
@@ -83,7 +97,10 @@ function ProductDetail({ slug }: { slug: ProductSlug }) {
   const per = c.productsSection.perCard;
 
   return (
-    <article className="mx-auto mt-8 flex max-w-[960px] flex-col overflow-hidden rounded-3xl border border-[var(--rule-2)] bg-white shadow-[0_20px_60px_-24px_rgba(42,171,238,0.15)] md:flex-row">
+    <article
+      data-surface="light"
+      className="relative mx-auto mt-8 flex max-w-[960px] flex-col overflow-hidden rounded-3xl border border-white/15 bg-white shadow-[0_40px_120px_-30px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.05)] md:flex-row"
+    >
       {/* Image */}
       <div
         className="relative h-[220px] shrink-0 overflow-hidden md:h-auto md:w-[380px] lg:w-[440px]"
@@ -125,7 +142,10 @@ function ProductDetail({ slug }: { slug: ProductSlug }) {
             </h3>
           </div>
           {p.badge && (
-            <span className="shrink-0 rounded-full bg-[linear-gradient(135deg,#2AABEE,#0088CC)] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-white">
+            <span
+              style={{ color: "#FFFFFF" }}
+              className="shrink-0 rounded-full bg-[linear-gradient(135deg,#2AABEE,#0088CC)] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.08em] !text-white shadow-[0_4px_12px_-3px_rgba(0,136,204,0.55)]"
+            >
               {p.badge}
             </span>
           )}

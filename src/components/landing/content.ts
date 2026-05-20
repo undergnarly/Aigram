@@ -445,7 +445,7 @@ const EN: LangContent = {
     h2: "Why operators choose AiGram.",
     sub: "Real numbers from teams running AiGram in their Telegram groups. Conservative estimates — your mileage may vary.",
     items: [
-      { value: "300-500%", label: "ROI in year 1", detail: "Most teams pay back the subscription in the first month — and keep stacking gains as more agents come online." },
+      { value: "300%", label: "ROI in year 1", detail: "Most teams pay back the subscription in the first month — and keep stacking gains as more agents come online." },
       { value: "24h", label: "Setup time", detail: "From Discovery Call to a fully wired AI team in your Telegram group — twenty-four hours, no exceptions." },
       { value: "40+", label: "Built-in skills", detail: "Calendar, research, scraping, OSINT, KPI tracking, reports — every skill ready out of the box on Standard and above." },
       { value: "99.9%", label: "Uptime SLA", detail: "Standard and Premium plans include a 99.9% uptime guarantee with priority response on every incident." },
@@ -912,7 +912,7 @@ const RU: LangContent = {
     h2: "Почему операторы выбирают AiGram.",
     sub: "Реальные цифры от команд, которые уже работают в AiGram. Консервативные оценки — у вас может быть лучше.",
     items: [
-      { value: "300-500%", label: "ROI за первый год", detail: "Большинство команд отбивают подписку в первый месяц — и продолжают копить выигрыш по мере подключения новых агентов." },
+      { value: "300%", label: "ROI за первый год", detail: "Большинство команд отбивают подписку в первый месяц — и продолжают копить выигрыш по мере подключения новых агентов." },
       { value: "24ч", label: "Время настройки", detail: "От звонка-знакомства до полностью настроенной AI-команды в твоей группе Telegram — двадцать четыре часа, без исключений." },
       { value: "40+", label: "Готовых навыков", detail: "Календарь, ресёрч, парсинг, OSINT, KPI-трекинг, отчёты — все навыки готовы из коробки на Standard и выше." },
       { value: "99.9%", label: "Uptime SLA", detail: "Тарифы Standard и Premium включают гарантию аптайма 99.9% и приоритетный ответ по каждому инциденту." },

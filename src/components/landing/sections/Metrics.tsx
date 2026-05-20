@@ -53,7 +53,16 @@ const ICONS = [IconClock, IconChart, IconPhone, IconShield];
 export default function Metrics() {
   const c = useContent();
   return (
-    <Section className="bg-[var(--bg-soft)]">
+    <Section className="blue-stage relative overflow-hidden">
+      {/* iridescent aurora — top-right cool, bottom-left warm */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.28),transparent_70%)] blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-32 -left-32 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(255,229,150,0.16),transparent_70%)] blur-3xl"
+      />
       <Container>
         <div className="mx-auto max-w-[680px] text-center">
           <BlurFade>
@@ -76,8 +85,11 @@ export default function Metrics() {
             const Icon = ICONS[i] ?? IconClock;
             return (
               <BlurFade key={i} delay={i * 0.08} className="h-full">
-                <Spotlight className="h-full rounded-3xl" color="rgba(42,171,238,0.12)">
-                  <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-[var(--rule)] bg-white p-5 transition-all duration-500 hover:border-[rgba(42,171,238,0.3)] hover:-translate-y-1 hover:shadow-[0_16px_40px_-16px_rgba(42,171,238,0.18)] md:min-h-[240px] md:p-6">
+                <Spotlight className="h-full rounded-3xl" color="rgba(255,255,255,0.18)">
+                  <div
+                    data-surface="light"
+                    className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/15 bg-white p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.55)] md:min-h-[240px] md:p-6"
+                  >
                     <div
                       aria-hidden
                       className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--indigo)]/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"

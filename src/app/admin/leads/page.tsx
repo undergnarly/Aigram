@@ -73,16 +73,16 @@ function PageHeader({ count, leads }: { count: number; leads: Lead[] }) {
   return (
     <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <div className="mb-2 text-[11px] font-mono uppercase tracking-[0.18em] text-white/40">
+        <div className="mb-2 text-[11px] font-mono uppercase tracking-[0.18em] text-slate-500">
           Inbox
         </div>
         <h1 className="flex items-baseline gap-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Leads
-          <span className="rounded-full bg-white/5 px-2.5 py-0.5 text-xs font-semibold text-white/60 ring-1 ring-white/10">
+          <span className="rounded-full bg-white/5 px-2.5 py-0.5 text-xs font-semibold text-slate-600 ring-1 ring-white/10">
             {count}
           </span>
         </h1>
-        <p className="mt-1 text-sm text-white/55">
+        <p className="mt-1 text-sm text-slate-600">
           Every Discovery-Call request and form submission, newest first.
         </p>
       </div>
@@ -118,7 +118,7 @@ function FilterBar({
             className={
               isActive
                 ? "inline-flex items-center gap-2 rounded-full bg-[#0088CC] px-3.5 py-1.5 text-xs font-semibold text-[#FFFFFF]"
-                : "inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3.5 py-1.5 text-xs font-medium text-white/70 hover:border-white/20 hover:text-white"
+                : "inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3.5 py-1.5 text-xs font-medium text-slate-700 hover:border-white/20 hover:text-slate-900"
             }
           >
             {f.label}
@@ -126,7 +126,7 @@ function FilterBar({
               className={
                 isActive
                   ? "rounded-full bg-black/15 px-1.5 py-0.5 text-[10px] font-bold"
-                  : "rounded-full bg-white/10 px-1.5 py-0.5 text-[10px] font-bold text-white/70"
+                  : "rounded-full bg-white/10 px-1.5 py-0.5 text-[10px] font-bold text-slate-700"
               }
             >
               {counts[f.key]}
@@ -178,11 +178,11 @@ function Th({
 }) {
   return (
     <th
-      className={`whitespace-nowrap px-4 py-3 text-[11px] font-medium uppercase tracking-wider text-white/45 sm:px-5 ${align === "right" ? "text-right" : "text-left"}`}
+      className={`whitespace-nowrap px-4 py-3 text-[11px] font-medium uppercase tracking-wider text-slate-500 sm:px-5 ${align === "right" ? "text-right" : "text-left"}`}
     >
       <span className="inline-flex items-center gap-1.5">
         {children}
-        <span className="text-white/25" aria-hidden>↕</span>
+        <span className="text-slate-400" aria-hidden>↕</span>
       </span>
     </th>
   );
@@ -197,21 +197,21 @@ function LeadRow({ lead }: { lead: Lead }) {
           <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-[#0088CC]/30 to-[#2AABEE]/10 text-xs font-bold text-[#0088CC] ring-1 ring-[#0088CC]/30">
             {initials}
           </span>
-          <span className="font-medium text-white">
-            {lead.name ?? <span className="italic text-white/50">No name</span>}
+          <span className="font-medium text-slate-900">
+            {lead.name ?? <span className="italic text-slate-500">No name</span>}
           </span>
         </div>
       </td>
-      <td className="px-4 py-4 text-white/75 sm:px-5">{lead.email}</td>
+      <td className="px-4 py-4 text-slate-700 sm:px-5">{lead.email}</td>
       <td className="px-4 py-4 sm:px-5">
-        <span className="rounded-md bg-white/5 px-2 py-0.5 font-mono text-xs text-white/65 ring-1 ring-white/10">
+        <span className="rounded-md bg-white/5 px-2 py-0.5 font-mono text-xs text-slate-600 ring-1 ring-white/10">
           {lead.source ?? "direct"}
         </span>
       </td>
       <td className="px-4 py-4 sm:px-5">
         <StatusPill status={lead.status} />
       </td>
-      <td className="px-4 py-4 text-right text-white/55 sm:px-5">
+      <td className="px-4 py-4 text-right text-slate-600 sm:px-5">
         <time dateTime={lead.createdAt}>{formatDate(lead.createdAt)}</time>
       </td>
     </tr>
@@ -223,7 +223,7 @@ function StatusPill({ status }: { status: Lead["status"] }) {
     new: "bg-[#0088CC]/15 text-[#0088CC] ring-[#0088CC]/30",
     contacted: "bg-sky-400/15 text-sky-300 ring-sky-400/30",
     qualified: "bg-emerald-400/15 text-emerald-300 ring-emerald-400/30",
-    closed: "bg-white/5 text-white/45 ring-white/15",
+    closed: "bg-white/5 text-slate-500 ring-white/15",
   };
   return (
     <span
@@ -242,7 +242,7 @@ function EmptyState() {
         <InboxIcon />
       </div>
       <div className="text-base font-semibold">No leads yet</div>
-      <p className="mx-auto mt-2 max-w-md text-sm text-white/55">
+      <p className="mx-auto mt-2 max-w-md text-sm text-slate-600">
         When someone books a Discovery Call or submits a form on the site,
         they&rsquo;ll show up right here — with name, source, and status.
       </p>
@@ -257,7 +257,7 @@ function EmptyState() {
           href="https://cal.com/aigram/discovery"
           target="_blank"
           rel="noopener"
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs font-medium text-white/70 hover:border-white/20 hover:text-white"
+          className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs font-medium text-slate-700 hover:border-white/20 hover:text-slate-900"
         >
           Test booking flow ↗
         </a>

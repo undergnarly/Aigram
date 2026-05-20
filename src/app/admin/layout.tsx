@@ -9,7 +9,7 @@ import Link from "next/link";
  */
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative min-h-screen bg-[#FFFFFF] text-white antialiased">
+    <div className="relative min-h-screen bg-[#FFFFFF] text-slate-900 antialiased">
       {/* Ambient glow — matches the landing page's mesh vibe at lower intensity */}
       <div
         aria-hidden
@@ -65,7 +65,7 @@ function BrandHeader({ compact = false }: { compact?: boolean }) {
       </span>
       <span className="flex flex-col leading-none">
         <span className="text-sm font-bold tracking-tight">AiGram</span>
-        <span className="mt-1 text-[10px] font-mono uppercase tracking-[0.18em] text-white/40">
+        <span className="mt-1 text-[10px] font-mono uppercase tracking-[0.18em] text-slate-500">
           Admin
         </span>
       </span>
@@ -76,7 +76,7 @@ function BrandHeader({ compact = false }: { compact?: boolean }) {
 function SidebarNav() {
   return (
     <nav className="flex-1 px-3 py-6">
-      <div className="px-3 pb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-white/30">
+      <div className="px-3 pb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-slate-400">
         Workspace
       </div>
       <ul className="space-y-1">
@@ -100,9 +100,9 @@ function SidebarLink({
     <li>
       <Link
         href={href}
-        className="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+        className="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-white/5 hover:text-slate-900"
       >
-        <span className="text-white/40 group-hover:text-[#0088CC] transition-colors">
+        <span className="text-slate-500 group-hover:text-[#0088CC] transition-colors">
           {icon}
         </span>
         {label}
@@ -115,7 +115,7 @@ function MobileNavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="rounded-full border border-white/10 px-3 py-1.5 text-xs font-medium text-white/70 hover:border-[#0088CC]/40 hover:text-white"
+      className="rounded-full border border-white/10 px-3 py-1.5 text-xs font-medium text-slate-700 hover:border-[#0088CC]/40 hover:text-slate-900"
     >
       {label}
     </Link>
@@ -127,7 +127,7 @@ function SidebarFooter() {
     <div className="border-t border-white/8 p-4">
       <Link
         href="/"
-        className="flex items-center justify-between rounded-lg border border-white/10 px-3 py-2 text-xs font-medium text-white/60 transition-colors hover:border-white/20 hover:text-white"
+        className="flex items-center justify-between rounded-lg border border-white/10 px-3 py-2 text-xs font-medium text-slate-600 transition-colors hover:border-white/20 hover:text-slate-900"
       >
         <span>View site</span>
         <span aria-hidden>↗</span>

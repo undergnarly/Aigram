@@ -4195,19 +4195,14 @@ body {
   color: var(--ink) !important;
 }
 
-/* Tailwind utility overrides — components used text-white/N and bg-white/N
-   to render translucent text on dark backgrounds. Flip them to dark-on-light. */
-.text-white,
-[class*="text-white\\/"] {
-  color: var(--ink) !important;
-}
-.bg-white,
-[class*="bg-white\\/"] {
-  background-color: rgba(0, 0, 0, 0.02) !important;
-}
-[class*="border-white\\/"] {
-  border-color: rgba(0, 0, 0, 0.10) !important;
-}
+/* Tailwind utility overrides — REMOVED 2026-05-20.
+   Previous rules forced .text-white → var(--ink) !important and
+   .bg-white → rgba(0,0,0,0.02) !important, which silently killed all
+   white text on blue/dark backgrounds (active tabs, badges, CTAs,
+   premium card) and turned every legitimate white card into a soft-grey
+   wash. The new landing tree is built with explicit Tailwind colors and
+   does NOT rely on legacy dark-theme leftovers, so the blanket override
+   does more damage than good. White-on-blue is the design intent. */
 
 /* Cards, panels, and surfaces that were dark — bring them to light */
 .card,
@@ -4309,11 +4304,191 @@ code, kbd, samp, pre {
   opacity: 0.6;
 }
 
-/* Final safety net — anything left painting pure white text becomes ink */
-[style*="color: #FFFFFF"],
-[style*="color: white"],
-[style*="color:#FFFFFF"],
-[style*="color:white"] {
-  color: var(--ink) !important;
+/* AiGram light-mode override block — END
+   Previous "safety net" that forced inline color:white → ink !important
+   has been removed (2026-05-20). It was inverting all legitimate white-on-blue
+   text — CTAs, active tabs, badges, the premium card.
+   White text on colored backgrounds is the design intent. */
+
+/* ============================================================
+   SECTION RHYTHM — alternating block treatments
+   ------------------------------------------------------------
+   Three flavours: default (white), .section-soft (tinted), and
+   .dark-stage (midnight). The dark-stage trick: redefine the
+   text-color variables INSIDE its scope, so any descendant using
+   `text-[var(--ink)]`, `text-[var(--muted)]`, etc. flips to
+   white-on-dark automatically — no React edits required.
+   ============================================================ */
+
+.section-soft {
+  background: linear-gradient(180deg, rgba(232,244,253,0) 0%, rgba(232,244,253,0.55) 50%, rgba(232,244,253,0) 100%),
+              var(--bg-soft);
 }
-/* end AiGram light-mode override block */
+
+.dark-stage {
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 0%, rgba(42,171,238,0.22), transparent 65%),
+    radial-gradient(ellipse 60% 60% at 10% 100%, rgba(240,183,86,0.10), transparent 65%),
+    linear-gradient(180deg, #0E2A4A 0%, #13365E 50%, #1A4574 100%);
+  /* shared dark-mode tokens (defined below in .dark-stage cascade) */
+}
+
+/* Trendy 2026 Telegram-blue stage — vibrant, gradient, with iridescent hints.
+   Inherits the same text-token rebinding as .dark-stage. */
+.blue-stage {
+  background:
+    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(255,255,255,0.18), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 0% 100%, rgba(14,42,74,0.45), transparent 65%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(84,169,235,0.35), transparent 70%),
+    linear-gradient(135deg, #0077B5 0%, #0088CC 30%, #2AABEE 70%, #54A9EB 100%);
+  position: relative;
+  isolation: isolate;
+}
+.blue-stage--alt {
+  /* mirror image gradient for adjacent sections so they feel distinct */
+  background:
+    radial-gradient(ellipse 60% 50% at 0% 0%, rgba(255,255,255,0.18), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(14,42,74,0.50), transparent 65%),
+    radial-gradient(ellipse 50% 40% at 50% 30%, rgba(84,169,235,0.25), transparent 70%),
+    linear-gradient(225deg, #0077B5 0%, #0088CC 30%, #2AABEE 70%, #54A9EB 100%);
+  position: relative;
+  isolation: isolate;
+}
+/* Both blue stages share the dark-stage token rebinding (white text). */
+.blue-stage,
+.blue-stage--alt {
+  --ink: #FFFFFF;
+  --ink-2: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.78);
+  --muted-2: rgba(255,255,255,0.84);
+  --rule: rgba(255,255,255,0.14);
+  --rule-2: rgba(255,255,255,0.22);
+  --rule-strong: rgba(255,255,255,0.34);
+  --bg: #0088CC;
+  --bg-soft: rgba(255,255,255,0.06);
+  --bg-tint: rgba(255,255,255,0.10);
+  color: #FFFFFF;
+}
+.blue-stage [data-surface="light"],
+.blue-stage--alt [data-surface="light"],
+.blue-stage .light-surface,
+.blue-stage--alt .light-surface {
+  --ink: #1C1C1E;
+  --ink-2: #3D3D3D;
+  --muted: #8E8E93;
+  --muted-2: #6B6B70;
+  --rule: rgba(0,0,0,0.06);
+  --rule-2: rgba(0,0,0,0.10);
+  --rule-strong: rgba(0,0,0,0.18);
+  color: var(--ink);
+}
+/* Separator: subtle hairline glow at the seam between adjacent blue stages
+   (place via ::after on the upper section). */
+.blue-stage::after,
+.blue-stage--alt::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.32), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+  /* re-bind text tokens so anything inside that reads `var(--ink)` flips */
+  --ink: #FFFFFF;
+  --ink-2: rgba(255,255,255,0.88);
+  --muted: rgba(255,255,255,0.62);
+  --muted-2: rgba(255,255,255,0.70);
+  --rule: rgba(255,255,255,0.10);
+  --rule-2: rgba(255,255,255,0.18);
+  --rule-strong: rgba(255,255,255,0.28);
+  --bg: #13365E;
+  --bg-tint: rgba(42,171,238,0.18);
+  color: #FFFFFF;
+}
+/* Surfaces explicitly white inside a dark stage should stay white
+   (cards, modals, form fields), with internal text-token cascade
+   reset so their inner text reads as if on a normal light surface. */
+.dark-stage [data-surface="light"],
+.dark-stage .light-surface {
+  --ink: #1C1C1E;
+  --ink-2: #3D3D3D;
+  --muted: #8E8E93;
+  --muted-2: #6B6B70;
+  --rule: rgba(0,0,0,0.06);
+  --rule-2: rgba(0,0,0,0.10);
+  --rule-strong: rgba(0,0,0,0.18);
+  color: var(--ink);
+}
+
+/* ============================================================
+   PRICING — premium tier card animations
+   ============================================================ */
+@keyframes premium-shimmer {
+  0%   { transform: translateX(-100%) skewX(-12deg); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateX(220%) skewX(-12deg); opacity: 0; }
+}
+@keyframes premium-aurora {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.55; }
+  50%      { transform: translate(15%, -10%) scale(1.15); opacity: 0.78; }
+}
+@keyframes premium-accent-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+@keyframes premium-gold-glow {
+  0%, 100% { box-shadow: 0 4px 14px -3px rgba(240,183,86,0.45), inset 0 1px 0 rgba(255,255,255,0.5); }
+  50%      { box-shadow: 0 4px 22px -2px rgba(240,183,86,0.78), inset 0 1px 0 rgba(255,255,255,0.6); }
+}
+.premium-card { position: relative; overflow: hidden; }
+.premium-aurora {
+  position: absolute;
+  inset: -40% -20% auto auto;
+  width: 70%; aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(240,183,86,0.22), transparent 70%);
+  filter: blur(40px);
+  animation: premium-aurora 14s ease-in-out infinite;
+  pointer-events: none;
+}
+.premium-aurora-2 {
+  position: absolute;
+  inset: auto auto -30% -20%;
+  width: 60%; aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(42,171,238,0.28), transparent 70%);
+  filter: blur(40px);
+  animation: premium-aurora 18s ease-in-out 2s infinite reverse;
+  pointer-events: none;
+}
+.premium-shimmer {
+  position: absolute; inset: 0;
+  pointer-events: none; overflow: hidden;
+  border-radius: inherit;
+}
+.premium-shimmer::before {
+  content: ""; position: absolute;
+  top: 0; left: 0;
+  width: 40%; height: 100%;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
+  animation: premium-shimmer 6s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+.recommended-bar {
+  background-size: 200% 100%;
+  animation: premium-accent-flow 6s ease-in-out infinite;
+}
+.premium-badge {
+  animation: premium-gold-glow 3.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .premium-shimmer::before,
+  .premium-aurora,
+  .premium-aurora-2,
+  .recommended-bar,
+  .premium-badge { animation: none !important; }
+}

@@ -14,7 +14,15 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <Section id="faq">
+    <Section
+      id="faq"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#0088CC_0px,#2AABEE_80px,#54A9EB_140px,#E8F4FD_220px,#FFFFFF_320px)]"
+    >
+      {/* shimmer band — gives the top blue ribbon depth */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-[260px] bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,255,255,0.30),transparent_70%)]"
+      />
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">

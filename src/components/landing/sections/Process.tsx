@@ -47,8 +47,8 @@ function IconSupport({ className }: { className?: string }) {
 }
 
 const STEP_ICONS = [IconDiscovery, IconBuild, IconTrain, IconSupport];
-const STEP_META_RU = ["30 минут", "1–2 недели", "Живые сессии", "7–90 дней"];
-const STEP_META_EN = ["30 min", "1–2 weeks", "Live sessions", "7–90 days"];
+const STEP_META_RU = ["30 минут", "Два дня", "Живые сессии", "7–90 дней"];
+const STEP_META_EN = ["30 min", "Two days", "Live sessions", "7–90 days"];
 
 export default function Process() {
   const c = useContent();
@@ -99,9 +99,18 @@ export default function Process() {
   }, [c.process.steps.length]);
 
   return (
-    <Section id="process">
+    <Section id="process" className="blue-stage--alt relative overflow-hidden">
+      {/* aurora — mirrored from Metrics so adjacent blue stages feel distinct */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 left-[-10%] h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.28),transparent_70%)] blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-32 -right-32 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(255,229,150,0.16),transparent_70%)] blur-3xl"
+      />
       <Container>
-        <div className="mx-auto max-w-3xl text-center lg:text-left lg:mx-0 lg:max-w-[820px]">
+        <div className="mx-auto max-w-3xl text-center lg:max-w-[820px]">
           <BlurFade>
             <Eyebrow>{c.process.eyebrow}</Eyebrow>
           </BlurFade>
@@ -121,16 +130,16 @@ export default function Process() {
           {/* Mobile: vertical rail */}
           <div
             aria-hidden
-            className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-[var(--indigo)]/70 via-[var(--rule-2)] to-transparent lg:hidden"
+            className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-white/80 via-white/30 to-transparent lg:hidden"
           />
           {/* Desktop: horizontal rail */}
           <div
             aria-hidden
-            className="absolute left-0 right-0 top-[27px] hidden h-px bg-gradient-to-r from-transparent via-[var(--rule-2)] to-transparent lg:block"
+            className="absolute left-0 right-0 top-[27px] hidden h-px bg-gradient-to-r from-transparent via-white/30 to-transparent lg:block"
           />
           <div
             aria-hidden
-            className="absolute left-0 top-[27px] hidden h-px w-[24%] bg-gradient-to-r from-[var(--indigo)] via-[var(--indigo)]/60 to-transparent lg:block"
+            className="absolute left-0 top-[27px] hidden h-px w-[24%] bg-gradient-to-r from-white via-white/60 to-transparent lg:block"
           />
 
           <div className="grid gap-5 lg:grid-cols-4 lg:gap-6">
@@ -142,13 +151,13 @@ export default function Process() {
                   <li aria-current={isActive ? "step" : undefined} className="group relative">
                     <div className="flex items-start gap-5 lg:flex-col lg:items-stretch lg:gap-4">
                       {/* Node */}
-                      <div className="relative shrink-0">
+                      <div className="relative shrink-0" data-surface="light">
                         <div
                           className={[
                             "relative grid size-14 place-items-center rounded-full font-mono text-[12px] font-bold transition-all duration-500 group-hover:scale-105",
                             isActive
-                              ? "bg-[linear-gradient(135deg,#2AABEE,#0088CC)] text-white shadow-[0_8px_28px_-6px_rgba(42,171,238,0.5)] scale-110"
-                              : "border border-[var(--rule-2)] bg-white text-[var(--ink-2)] group-hover:border-[var(--indigo)]/40",
+                              ? "bg-[linear-gradient(135deg,#2AABEE,#0088CC)] !text-white shadow-[0_8px_28px_-6px_rgba(255,255,255,0.5)] scale-110"
+                              : "border border-[rgba(0,0,0,0.10)] bg-white text-[var(--ink-2)]",
                           ].join(" ")}
                         >
                           {s.step}
@@ -175,11 +184,12 @@ export default function Process() {
                       {/* Card body */}
                       <div
                         ref={(el) => { cardRefs.current[i] = el; }}
+                        data-surface="light"
                         className={[
                           "flex-1 rounded-2xl border p-4 transition-all duration-500 md:p-5 lg:flex-none",
                           isActive
-                            ? "border-[var(--indigo)]/40 bg-[var(--indigo-soft)] shadow-[0_8px_24px_-12px_rgba(42,171,238,0.2)] -translate-y-0.5"
-                            : "border-[var(--rule)] bg-white hover:border-[var(--rule-2)] hover:-translate-y-0.5",
+                            ? "border-white/40 bg-white shadow-[0_20px_50px_-15px_rgba(0,0,0,0.4)] -translate-y-0.5"
+                            : "border-white/15 bg-white/95 hover:bg-white hover:-translate-y-0.5",
                         ].join(" ")}
                       >
                         <div className="flex items-baseline justify-between gap-3">
