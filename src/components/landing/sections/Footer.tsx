@@ -6,7 +6,10 @@ import { Container, useContent } from "../lib";
 export default function Footer() {
   const c = useContent();
   return (
-    <footer className="relative border-t border-[var(--rule)] bg-[var(--bg-soft)] pb-[calc(72px+env(safe-area-inset-bottom,0px))] pt-16 md:pb-16">
+    <footer
+      className="dark-stage relative border-t border-white/8 pb-[calc(72px+env(safe-area-inset-bottom,0px))] pt-16 md:pb-16"
+      style={{ background: "#08182E" }}
+    >
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2fr] lg:gap-16">
           <div>

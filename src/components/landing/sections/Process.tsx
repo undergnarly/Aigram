@@ -100,14 +100,10 @@ export default function Process() {
 
   return (
     <Section id="process" className="blue-stage--alt relative overflow-hidden">
-      {/* aurora — mirrored from Metrics so adjacent blue stages feel distinct */}
+      {/* bottom-right aurora only (top kept clean so seam to Metrics stays dark) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 left-[-10%] h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.28),transparent_70%)] blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-32 -right-32 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(255,229,150,0.16),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute -bottom-32 -right-32 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(84,169,235,0.18),transparent_70%)] blur-3xl"
       />
       <Container>
         <div className="mx-auto max-w-3xl text-center lg:max-w-[820px]">

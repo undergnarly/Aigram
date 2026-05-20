@@ -13,11 +13,11 @@ import {
 import { BlurFade, Magnetic } from "../motion";
 
 const HERO_IMAGES = [
-  "/products/foundation.webp",
-  "/products/ai-lead-intel.webp",
-  "/products/ai-sales.webp",
-  "/products/knowledge-vault.webp",
-  "/products/orchestrator.webp",
+  "/products/agent-1.webp",
+  "/products/agent-2.webp",
+  "/products/agent-3.webp",
+  "/products/agent-4.webp",
+  "/products/agent-5.webp",
 ];
 
 export default function Hero() {
@@ -79,10 +79,10 @@ export default function Hero() {
         />
       </div>
 
-      {/* DESKTOP bg image — right-aligned */}
+      {/* DESKTOP bg image — natural-size, anchored to right (no upscale → no pixelation) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 right-[100px] z-0 hidden overflow-hidden lg:block"
+        className="pointer-events-none absolute inset-y-0 left-0 right-0 z-0 hidden overflow-hidden lg:block"
       >
         {HERO_IMAGES.map((src, i) => (
           <Image
@@ -91,29 +91,29 @@ export default function Hero() {
             alt=""
             fill
             priority={i === 0}
-            sizes="(min-width: 1024px) calc(100vw - 100px), 0px"
-            className="object-cover object-right transition-opacity duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+            sizes="(min-width: 1024px) 60vw, 0px"
+            className="object-contain object-right transition-opacity duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             style={{ opacity: i === activeIdx ? 1 : 0 }}
           />
         ))}
-        {/* progressive blur where text overlaps */}
+        {/* progressive blur where text overlaps the LEFT ~20% of the image */}
         <div
           className="absolute inset-0"
           style={{
-            backdropFilter: "blur(20px) saturate(0.9)",
-            WebkitBackdropFilter: "blur(20px) saturate(0.9)",
+            backdropFilter: "blur(24px) saturate(0.9)",
+            WebkitBackdropFilter: "blur(24px) saturate(0.9)",
             maskImage:
-              "linear-gradient(to right, black 0%, black 42%, transparent 60%)",
+              "linear-gradient(to right, black 0%, black 28%, transparent 42%)",
             WebkitMaskImage:
-              "linear-gradient(to right, black 0%, black 42%, transparent 60%)",
+              "linear-gradient(to right, black 0%, black 28%, transparent 42%)",
           }}
         />
-        {/* white tint — text readability on left */}
+        {/* white tint — text readability on left strip only */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.99) 45%, rgba(255,255,255,1) 55%, rgba(255,255,255,0.15) 70%, transparent 80%)",
+              "linear-gradient(to right, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.94) 22%, rgba(255,255,255,0.65) 32%, rgba(255,255,255,0.10) 42%, transparent 50%)",
           }}
         />
       </div>

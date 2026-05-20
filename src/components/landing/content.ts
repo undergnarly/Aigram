@@ -264,7 +264,7 @@ const EN: LangContent = {
       ],
       fromPrice: PRICE_RANGES.planner.from,
       delivery: PRICE_RANGES.planner.delivery.en,
-      image: "/products/planner.webp",
+      image: "/products/agent-1.webp",
       tiers: [
         {
           name: "Lite",
@@ -302,7 +302,7 @@ const EN: LangContent = {
       ],
       fromPrice: PRICE_RANGES.researcher.from,
       delivery: PRICE_RANGES.researcher.delivery.en,
-      image: "/products/researcher.webp",
+      image: "/products/agent-2.webp",
       tiers: [
         {
           name: "Lite",
@@ -340,7 +340,7 @@ const EN: LangContent = {
       ],
       fromPrice: PRICE_RANGES.automator.from,
       delivery: PRICE_RANGES.automator.delivery.en,
-      image: "/products/automator.webp",
+      image: "/products/agent-3.webp",
       tiers: [
         {
           name: "Lite",
@@ -378,7 +378,7 @@ const EN: LangContent = {
       ],
       fromPrice: PRICE_RANGES.analyst.from,
       delivery: PRICE_RANGES.analyst.delivery.en,
-      image: "/products/analyst.webp",
+      image: "/products/agent-4.webp",
       tiers: [
         {
           name: "Lite",
@@ -416,7 +416,7 @@ const EN: LangContent = {
       ],
       fromPrice: PRICE_RANGES.concierge.from,
       delivery: PRICE_RANGES.concierge.delivery.en,
-      image: "/products/concierge.webp",
+      image: "/products/agent-5.webp",
       tiers: [
         {
           name: "Lite",
@@ -731,7 +731,7 @@ const RU: LangContent = {
       ],
       fromPrice: PRICE_RANGES.planner.from,
       delivery: PRICE_RANGES.planner.delivery.ru,
-      image: "/products/planner.webp",
+      image: "/products/agent-1.webp",
       tiers: [
         {
           name: "Lite",
@@ -769,7 +769,7 @@ const RU: LangContent = {
       ],
       fromPrice: PRICE_RANGES.researcher.from,
       delivery: PRICE_RANGES.researcher.delivery.ru,
-      image: "/products/researcher.webp",
+      image: "/products/agent-2.webp",
       tiers: [
         {
           name: "Lite",
@@ -807,7 +807,7 @@ const RU: LangContent = {
       ],
       fromPrice: PRICE_RANGES.automator.from,
       delivery: PRICE_RANGES.automator.delivery.ru,
-      image: "/products/automator.webp",
+      image: "/products/agent-3.webp",
       tiers: [
         {
           name: "Lite",
@@ -845,7 +845,7 @@ const RU: LangContent = {
       ],
       fromPrice: PRICE_RANGES.analyst.from,
       delivery: PRICE_RANGES.analyst.delivery.ru,
-      image: "/products/analyst.webp",
+      image: "/products/agent-4.webp",
       tiers: [
         {
           name: "Lite",
@@ -883,7 +883,7 @@ const RU: LangContent = {
       ],
       fromPrice: PRICE_RANGES.concierge.from,
       delivery: PRICE_RANGES.concierge.delivery.ru,
-      image: "/products/concierge.webp",
+      image: "/products/agent-5.webp",
       tiers: [
         {
           name: "Lite",

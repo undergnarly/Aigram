@@ -54,14 +54,10 @@ export default function Metrics() {
   const c = useContent();
   return (
     <Section className="blue-stage relative overflow-hidden">
-      {/* iridescent aurora — top-right cool, bottom-left warm */}
+      {/* top-right aurora only (bottom kept clean so the seam to Process stays dark) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.28),transparent_70%)] blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-32 -left-32 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(255,229,150,0.16),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.20),transparent_70%)] blur-3xl"
       />
       <Container>
         <div className="mx-auto max-w-[680px] text-center">

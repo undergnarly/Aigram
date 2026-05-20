@@ -4327,32 +4327,39 @@ code, kbd, samp, pre {
 
 .dark-stage {
   background:
-    radial-gradient(ellipse 70% 50% at 80% 0%, rgba(42,171,238,0.22), transparent 65%),
-    radial-gradient(ellipse 60% 60% at 10% 100%, rgba(240,183,86,0.10), transparent 65%),
-    linear-gradient(180deg, #0E2A4A 0%, #13365E 50%, #1A4574 100%);
+    radial-gradient(ellipse 70% 40% at 80% 5%, rgba(42,171,238,0.22), transparent 65%),
+    radial-gradient(ellipse 50% 35% at 15% 75%, rgba(240,183,86,0.10), transparent 65%),
+    linear-gradient(180deg, #0E2A4A 0%, #13365E 35%, #0E3666 70%, #08182E 100%);
   /* shared dark-mode tokens (defined below in .dark-stage cascade) */
 }
 
-/* Trendy 2026 Telegram-blue stage — vibrant, gradient, with iridescent hints.
+/* Trendy 2026 Telegram-blue stage — DEEP, PREMIUM, slow drifting aurora.
+   .blue-stage ↔ .blue-stage--alt blend SEAMLESSLY: bottom of one ≈ top of next
+   (both ~#0E2A4A), so adjacent sections read as one continuous dark gradient.
    Inherits the same text-token rebinding as .dark-stage. */
+@keyframes blue-stage-drift {
+  0%, 100% { background-position: 0% 0%, 0% 100%, 50% 50%, 0% 0%; }
+  50%      { background-position: 30% 20%, -20% 80%, 60% 40%, 0% 0%; }
+}
+/* Seamless darkening WAVE through Metrics + Process:
+   .blue-stage     : #1A4574 → #0E2A4A   (Metrics: lighter top → darkest bottom)
+   .blue-stage--alt: #0E2A4A → #1A4574   (Process: darkest top → lighter bottom)
+   Result: one continuous gradient flowing through both, darkest at the seam.
+   PURE LINEAR — no radial overlays or animation that could brighten the edges
+   and recreate a visible seam. */
 .blue-stage {
-  background:
-    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(255,255,255,0.18), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 0% 100%, rgba(14,42,74,0.45), transparent 65%),
-    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(84,169,235,0.35), transparent 70%),
-    linear-gradient(135deg, #0077B5 0%, #0088CC 30%, #2AABEE 70%, #54A9EB 100%);
+  background: linear-gradient(180deg, #1A4574 0%, #145E9A 30%, #1466A7 55%, #0E3666 82%, #0E2A4A 100%);
   position: relative;
   isolation: isolate;
 }
 .blue-stage--alt {
-  /* mirror image gradient for adjacent sections so they feel distinct */
-  background:
-    radial-gradient(ellipse 60% 50% at 0% 0%, rgba(255,255,255,0.18), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(14,42,74,0.50), transparent 65%),
-    radial-gradient(ellipse 50% 40% at 50% 30%, rgba(84,169,235,0.25), transparent 70%),
-    linear-gradient(225deg, #0077B5 0%, #0088CC 30%, #2AABEE 70%, #54A9EB 100%);
+  background: linear-gradient(180deg, #0E2A4A 0%, #0E3666 18%, #1466A7 45%, #145E9A 70%, #1A4574 100%);
   position: relative;
   isolation: isolate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .blue-stage,
+  .blue-stage--alt { animation: none !important; }
 }
 /* Both blue stages share the dark-stage token rebinding (white text). */
 .blue-stage,
@@ -4382,21 +4389,10 @@ code, kbd, samp, pre {
   --rule-strong: rgba(0,0,0,0.18);
   color: var(--ink);
 }
-/* Separator: subtle hairline glow at the seam between adjacent blue stages
-   (place via ::after on the upper section). */
-.blue-stage::after,
-.blue-stage--alt::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.32), transparent);
-  pointer-events: none;
-  z-index: 1;
-}
-  /* re-bind text tokens so anything inside that reads `var(--ink)` flips */
+/* (Separator hairline removed 2026-05-21 — sections must blend with ZERO
+   visible seam. Color match at boundary does all the work.) */
+/* Dark-stage text token rebinding (white text, dark backgrounds) */
+.dark-stage {
   --ink: #FFFFFF;
   --ink-2: rgba(255,255,255,0.88);
   --muted: rgba(255,255,255,0.62);
