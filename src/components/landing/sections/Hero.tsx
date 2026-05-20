@@ -167,17 +167,6 @@ export default function Hero() {
               </div>
             </BlurFade>
 
-            <BlurFade delay={0.32}>
-              <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 text-[12px] font-medium text-[var(--muted)]">
-                <span className="text-[var(--muted)]">{c.hero.trustLabel}</span>
-                {c.hero.trustItems.map((item, i) => (
-                  <span key={item} className="flex items-center gap-3">
-                    {i > 0 && <span className="size-1 rounded-full bg-[var(--rule-2)]" />}
-                    <span className="text-[var(--ink-2)]">{item}</span>
-                  </span>
-                ))}
-              </div>
-            </BlurFade>
           </div>
         </div>
       </Container>

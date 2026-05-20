@@ -4176,6 +4176,22 @@ h2.h2 .grad-text,
 html { scroll-padding-top: 80px; }
 body { overscroll-behavior-y: contain; }
 
+/* Desktop-only soft scroll-snap on top-level <section>s — gives the page
+   a guided, story-like feel where the next block "catches" the eye,
+   without the abruptness of mandatory snap. Disabled on touch / coarse
+   pointers so mobile scroll stays free. */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+  main > section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    scroll-margin-top: 72px;
+  }
+  main > section.no-snap { scroll-snap-align: none; }
+}
+
 /* end legacy migrated stylesheet */
 
 /* ============================================================
