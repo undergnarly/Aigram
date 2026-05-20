@@ -79,43 +79,46 @@ export default function Hero() {
         />
       </div>
 
-      {/* DESKTOP bg image — natural-size, anchored to right (no upscale → no pixelation) */}
+      {/* DESKTOP bg image — anchored to right WITHIN the same content rail as text
+          (max-w-1280 + gutter), so left/right margins are symmetric. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 right-0 z-0 hidden overflow-hidden lg:block"
+        className="pointer-events-none absolute inset-0 z-0 hidden overflow-hidden lg:block"
       >
-        {HERO_IMAGES.map((src, i) => (
-          <Image
-            key={src}
-            src={src}
-            alt=""
-            fill
-            priority={i === 0}
-            sizes="(min-width: 1024px) 60vw, 0px"
-            className="object-contain object-right transition-opacity duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-            style={{ opacity: i === activeIdx ? 1 : 0 }}
+        <div className="relative mx-auto h-full max-w-[1280px] px-[var(--gutter)]">
+          {HERO_IMAGES.map((src, i) => (
+            <Image
+              key={src}
+              src={src}
+              alt=""
+              fill
+              priority={i === 0}
+              sizes="(min-width: 1024px) 56vw, 0px"
+              className="object-contain object-right transition-opacity duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+              style={{ opacity: i === activeIdx ? 1 : 0 }}
+            />
+          ))}
+          {/* blur ONLY the left ~10% of the image where it sits under the text */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backdropFilter: "blur(24px) saturate(0.9)",
+              WebkitBackdropFilter: "blur(24px) saturate(0.9)",
+              maskImage:
+                "linear-gradient(to right, black 0%, black 22%, transparent 36%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, black 0%, black 22%, transparent 36%)",
+            }}
           />
-        ))}
-        {/* progressive blur where text overlaps the LEFT ~20% of the image */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backdropFilter: "blur(24px) saturate(0.9)",
-            WebkitBackdropFilter: "blur(24px) saturate(0.9)",
-            maskImage:
-              "linear-gradient(to right, black 0%, black 28%, transparent 42%)",
-            WebkitMaskImage:
-              "linear-gradient(to right, black 0%, black 28%, transparent 42%)",
-          }}
-        />
-        {/* white tint — text readability on left strip only */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.94) 22%, rgba(255,255,255,0.65) 32%, rgba(255,255,255,0.10) 42%, transparent 50%)",
-          }}
-        />
+          {/* white tint — readability strip on the left ~10-15% only */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.90) 18%, rgba(255,255,255,0.55) 30%, rgba(255,255,255,0.08) 40%, transparent 48%)",
+            }}
+          />
+        </div>
       </div>
 
       <Container className="relative z-10 pt-[clamp(220px,46vw,360px)] pb-[clamp(48px,8vh,96px)] lg:pt-[clamp(56px,9vh,120px)]">
