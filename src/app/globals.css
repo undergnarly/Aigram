@@ -4343,8 +4343,9 @@ code, kbd, samp, pre {
 
 .dark-stage {
   background:
-    radial-gradient(ellipse 70% 40% at 80% 5%, rgba(42,171,238,0.22), transparent 65%),
-    radial-gradient(ellipse 50% 35% at 15% 75%, rgba(240,183,86,0.10), transparent 65%),
+    /* radials kept FAR from edges so top/bottom stay uniform = no seam */
+    radial-gradient(ellipse 60% 30% at 75% 40%, rgba(42,171,238,0.18), transparent 70%),
+    radial-gradient(ellipse 45% 25% at 20% 55%, rgba(84,169,235,0.12), transparent 75%),
     linear-gradient(180deg, #0E2A4A 0%, #13365E 35%, #0E3666 70%, #08182E 100%);
   /* shared dark-mode tokens (defined below in .dark-stage cascade) */
 }

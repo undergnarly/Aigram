@@ -18,15 +18,9 @@ export default function FAQ() {
       id="faq"
       className="relative overflow-hidden bg-[linear-gradient(180deg,#FFFFFF_0%,#F4F5F7_22%,#E8F4FD_50%,#54A9EB_78%,#0E4A86_92%,#0E2A4A_100%)]"
     >
-      {/* slow aurora at bottom for premium depth */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[60%] bg-[radial-gradient(ellipse_at_50%_100%,rgba(42,171,238,0.28),transparent_70%)]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-32 -left-32 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(84,169,235,0.20),transparent_70%)] blur-3xl"
-      />
+      {/* (overlay glows removed — they brightened the bottom edge and created
+          a visible seam where FAQ meets FinalCTA. Section now ends in a clean
+          uniform #0E2A4A that matches dark-stage top exactly.) */}
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">

@@ -188,19 +188,9 @@ export default function Process() {
                             : "border-white/12 bg-white/[0.06] shadow-[0_20px_50px_-25px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.10)] hover:bg-white/[0.10] hover:border-white/20 hover:-translate-y-0.5",
                         ].join(" ")}
                       >
-                        <div className="flex items-baseline justify-between gap-3">
-                          <h3 className="text-[18px] font-bold tracking-tight text-[var(--ink)] md:text-[19px]">
-                            {s.title}
-                          </h3>
-                          <span
-                            className={[
-                              "font-mono text-[11px] uppercase tracking-[0.08em] transition-colors duration-500",
-                              isActive ? "text-[var(--indigo)]" : "text-[var(--indigo)]/70",
-                            ].join(" ")}
-                          >
-                            {meta[i]}
-                          </span>
-                        </div>
+                        <h3 className="text-[17px] font-bold tracking-tight text-[var(--ink)] whitespace-nowrap md:text-[18px]">
+                          {s.title}
+                        </h3>
                         <p className="mt-2 text-pretty text-[14px] leading-relaxed text-[var(--muted)] md:text-[14.5px]">
                           {s.body}
                         </p>

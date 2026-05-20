@@ -45,14 +45,10 @@ export default function FinalCTA() {
 
   return (
     <Section id="book" className="dark-stage relative overflow-hidden">
-      {/* extra aurora glows for depth */}
+      {/* aurora kept AWAY from top/bottom edges so seams stay invisible */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(42,171,238,0.30),transparent_70%)] blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-32 -left-32 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(240,183,86,0.18),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute top-1/2 -translate-y-1/2 -right-40 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(42,171,238,0.22),transparent_70%)] blur-3xl"
       />
 
       <Container>
