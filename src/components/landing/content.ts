@@ -229,7 +229,7 @@ const EN: LangContent = {
     trustItems: ["Setup in 24 hours", "No technical skills needed", "30-day money-back"],
   },
   social: {
-    label: "Used by 40+ businesses across 12 countries.",
+    label: "Plug in as connectors — your AI team works with the tools you already use.",
     items: [
       "Telegram",
       "Claude",
@@ -696,7 +696,7 @@ const RU: LangContent = {
     trustItems: ["Настройка за 24 часа", "Без технических знаний", "30 дней возврат"],
   },
   social: {
-    label: "Используют 40+ компаний в 12 странах.",
+    label: "Подключаем как коннекторы — AI-команда работает с вашими привычными сервисами.",
     items: [
       "Telegram",
       "Claude",
