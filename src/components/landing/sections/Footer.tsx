@@ -24,7 +24,7 @@ export default function Footer() {
               >
                 <path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-17 7.571a2.244 2.244 0 00.243 4.199l3.795 1.058 1.427 4.436a.5.5 0 00.851.162l2.294-2.515 4.433 3.267a2.244 2.244 0 003.438-1.347l3.046-14.96a2.24 2.24 0 00-2.505-2.086z" />
               </svg>
-              <span>AiGram</span>
+              <span>GramCrew</span>
             </Link>
             <p className="mt-5 max-w-[36ch] text-[14px] leading-relaxed text-[var(--muted)]">
               {c.footer.tagline}

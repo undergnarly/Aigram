@@ -46,7 +46,7 @@
    /product/[slug] and /admin. */
 
 :root {
-  /* AiGram light palette — Telegram blue on white */
+  /* GramCrew light palette — Telegram blue on white */
   --bg: #FFFFFF;
   --bg-soft: #F4F5F7;
   --bg-tint: #E8F4FD;
@@ -4179,7 +4179,7 @@ body { overscroll-behavior-y: contain; }
 /* end legacy migrated stylesheet */
 
 /* ============================================================
-   AiGram LIGHT-MODE OVERRIDE BLOCK
+   GramCrew LIGHT-MODE OVERRIDE BLOCK
    ------------------------------------------------------------
    The legacy stylesheet was authored for a dark theme. After
    the literal colour swap (neon-green → Telegram blue, dark
@@ -4304,7 +4304,7 @@ code, kbd, samp, pre {
   opacity: 0.6;
 }
 
-/* AiGram light-mode override block — END
+/* GramCrew light-mode override block — END
    Previous "safety net" that forced inline color:white → ink !important
    has been removed (2026-05-20). It was inverting all legitimate white-on-blue
    text — CTAs, active tabs, badges, the premium card.

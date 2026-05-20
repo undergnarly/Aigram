@@ -254,7 +254,7 @@ function EmptyState() {
           Preview landing page
         </Link>
         <a
-          href="https://cal.com/aigram/discovery"
+          href="https://cal.com/gramcrew/discovery"
           target="_blank"
           rel="noopener"
           className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs font-medium text-slate-700 hover:border-white/20 hover:text-slate-900"

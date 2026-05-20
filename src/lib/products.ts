@@ -204,7 +204,7 @@ export const PRODUCTS: Record<string, Product> = {
     ],
     faqs: [
       { q: "Which BI tools do you connect to?", a: "Direct APIs to GA4, Mixpanel, Stripe, HubSpot, Postgres, BigQuery. Custom sources on Premium." },
-      { q: "What about my private data?", a: "Read-only by default. Data never leaves your cloud. Aggregations happen on AiGram-controlled infrastructure scoped to your group." },
+      { q: "What about my private data?", a: "Read-only by default. Data never leaves your cloud. Aggregations happen on GramCrew-controlled infrastructure scoped to your group." },
     ],
   },
   concierge: {
@@ -227,7 +227,7 @@ export const PRODUCTS: Record<string, Product> = {
     impact: [
       { metric: "1:1", label: "Sounds like you", detail: "Trained on transcripts and docs you provide. The voice is yours, not ours." },
       { metric: "24/7", label: "Senior coverage", detail: "Your assistant answers like your top operator, around the clock, in every timezone." },
-      { metric: "100%", label: "White-label", detail: "Customers see your brand. No AiGram logo, no shared infrastructure visible." },
+      { metric: "100%", label: "White-label", detail: "Customers see your brand. No GramCrew logo, no shared infrastructure visible." },
     ],
     howItWorks: [
       { step: "01", title: "Discovery", body: "90-min deep dive. We collect transcripts, docs, and brand guidelines." },
@@ -248,7 +248,7 @@ export const PRODUCTS: Record<string, Product> = {
     ],
     faqs: [
       { q: "How do you train the brand voice?", a: "We ingest transcripts (sales calls, support tickets, blog posts) and brand guidelines. Tuning runs 3–5 days. We benchmark against blind taste tests with your team." },
-      { q: "Who owns the model?", a: "You own the knowledge base, the brand voice tuning, and the bot deployment. If you leave AiGram, you keep all three. We don't gatekeep your data." },
+      { q: "Who owns the model?", a: "You own the knowledge base, the brand voice tuning, and the bot deployment. If you leave GramCrew, you keep all three. We don't gatekeep your data." },
     ],
   },
 };

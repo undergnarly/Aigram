@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = PRODUCTS[slug];
   if (!p) return {};
   return {
-    title: `${p.name} — ${p.tagline} | AiGram`,
+    title: `${p.name} — ${p.tagline} | GramCrew`,
     description: p.hero,
   };
 }
@@ -26,7 +26,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       {/* Sticky top nav */}
       <header className="sticky top-0 z-20 border-b border-white/8 bg-[#FFFFFF]/85 backdrop-blur-md">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
-          <Link href="/" className="font-bold text-[#0088CC]">AiGram</Link>
+          <Link href="/" className="font-bold text-[#0088CC]">GramCrew</Link>
           <Link
             href="/#packages"
             className="text-xs sm:text-sm text-slate-600 hover:text-slate-900"
@@ -233,7 +233,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             30-min Discovery Call. We map your stack and confirm fit before any build.
           </p>
           <a
-            href="https://cal.com/aigram/discovery"
+            href="https://cal.com/gramcrew/discovery"
             target="_blank"
             rel="noopener"
             className="inline-flex items-center gap-2 rounded-full bg-[#0088CC] text-white font-bold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg hover:scale-[1.02] transition-transform"
