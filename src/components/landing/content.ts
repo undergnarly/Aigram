@@ -188,6 +188,22 @@ type LangContent = {
   };
   mobileCta: string;
   subscriptionPlan: SubscriptionPlanSection;
+  demo: {
+    eyebrow: string;
+    h2: string;
+    sub: string;
+    botOnline: string;
+    setupIn: string;
+    setupInLabel: string;
+    topicsLabel: string;
+    openForRequests: string;
+    readOnlyPlaceholder: string;
+    requestPlaceholder: string;
+    openDemoCta: string;
+    requestSetupCta: string;
+    footerNote: string;
+    userTyping: string;
+  };
 };
 
 const PRICE_RANGES = {
@@ -663,6 +679,22 @@ const EN: LangContent = {
       { module: "AI Concierge (white-label)", light: "—", standard: "—", premium: "Yes" },
     ],
   },
+  demo: {
+    eyebrow: "Interactive Demo",
+    h2: "Your AI team, live inside Telegram",
+    sub: "Click any topic to explore. This is exactly what your workspace looks like.",
+    botOnline: "bot is online",
+    setupIn: "24h",
+    setupInLabel: "Setup in",
+    topicsLabel: "Topics",
+    openForRequests: "Open for requests",
+    readOnlyPlaceholder: "Read-only demo",
+    requestPlaceholder: "Write your request...",
+    openDemoCta: "Open live demo in Telegram",
+    requestSetupCta: "Request setup →",
+    footerNote: "Setup in 24 hours · No code required · Cancel anytime",
+    userTyping: "typing...",
+  },
 };
 
 // ---------------- RU ----------------
@@ -1129,6 +1161,22 @@ const RU: LangContent = {
       { module: "AI Analyst", light: "Дайджест", standard: "Алерты", premium: "Кастомное приложение" },
       { module: "AI Concierge (white-label)", light: "—", standard: "—", premium: "Да" },
     ],
+  },
+  demo: {
+    eyebrow: "Интерактивное демо",
+    h2: "Ваша AI-команда живёт в Telegram",
+    sub: "Нажмите на любой топик и посмотрите, как это работает. Именно так выглядит ваш рабочий Telegram.",
+    botOnline: "бот онлайн",
+    setupIn: "24ч",
+    setupInLabel: "Настройка за",
+    topicsLabel: "Топики",
+    openForRequests: "Можно написать",
+    readOnlyPlaceholder: "Демо (только чтение)",
+    requestPlaceholder: "Напишите вашу задачу...",
+    openDemoCta: "Открыть демо-группу в Telegram",
+    requestSetupCta: "Оставить заявку →",
+    footerNote: "Настройка за 24 часа · Не нужен код · Отмена в любой момент",
+    userTyping: "печатает...",
   },
 };
 
