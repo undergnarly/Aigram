@@ -241,14 +241,14 @@ const EN: LangContent = {
     eyebrow: "AI Team Infrastructure for Telegram",
     h1Lines: ["Your AI team", "lives inside", "Telegram"],
     lead:
-      "Every forum topic becomes an isolated AI agent with its own memory, skills, and context. Your business runs 24/7 — no apps to learn, no dashboards to check. Just Telegram.",
+      "Replace your research tools, task manager, lead tracker, and part-time VA — with six AI specialists who live inside your Telegram. Each forum topic is a different expert with isolated memory and real tools. Setup in 24 hours. Zero learning curve.",
     primary: "Book Discovery Call",
     secondary: "See Demo",
     trustLabel: "Built for operators in",
-    trustItems: ["Setup in 24 hours", "No technical skills needed", "30-day money-back"],
+    trustItems: ["Replaces Notion + Zapier + VA", "Setup in 24 hours", "30-day money-back"],
   },
   social: {
-    label: "Plug in as connectors — your AI team works with the tools you already use.",
+    label: "Replaces your SaaS stack — or plugs into it. Your team keeps using Telegram.",
     items: [
       "Telegram",
       "Claude",
@@ -262,9 +262,9 @@ const EN: LangContent = {
     ],
   },
   productsSection: {
-    eyebrow: "Six agents + custom",
-    h2: "One Telegram group. Six AI agents. Plus your own.",
-    sub: "Each agent lives in its own forum topic with isolated memory, scoped skills, and a job to do. Premium plans include up to 3 custom agents we build for your specific business — marketing specialist, recruiter, ops analyst, whatever you need.",
+    eyebrow: "Six agents + your own",
+    h2: "One Telegram group. Six AI agents. Plus a custom one we build for you.",
+    sub: "Each agent lives in its own forum topic with isolated memory, scoped skills, and a specific job. Standard includes one Custom Agent we build around your exact workflow — your industry, your clients, your processes. Premium scales to three.",
     perCard: { from: "From", delivery: "Setup", learnMore: "Open details" },
   },
   products: {
@@ -502,10 +502,10 @@ const EN: LangContent = {
     h2: "Why operators choose GramFleet.",
     sub: "Targets built from beta testing and founder interviews. Numbers update as clients report real results.",
     items: [
-      { value: "300%", label: "ROI in year 1", detail: "Most teams pay back the subscription in the first month — and keep stacking gains as more agents come online." },
+      { value: "5", label: "SaaS tools replaced", detail: "Notion for tasks, Zapier for automation, ChatGPT for research, a research subscription, and a part-time VA — all running in one Telegram group." },
       { value: "24h", label: "Setup time", detail: "From Discovery Call to a fully wired AI team in your Telegram group — twenty-four hours, no exceptions." },
-      { value: "40+", label: "Built-in skills", detail: "Calendar, research, scraping, OSINT, KPI tracking, reports — every skill ready out of the box on Standard and above." },
-      { value: "99.9%", label: "Uptime SLA", detail: "Standard and Premium plans include a 99.9% uptime guarantee with priority response on every incident." },
+      { value: "15h", label: "Saved per week", detail: "Research, reporting, lead follow-ups, task tracking — the routine work that eats founder hours moves to your agents automatically." },
+      { value: "47%", label: "Leads lost to slow follow-up", detail: "Almost half of small teams lose clients because no one responded fast enough. Your AI Automator responds in 30 seconds, every time." },
     ],
   },
   process: {
@@ -513,7 +513,7 @@ const EN: LangContent = {
     h2: "Discovery → 24h Setup → Start Using → Support.",
     sub: "Four steps. No long-tail onboarding. You leave with a working AI team — and we keep it running.",
     steps: [
-      { step: "01", title: "Discovery Call", body: "We study your workflow and design the ideal topic structure for your Telegram group. Free, thirty minutes, zero commitment." },
+      { step: "01", title: "Discovery Call", body: "We study your workflow, map the right agents for your team, and design your Custom Agent from scratch. Free, thirty minutes, zero commitment." },
       { step: "02", title: "24h Setup", body: "We deploy your AI infrastructure, connect your Telegram group, configure every agent, and load your knowledge base. You follow progress live." },
       { step: "03", title: "Start Using", body: "Your team starts day one. The AI picks up your patterns, tone, and decisions in the first weeks — it gets sharper without manual tuning." },
       { step: "04", title: "Ongoing Support", body: "Dedicated human support and regular tuning. We monitor your agents around the clock, fix edge cases, and keep everything at peak performance." },
@@ -522,7 +522,7 @@ const EN: LangContent = {
   pricing: {
     eyebrow: "Pricing",
     h2: "Three plans. Monthly. Cancel anytime.",
-    sub: "Pick the plan that matches your team size and ambition. Setup is one-time. Monthly subscription includes AI usage, human support, and ongoing tuning.",
+    sub: "Most teams start on Standard. The $1,000 setup fee is waived when you prepay 3 months — most operators recover the cost in the first month from time saved alone.",
     productTab: "Agent",
     chooseTier: "Choose plan",
     pickThis: "Choose this plan",
@@ -563,6 +563,10 @@ const EN: LangContent = {
       {
         q: "Why not just use ChatGPT for $20/mo?",
         a: "ChatGPT is a single conversation thread — no persistent memory between sessions, no real tools, no team access. GramFleet gives you 6 isolated specialists, each of which remembers everything since day one, runs 40+ live skills (web scraping, code execution, calendar, KPI reports), and lets your whole team work with them simultaneously. It's the difference between one generalist intern and a trained department that never forgets.",
+      },
+      {
+        q: "How is this different from Hermify or other Telegram AI bots?",
+        a: "Hermify connects one AI model to one Telegram bot — one agent, one context, one job. GramFleet deploys a team: each forum topic is a different specialist with isolated memory and dedicated skills. The difference matters in practice — your Researcher doesn't bleed context into your Planner, your Automator doesn't slow down when the Analyst is running a report. Per-topic isolation is the architecture — no other managed product offers it.",
       },
     ],
   },
@@ -768,14 +772,14 @@ const RU: LangContent = {
     eyebrow: "AI-команда. Ваша инфраструктура в Telegram.",
     h1Lines: ["AI-команда", "живёт в вашем", "Telegram"],
     lead:
-      "Каждая ветка форума — отдельный AI-агент со своей памятью, навыками и контекстом. Ваш бизнес работает 24/7 — без новых приложений, без дашбордов. Просто Telegram.",
+      "Замените инструменты для задач, автоматизации, ресёрча и частичного ассистента — шестью AI-специалистами внутри вашего Telegram. Каждая ветка форума — отдельный эксперт со своей памятью и реальными инструментами. Запуск за 24 часа. Без кривой обучения.",
     primary: "Записаться на демо",
     secondary: "Смотреть демо",
     trustLabel: "Для операторов бизнеса в",
-    trustItems: ["Настройка за 24 часа", "Без технических знаний", "30 дней возврат"],
+    trustItems: ["Заменяет Notion + Zapier + ассистента", "Запуск за 24 часа", "30 дней возврат"],
   },
   social: {
-    label: "Подключаем как коннекторы — AI-команда работает с вашими привычными сервисами.",
+    label: "Заменяет SaaS-стек — или подключается к нему. Команда продолжает работать в Telegram.",
     items: [
       "Telegram",
       "Claude",
@@ -789,9 +793,9 @@ const RU: LangContent = {
     ],
   },
   productsSection: {
-    eyebrow: "Шесть агентов + свой",
-    h2: "Одна группа в Telegram. Шесть AI-агентов. Плюс ваш кастомный.",
-    sub: "Каждый агент живёт в своей ветке форума — со своей памятью, своими навыками и своей задачей. Premium-план включает до 3 кастомных агентов, которых мы строим под ваш бизнес — маркетолог, рекрутер, аналитик, кто угодно.",
+    eyebrow: "Шесть агентов + ваш собственный",
+    h2: "Одна группа в Telegram. Шесть AI-агентов. Плюс кастомный, которого строим мы.",
+    sub: "Каждый агент живёт в своей ветке форума — со своей памятью, своими навыками и своей задачей. Standard включает одного Кастомного агента, которого мы строим под ваш конкретный бизнес-процесс — вашу отрасль, ваших клиентов, ваши операции. Premium масштабируется до трёх.",
     perCard: { from: "От", delivery: "Запуск", learnMore: "Подробнее" },
   },
   products: {
@@ -1029,10 +1033,10 @@ const RU: LangContent = {
     h2: "Почему операторы выбирают GramFleet.",
     sub: "Целевые показатели на основе бета-тестирования и интервью с фаундерами. Обновляются по мере появления реальных данных от клиентов.",
     items: [
-      { value: "300%", label: "ROI за первый год", detail: "Большинство команд отбивают подписку в первый месяц — и продолжают копить выигрыш по мере подключения новых агентов." },
-      { value: "24ч", label: "Время настройки", detail: "От звонка-знакомства до полностью настроенной AI-команды в твоей группе Telegram — двадцать четыре часа, без исключений." },
-      { value: "40+", label: "Готовых навыков", detail: "Календарь, ресёрч, парсинг, OSINT, KPI-трекинг, отчёты — все навыки готовы из коробки на Standard и выше." },
-      { value: "99.9%", label: "Uptime SLA", detail: "Тарифы Standard и Premium включают гарантию аптайма 99.9% и приоритетный ответ по каждому инциденту." },
+      { value: "5", label: "SaaS-инструментов заменяет", detail: "Notion для задач, Zapier для автоматизации, ChatGPT для ресёрча, подписка на аналитику и частичный ассистент — всё работает в одной Telegram-группе." },
+      { value: "24ч", label: "Время запуска", detail: "От звонка-знакомства до полностью настроенной AI-команды в вашей группе Telegram — двадцать четыре часа, без исключений." },
+      { value: "15ч", label: "Экономится в неделю", detail: "Ресёрч, отчёты, обработка лидов, ведение задач — рутина которая съедает фаундерские часы уходит к агентам автоматически." },
+      { value: "47%", label: "Лидов теряет медленный ответ", detail: "Почти половина малого бизнеса теряет клиентов потому что никто не ответил вовремя. AI Automator отвечает за 30 секунд, каждый раз." },
     ],
   },
   process: {
@@ -1040,7 +1044,7 @@ const RU: LangContent = {
     h2: "Знакомство → Запуск 24ч → Работа → Поддержка.",
     sub: "Четыре шага. Без долгого онбординга. Уходите с работающей AI-командой — а мы держим её в форме.",
     steps: [
-      { step: "01", title: "Звонок-знакомство", body: "Изучаем твой процесс и проектируем идеальную структуру топиков для группы Telegram. Бесплатно, тридцать минут, без обязательств." },
+      { step: "01", title: "Звонок-знакомство", body: "Изучаем твой процесс, подбираем нужных агентов и с нуля проектируем твоего Кастомного агента. Бесплатно, тридцать минут, без обязательств." },
       { step: "02", title: "Настройка за 24ч", body: "Разворачиваем AI-инфраструктуру, подключаем группу Telegram, настраиваем каждого агента и загружаем базу знаний. Ты следишь за прогрессом онлайн." },
       { step: "03", title: "Начало работы", body: "Команда начинает в первый же день. ИИ осваивает твои паттерны, тон и решения за первые недели — становится точнее без ручной настройки." },
       { step: "04", title: "Поддержка", body: "Персональная поддержка и регулярные аудиты. Мы мониторим агентов круглосуточно, устраняем баги и держим всё на пиковой эффективности." },
@@ -1049,7 +1053,7 @@ const RU: LangContent = {
   pricing: {
     eyebrow: "Цены",
     h2: "Три тарифа. Ежемесячно. Отмена в любой момент.",
-    sub: "Выбери тариф под размер команды и амбиции. Настройка — разовая. Подписка включает оплату ИИ, человеческую поддержку и доработки.",
+    sub: "Большинство команд начинают на Standard. Разовая настройка $1,000 не платится при оплате 3 месяцев вперёд — большинство операторов отбивают её в первый же месяц за счёт сэкономленного времени.",
     productTab: "Агент",
     chooseTier: "Выбрать тариф",
     pickThis: "Выбрать этот тариф",
@@ -1090,6 +1094,10 @@ const RU: LangContent = {
       {
         q: "Зачем платить $499, если есть ChatGPT за $20?",
         a: "ChatGPT — один чат без памяти между сессиями, без реальных инструментов, без доступа для команды. GramFleet — 6 изолированных специалистов: каждый помнит всё с первого дня, работает с 40+ live-инструментами (парсинг, код, календарь, KPI), и вся команда работает с ними одновременно. Разница как между одним стажёром-генералистом и целым отделом с памятью.",
+      },
+      {
+        q: "Чем отличается от Hermify и других Telegram AI-ботов?",
+        a: "Hermify подключает одну AI-модель к одному боту Telegram — один агент, один контекст, одна задача. GramFleet разворачивает команду: каждая ветка форума — отдельный специалист с изолированной памятью и выделенными навыками. На практике это важно: Researcher не смешивает контекст с Planner, Automator не замедляется когда Analyst строит отчёт. Per-topic isolation — это архитектура, которой нет ни у одного другого managed-продукта.",
       },
     ],
   },
