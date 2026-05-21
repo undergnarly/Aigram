@@ -6,6 +6,7 @@ import Hero from "./sections/Hero";
 import SocialProof from "./sections/SocialProof";
 import Products from "./sections/Products";
 import Metrics from "./sections/Metrics";
+import Features from "./sections/Features";
 import Process from "./sections/Process";
 import Pricing from "./sections/Pricing";
 import FAQ from "./sections/FAQ";
@@ -25,6 +26,7 @@ export default function LandingPage() {
           <SocialProof />
           <Products />
           <Metrics />
+          <Features />
           <Process />
           <Pricing />
           <FAQ />

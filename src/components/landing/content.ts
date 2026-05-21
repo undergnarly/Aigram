@@ -116,6 +116,12 @@ type LangContent = {
     sub: string;
     items: { value: string; label: string; detail: string }[];
   };
+  features: {
+    eyebrow: string;
+    h2: string;
+    sub: string;
+    items: { title: string; body: string; tag: string }[];
+  };
   process: {
     eyebrow: string;
     h2: string;
@@ -506,6 +512,38 @@ const EN: LangContent = {
       { value: "24h", label: "Setup time", detail: "From Discovery Call to a fully wired AI team in your Telegram group — twenty-four hours, no exceptions." },
       { value: "15h", label: "Saved per week", detail: "Research, reporting, lead follow-ups, task tracking — the routine work that eats founder hours moves to your agents automatically." },
       { value: "47%", label: "Leads lost to slow follow-up", detail: "Almost half of small teams lose clients because no one responded fast enough. Your AI Automator responds in 30 seconds, every time." },
+    ],
+  },
+  features: {
+    eyebrow: "Built-in",
+    h2: "Five things you get out of the box.",
+    sub: "Not roadmap items — already in production. Battle-tested in our live beta groups today.",
+    items: [
+      {
+        tag: "Voice",
+        title: "Voice responses on tap",
+        body: "Every agent can reply with voice notes. Edge TTS with Svetlana and Dmitry, per-topic toggle — turn voice on for your Planner, leave it off in the Analyst. Drives ten times the engagement vs. text-only.",
+      },
+      {
+        tag: "Onboarding",
+        title: "30-second smart onboarding",
+        body: "Owner answers one question — 'what's your business about?' The bot drafts the topic plan, names each agent, and ships a Telegram keyboard with one-tap actions. From install to first reply in under a minute.",
+      },
+      {
+        tag: "Team",
+        title: "Whole-team access",
+        body: "Every member of your authorized group works with the agents — no per-seat invites, no juggling logins. Owner gets DM-level controls. Unauthorized groups are blocked automatically so the bot can't be hijacked.",
+      },
+      {
+        tag: "Uptime",
+        title: "Updates without downtime",
+        body: "We push improvements through a safe-restart orchestrator that drains in-flight requests, swaps the process, and reattaches sessions. You never see a maintenance window — agents stay on the chat the whole time.",
+      },
+      {
+        tag: "Languages",
+        title: "10 languages, native quality",
+        body: "Interface and agent replies fully localized in 10 languages — Russian, English, Spanish, Portuguese, French, German, Italian, Indonesian, Turkish, and Polish. Your team can write in any of them, the agent matches.",
+      },
     ],
   },
   process: {
@@ -1037,6 +1075,38 @@ const RU: LangContent = {
       { value: "24ч", label: "Время запуска", detail: "От звонка-знакомства до полностью настроенной AI-команды в вашей группе Telegram — двадцать четыре часа, без исключений." },
       { value: "15ч", label: "Экономится в неделю", detail: "Ресёрч, отчёты, обработка лидов, ведение задач — рутина которая съедает фаундерские часы уходит к агентам автоматически." },
       { value: "47%", label: "Лидов теряет медленный ответ", detail: "Почти половина малого бизнеса теряет клиентов потому что никто не ответил вовремя. AI Automator отвечает за 30 секунд, каждый раз." },
+    ],
+  },
+  features: {
+    eyebrow: "Уже в продукте",
+    h2: "Пять вещей, которые работают из коробки.",
+    sub: "Не в roadmap — уже в проде. Обкатано в живых бета-группах прямо сейчас.",
+    items: [
+      {
+        tag: "Голос",
+        title: "Голосовые ответы по запросу",
+        body: "Любой агент может отвечать голосом. Edge TTS, голоса Светлана и Дмитрий, переключатель в каждом топике отдельно — включи голос у Планера, оставь текст у Аналитика. В разы выше вовлечённость по сравнению с текстом.",
+      },
+      {
+        tag: "Онбординг",
+        title: "Умный онбординг за 30 секунд",
+        body: "Владелец отвечает на один вопрос — «о чём ваш бизнес?». Бот сам собирает план топиков, называет каждого агента и присылает клавиатуру с действиями на один тап. От установки до первого ответа — меньше минуты.",
+      },
+      {
+        tag: "Команда",
+        title: "Доступ для всей команды",
+        body: "С агентами работают все участники авторизованной группы — без приглашений по местам, без жонглирования логинами. Владелец управляет в личке. Неавторизованные группы автоматически блокируются — бот нельзя угнать в чужой чат.",
+      },
+      {
+        tag: "Аптайм",
+        title: "Обновления без даунтайма",
+        body: "Апдейты выкатываются через оркестратор безопасного рестарта — он дожидается завершения текущих запросов, подменяет процесс и переподключает сессии. Окна обслуживания не видно, агенты остаются в чате всё время.",
+      },
+      {
+        tag: "Языки",
+        title: "10 языков, нативное качество",
+        body: "Интерфейс и ответы агентов полностью локализованы на 10 языков — русский, английский, испанский, португальский, французский, немецкий, итальянский, индонезийский, турецкий и польский. Пиши на любом — агент подхватывает.",
+      },
     ],
   },
   process: {
