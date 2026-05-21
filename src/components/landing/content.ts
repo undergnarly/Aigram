@@ -238,13 +238,13 @@ const EN: LangContent = {
     telegramHref: "https://t.me/gramfleet_bot",
   },
   hero: {
-    eyebrow: "Personal AI Infrastructure",
+    eyebrow: "AI Team Infrastructure for Telegram",
     h1Lines: ["Your AI team", "lives inside", "Telegram"],
     lead:
       "Every forum topic becomes an isolated AI agent with its own memory, skills, and context. Your business runs 24/7 — no apps to learn, no dashboards to check. Just Telegram.",
-    primary: "Start Free Trial",
+    primary: "Book Discovery Call",
     secondary: "See Demo",
-    trustLabel: "Trusted by founders in",
+    trustLabel: "Built for operators in",
     trustItems: ["Setup in 24 hours", "No technical skills needed", "30-day money-back"],
   },
   social: {
@@ -500,7 +500,7 @@ const EN: LangContent = {
   metrics: {
     eyebrow: "Outcomes",
     h2: "Why operators choose GramFleet.",
-    sub: "Real numbers from teams running GramFleet in their Telegram groups. Conservative estimates — your mileage may vary.",
+    sub: "Targets built from beta testing and founder interviews. Numbers update as clients report real results.",
     items: [
       { value: "300%", label: "ROI in year 1", detail: "Most teams pay back the subscription in the first month — and keep stacking gains as more agents come online." },
       { value: "24h", label: "Setup time", detail: "From Discovery Call to a fully wired AI team in your Telegram group — twenty-four hours, no exceptions." },
@@ -538,7 +538,7 @@ const EN: LangContent = {
     items: [
       {
         q: "What is GramFleet?",
-        a: "GramFleet is Personal AI Infrastructure that lives entirely inside your Telegram. Every forum topic in your business group becomes an isolated AI agent with its own memory, skills, and context. Your AI team — without dashboards, without new apps, without context switching.",
+        a: "GramFleet is AI Team Infrastructure for Telegram. Every forum topic in your business group becomes an isolated AI agent with its own memory, skills, and context. Your AI team — without dashboards, without new apps, without context switching.",
       },
       {
         q: "Do I need technical skills?",
@@ -560,6 +560,10 @@ const EN: LangContent = {
         q: "What is a topic agent?",
         a: "A topic agent is a dedicated AI assistant assigned to a single forum topic in your Telegram group. Each topic has its own isolated memory, its own scoped skills, and its own job — calendar, plans, research, analytics, or anything custom. Switch topics, switch context. No prompts to write.",
       },
+      {
+        q: "Why not just use ChatGPT for $20/mo?",
+        a: "ChatGPT is a single conversation thread — no persistent memory between sessions, no real tools, no team access. GramFleet gives you 6 isolated specialists, each of which remembers everything since day one, runs 40+ live skills (web scraping, code execution, calendar, KPI reports), and lets your whole team work with them simultaneously. It's the difference between one generalist intern and a trained department that never forgets.",
+      },
     ],
   },
   finalCta: {
@@ -580,7 +584,7 @@ const EN: LangContent = {
       contextPh: "One sentence on the bottleneck. (Optional)",
       productLabel: "Agent you're interested in",
     },
-    submit: "Start Free Trial",
+    submit: "Book Discovery Call",
     submitting: "Sending…",
     success: "You're in.",
     successSub: "We'll confirm the call within one business day. Watch your inbox.",
@@ -609,7 +613,7 @@ const EN: LangContent = {
     },
   },
   footer: {
-    tagline: "AI team inside your Telegram. Personal AI Infrastructure for business.",
+    tagline: "AI team inside your Telegram. AI Team Infrastructure for business.",
     columns: [
       {
         title: "Agents",
@@ -665,7 +669,7 @@ const EN: LangContent = {
           "Basic mini-app",
         ],
         forWho: "Solo founders, freelancers, small operators getting started",
-        cta: "Start Free Trial",
+        cta: "Start with Lite",
         ctaStyle: "outline" as const,
       },
       {
@@ -683,9 +687,10 @@ const EN: LangContent = {
           "Standard mini-app",
           "5h human support / month",
           "4h response SLA",
+          "1 Custom Agent (we build it for your workflow)",
         ],
         forWho: "Growing teams of 3-15 people, founders who want their hours back",
-        cta: "Start Free Trial",
+        cta: "Book Discovery Call",
         ctaStyle: "primary" as const,
       },
       {
@@ -697,6 +702,7 @@ const EN: LangContent = {
           "Claude Opus + Sonnet + GLM",
           "Unlimited users",
           "Unlimited topics",
+          "Up to 3 Custom Agents (we build them for you)",
           "2 custom skills per year included",
           "Custom branded mini-app",
           "10h human support / month",
@@ -705,7 +711,7 @@ const EN: LangContent = {
           "Priority bug fixes",
         ],
         forWho: "Mid-sized businesses, brands that need white-label and dedicated support",
-        cta: "Request a personal meeting",
+        cta: "Book a meeting",
         ctaStyle: "outline" as const,
       },
     ],
@@ -759,13 +765,13 @@ const RU: LangContent = {
     telegramHref: "https://t.me/gramfleet_bot",
   },
   hero: {
-    eyebrow: "Personal AI Infrastructure",
+    eyebrow: "AI-команда. Ваша инфраструктура в Telegram.",
     h1Lines: ["AI-команда", "живёт в вашем", "Telegram"],
     lead:
       "Каждая ветка форума — отдельный AI-агент со своей памятью, навыками и контекстом. Ваш бизнес работает 24/7 — без новых приложений, без дашбордов. Просто Telegram.",
-    primary: "Начать бесплатно",
+    primary: "Записаться на демо",
     secondary: "Смотреть демо",
-    trustLabel: "Нам доверяют фаундеры в",
+    trustLabel: "Для операторов бизнеса в",
     trustItems: ["Настройка за 24 часа", "Без технических знаний", "30 дней возврат"],
   },
   social: {
@@ -1021,7 +1027,7 @@ const RU: LangContent = {
   metrics: {
     eyebrow: "Результаты",
     h2: "Почему операторы выбирают GramFleet.",
-    sub: "Реальные цифры от команд, которые уже работают в GramFleet. Консервативные оценки — у вас может быть лучше.",
+    sub: "Целевые показатели на основе бета-тестирования и интервью с фаундерами. Обновляются по мере появления реальных данных от клиентов.",
     items: [
       { value: "300%", label: "ROI за первый год", detail: "Большинство команд отбивают подписку в первый месяц — и продолжают копить выигрыш по мере подключения новых агентов." },
       { value: "24ч", label: "Время настройки", detail: "От звонка-знакомства до полностью настроенной AI-команды в твоей группе Telegram — двадцать четыре часа, без исключений." },
@@ -1059,7 +1065,7 @@ const RU: LangContent = {
     items: [
       {
         q: "Что такое GramFleet?",
-        a: "GramFleet — это Personal AI Infrastructure, которая живёт прямо в твоём Telegram. Каждая ветка форума в твоей группе бизнеса — отдельный AI-агент со своей памятью, своими навыками и своим контекстом. Твоя AI-команда без дашбордов, без новых приложений, без переключения контекста.",
+        a: "GramFleet — это AI-инфраструктура команды для Telegram. Каждая ветка форума в твоей группе бизнеса — отдельный AI-агент со своей памятью, своими навыками и своим контекстом. Твоя AI-команда без дашбордов, без новых приложений, без переключения контекста.",
       },
       {
         q: "Нужны ли технические знания?",
@@ -1081,6 +1087,10 @@ const RU: LangContent = {
         q: "Что такое 'агент топика'?",
         a: "Агент топика — это выделенный AI-ассистент, привязанный к одной ветке форума в твоей группе Telegram. У каждого топика своя изолированная память, свои навыки и своя задача — календарь, планы, ресёрч, аналитика или что-то кастомное. Переключаешь топик — переключаешь контекст. Без промптов.",
       },
+      {
+        q: "Зачем платить $499, если есть ChatGPT за $20?",
+        a: "ChatGPT — один чат без памяти между сессиями, без реальных инструментов, без доступа для команды. GramFleet — 6 изолированных специалистов: каждый помнит всё с первого дня, работает с 40+ live-инструментами (парсинг, код, календарь, KPI), и вся команда работает с ними одновременно. Разница как между одним стажёром-генералистом и целым отделом с памятью.",
+      },
     ],
   },
   finalCta: {
@@ -1101,7 +1111,7 @@ const RU: LangContent = {
       contextPh: "Одно предложение про узкое место. (По желанию)",
       productLabel: "Какой агент интересует",
     },
-    submit: "Начать бесплатно",
+    submit: "Записаться на звонок",
     submitting: "Отправляем…",
     success: "Записали.",
     successSub: "Подтвердим звонок в течение рабочего дня. Ждите письмо.",
@@ -1130,7 +1140,7 @@ const RU: LangContent = {
     },
   },
   footer: {
-    tagline: "AI-команда внутри вашего Telegram. Personal AI Infrastructure для бизнеса.",
+    tagline: "AI-команда внутри вашего Telegram. AI-инфраструктура для бизнеса.",
     columns: [
       {
         title: "Агенты",
@@ -1186,7 +1196,7 @@ const RU: LangContent = {
           "Базовое мини-приложение",
         ],
         forWho: "Соло-фаундеры, фрилансеры, маленькие команды на старте",
-        cta: "Начать бесплатно",
+        cta: "Начать с Lite",
         ctaStyle: "outline" as const,
       },
       {
@@ -1204,9 +1214,10 @@ const RU: LangContent = {
           "Стандартное мини-приложение",
           "5ч человеческой поддержки/мес",
           "SLA ответа 4ч",
+          "1 Кастомный агент (строим под ваш процесс)",
         ],
         forWho: "Растущие команды от 3 до 15 человек, фаундеры, которые хотят вернуть свои часы",
-        cta: "Начать бесплатно",
+        cta: "Записаться на демо",
         ctaStyle: "primary" as const,
       },
       {
@@ -1218,6 +1229,7 @@ const RU: LangContent = {
           "Claude Opus + Sonnet + GLM",
           "Без лимита пользователей",
           "Без лимита топиков",
+          "До 3 Кастомных агентов (строим под вас)",
           "2 кастомных навыка в год включено",
           "Кастомное брендированное мини-приложение",
           "10ч человеческой поддержки/мес",
