@@ -12,6 +12,7 @@ import FAQ from "./sections/FAQ";
 import FinalCTA from "./sections/FinalCTA";
 import Footer from "./sections/Footer";
 import MobileStickyCTA from "./sections/MobileStickyCTA";
+import TelegramDemo from "./sections/TelegramDemo";
 
 export default function LandingPage() {
   return (
@@ -20,6 +21,7 @@ export default function LandingPage() {
         <Nav />
         <main>
           <Hero />
+          <TelegramDemo />
           <SocialProof />
           <Products />
           <Metrics />
