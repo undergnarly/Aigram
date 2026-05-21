@@ -68,7 +68,7 @@ function requireAdmin(req: NextRequest): boolean {
   const user = decoded.slice(0, colon);
   const pass = decoded.slice(colon + 1);
   const expectedUser = process.env.ADMIN_USER || "admin";
-  const expectedPass = process.env.ADMIN_PASSWORD || "gramcrew-2026";
+  const expectedPass = process.env.ADMIN_PASSWORD || "gramfleet-2026";
   return user === expectedUser && pass === expectedPass;
 }
 
@@ -130,7 +130,7 @@ export async function GET(req: NextRequest) {
   if (!requireAdmin(req)) {
     return new NextResponse("Authentication required", {
       status: 401,
-      headers: { "WWW-Authenticate": 'Basic realm="GramCrew Admin"' },
+      headers: { "WWW-Authenticate": 'Basic realm="GramFleet Admin"' },
     });
   }
   const rows = await db.lead.findMany({

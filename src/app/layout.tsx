@@ -26,12 +26,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gramcrew.ai"),
-  title: "GramCrew — AI Team Inside Your Telegram",
+  metadataBase: new URL("https://gramfleet.ai"),
+  title: "GramFleet — AI Team Inside Your Telegram",
   description:
-    "GramCrew is Personal AI Infrastructure for business that lives inside your Telegram. Every forum topic becomes an isolated AI agent with its own memory, skills, and context. 24-hour setup. No new apps, no dashboards. From $199/month.",
+    "GramFleet is Personal AI Infrastructure for business that lives inside your Telegram. Every forum topic becomes an isolated AI agent with its own memory, skills, and context. 24-hour setup. No new apps, no dashboards. From $199/month.",
   keywords: [
-    "GramCrew",
+    "GramFleet",
     "Personal AI Infrastructure",
     "AI in Telegram",
     "Telegram AI agent",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "small business AI",
     "white-label AI assistant",
   ],
-  authors: [{ name: "GramCrew" }],
+  authors: [{ name: "GramFleet" }],
   robots: {
     index: true,
     follow: true,
@@ -50,29 +50,29 @@ export const metadata: Metadata = {
     "max-snippet": -1,
   },
   alternates: {
-    canonical: "https://gramcrew.ai/",
+    canonical: "https://gramfleet.ai/",
     languages: {
-      en: "https://gramcrew.ai/",
-      ru: "https://gramcrew.ai/",
-      "x-default": "https://gramcrew.ai/",
+      en: "https://gramfleet.ai/",
+      ru: "https://gramfleet.ai/",
+      "x-default": "https://gramfleet.ai/",
     },
   },
   openGraph: {
-    title: "GramCrew — AI Team Inside Your Telegram",
+    title: "GramFleet — AI Team Inside Your Telegram",
     description:
       "Personal AI Infrastructure for business that lives inside your Telegram. Topic agents with memory, skills, and context. From $199/month.",
     type: "website",
-    url: "https://gramcrew.ai/",
-    images: ["https://gramcrew.ai/og-image.png"],
+    url: "https://gramfleet.ai/",
+    images: ["https://gramfleet.ai/og-image.png"],
     locale: "en_US",
-    siteName: "GramCrew",
+    siteName: "GramFleet",
   },
   twitter: {
     card: "summary_large_image",
-    title: "GramCrew — AI Team Inside Your Telegram",
+    title: "GramFleet — AI Team Inside Your Telegram",
     description:
       "Personal AI Infrastructure for business that lives inside your Telegram. From $199/month.",
-    images: ["https://gramcrew.ai/og-image.png"],
+    images: ["https://gramfleet.ai/og-image.png"],
   },
   other: {
     "ai-content-declaration": "human-authored, AI-assisted",
@@ -84,13 +84,13 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "SoftwareApplication",
-      "@id": "https://gramcrew.ai/#org",
-      name: "GramCrew",
+      "@id": "https://gramfleet.ai/#org",
+      name: "GramFleet",
       description:
         "Personal AI Infrastructure for business that lives inside Telegram. Each forum topic becomes an isolated AI agent with its own memory, skills, and context.",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Telegram",
-      url: "https://gramcrew.ai/",
+      url: "https://gramfleet.ai/",
       offers: [
         { "@type": "Offer", name: "Lite", price: "199", priceCurrency: "USD", description: "GLM AI model, 1 user, 6 default topics, 20+ skills, 24/7 AI support, 2h human support/month." },
         { "@type": "Offer", name: "Standard", price: "499", priceCurrency: "USD", description: "Claude Sonnet + GLM fallback, 3 users, 11 topics, 40+ skills, voice messages, 5h support, 4h SLA." },
@@ -99,11 +99,11 @@ const jsonLd = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://gramcrew.ai/#faq",
+      "@id": "https://gramfleet.ai/#faq",
       mainEntity: [
-        { "@type": "Question", name: "What is GramCrew?", acceptedAnswer: { "@type": "Answer", text: "GramCrew is Personal AI Infrastructure that lives entirely inside your Telegram. Every forum topic in your business group is an isolated AI agent with its own memory, skills, and context — your AI team without dashboards or new apps to learn." } },
-        { "@type": "Question", name: "Do I need technical skills?", acceptedAnswer: { "@type": "Answer", text: "No. If you can use Telegram, you can use GramCrew. Setup takes 24 hours and we configure everything for you on a Discovery Call." } },
-        { "@type": "Question", name: "Is my data secure?", acceptedAnswer: { "@type": "Answer", text: "Yes. GramCrew runs on Telegram's end-to-end encrypted infrastructure. Your topic memory and knowledge base are scoped to your group and not shared with any third party." } },
+        { "@type": "Question", name: "What is GramFleet?", acceptedAnswer: { "@type": "Answer", text: "GramFleet is Personal AI Infrastructure that lives entirely inside your Telegram. Every forum topic in your business group is an isolated AI agent with its own memory, skills, and context — your AI team without dashboards or new apps to learn." } },
+        { "@type": "Question", name: "Do I need technical skills?", acceptedAnswer: { "@type": "Answer", text: "No. If you can use Telegram, you can use GramFleet. Setup takes 24 hours and we configure everything for you on a Discovery Call." } },
+        { "@type": "Question", name: "Is my data secure?", acceptedAnswer: { "@type": "Answer", text: "Yes. GramFleet runs on Telegram's end-to-end encrypted infrastructure. Your topic memory and knowledge base are scoped to your group and not shared with any third party." } },
         { "@type": "Question", name: "What AI model do you use?", acceptedAnswer: { "@type": "Answer", text: "Lite uses GLM. Standard uses Claude Sonnet with automatic GLM fallback. Premium uses Claude Opus with Sonnet and GLM as fallback tiers." } },
         { "@type": "Question", name: "Can I cancel anytime?", acceptedAnswer: { "@type": "Answer", text: "Yes. Month-to-month subscription, cancel anytime. 30-day money-back guarantee on every plan." } },
         { "@type": "Question", name: "What is a topic agent?", acceptedAnswer: { "@type": "Answer", text: "A topic agent is a dedicated AI assistant assigned to a single forum topic in your Telegram group. Each topic has isolated memory, scoped skills, and a job to do — calendar, plans, research, analytics, or anything custom." } },
@@ -111,10 +111,10 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://gramcrew.ai/#site",
-      url: "https://gramcrew.ai/",
-      name: "GramCrew",
-      publisher: { "@id": "https://gramcrew.ai/#org" },
+      "@id": "https://gramfleet.ai/#site",
+      url: "https://gramfleet.ai/",
+      name: "GramFleet",
+      publisher: { "@id": "https://gramfleet.ai/#org" },
       inLanguage: ["en", "ru"],
       dateModified: "2026-05-20",
     },

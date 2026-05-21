@@ -10,7 +10,7 @@ import { NextRequest, NextResponse } from "next/server";
  *
  * Configuration (set in Netlify → Site settings → Environment):
  *   ADMIN_USER       Username                           (default: "admin")
- *   ADMIN_PASSWORD   Password                           (default: "gramcrew-2026")
+ *   ADMIN_PASSWORD   Password                           (default: "gramfleet-2026")
  *
  * The default password is committed on purpose so the dev environment
  * works out of the box. PRODUCTION MUST OVERRIDE IT via env vars.
@@ -18,7 +18,7 @@ import { NextRequest, NextResponse } from "next/server";
  */
 
 const DEFAULT_USER = "admin";
-const DEFAULT_PASSWORD = "gramcrew-2026";
+const DEFAULT_PASSWORD = "gramfleet-2026";
 
 export function middleware(req: NextRequest) {
   const expectedUser = process.env.ADMIN_USER || DEFAULT_USER;
@@ -33,7 +33,7 @@ export function middleware(req: NextRequest) {
     status: 401,
     headers: {
       // The realm string is what the browser shows in the credentials prompt.
-      "WWW-Authenticate": 'Basic realm="GramCrew Admin", charset="UTF-8"',
+      "WWW-Authenticate": 'Basic realm="GramFleet Admin", charset="UTF-8"',
       // Don't let the 401 page get cached by an intermediary.
       "Cache-Control": "no-store",
     },

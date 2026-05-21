@@ -1,5 +1,5 @@
 /**
- * Bilingual content map for the GramCrew landing page.
+ * Bilingual content map for the GramFleet landing page.
  * Keep this file as the single source of editorial truth. Section components
  * accept the `c` object (one language already resolved) so nothing else in
  * the tree has to know which language is active.
@@ -216,7 +216,7 @@ const EN: LangContent = {
     faq: "FAQ",
     cta: "Get Started",
     telegram: "Message on Telegram",
-    telegramHref: "https://t.me/gramcrew_bot",
+    telegramHref: "https://t.me/gramfleet_bot",
   },
   hero: {
     eyebrow: "Personal AI Infrastructure",
@@ -442,8 +442,8 @@ const EN: LangContent = {
   },
   metrics: {
     eyebrow: "Outcomes",
-    h2: "Why operators choose GramCrew.",
-    sub: "Real numbers from teams running GramCrew in their Telegram groups. Conservative estimates — your mileage may vary.",
+    h2: "Why operators choose GramFleet.",
+    sub: "Real numbers from teams running GramFleet in their Telegram groups. Conservative estimates — your mileage may vary.",
     items: [
       { value: "300%", label: "ROI in year 1", detail: "Most teams pay back the subscription in the first month — and keep stacking gains as more agents come online." },
       { value: "24h", label: "Setup time", detail: "From Discovery Call to a fully wired AI team in your Telegram group — twenty-four hours, no exceptions." },
@@ -480,16 +480,16 @@ const EN: LangContent = {
     sub: "Short, honest answers. Anything else — book a Discovery Call.",
     items: [
       {
-        q: "What is GramCrew?",
-        a: "GramCrew is Personal AI Infrastructure that lives entirely inside your Telegram. Every forum topic in your business group becomes an isolated AI agent with its own memory, skills, and context. Your AI team — without dashboards, without new apps, without context switching.",
+        q: "What is GramFleet?",
+        a: "GramFleet is Personal AI Infrastructure that lives entirely inside your Telegram. Every forum topic in your business group becomes an isolated AI agent with its own memory, skills, and context. Your AI team — without dashboards, without new apps, without context switching.",
       },
       {
         q: "Do I need technical skills?",
-        a: "No. If you can use Telegram, you can use GramCrew. We configure everything for you on the Discovery Call and during the 24-hour setup window. You and your team just keep using Telegram the way you already do.",
+        a: "No. If you can use Telegram, you can use GramFleet. We configure everything for you on the Discovery Call and during the 24-hour setup window. You and your team just keep using Telegram the way you already do.",
       },
       {
         q: "Is my data secure?",
-        a: "Yes. GramCrew runs on Telegram's end-to-end encrypted infrastructure. Topic memory and your knowledge base are scoped to your group, not shared with any third party, and never used to train public models. You can export or delete everything at any time.",
+        a: "Yes. GramFleet runs on Telegram's end-to-end encrypted infrastructure. Topic memory and your knowledge base are scoped to your group, not shared with any third party, and never used to train public models. You can export or delete everything at any time.",
       },
       {
         q: "What AI model do you use?",
@@ -527,7 +527,7 @@ const EN: LangContent = {
     submitting: "Sending…",
     success: "You're in.",
     successSub: "We'll confirm the call within one business day. Watch your inbox.",
-    error: "Something went wrong. Email hello@gramcrew.ai directly and we'll sort it.",
+    error: "Something went wrong. Email hello@gramfleet.ai directly and we'll sort it.",
     reassurance: [
       "30 minutes, free, no deck",
       "Setup in 24 hours",
@@ -576,14 +576,14 @@ const EN: LangContent = {
       {
         title: "Contact",
         links: [
-          { label: "hello@gramcrew.ai", href: "mailto:hello@gramcrew.ai" },
-          { label: "Telegram", href: "https://t.me/gramcrew_bot" },
+          { label: "hello@gramfleet.ai", href: "mailto:hello@gramfleet.ai" },
+          { label: "Telegram", href: "https://t.me/gramfleet_bot" },
           { label: "LinkedIn", href: "#" },
         ],
       },
     ],
-    rights: "© 2026 GramCrew · All rights reserved",
-    contact: "hello@gramcrew.ai",
+    rights: "© 2026 GramFleet · All rights reserved",
+    contact: "hello@gramfleet.ai",
   },
   mobileCta: "Get Started",
   subscriptionPlan: {
@@ -683,7 +683,7 @@ const RU: LangContent = {
     faq: "FAQ",
     cta: "Начать",
     telegram: "Написать в Телеграм",
-    telegramHref: "https://t.me/gramcrew_bot",
+    telegramHref: "https://t.me/gramfleet_bot",
   },
   hero: {
     eyebrow: "Personal AI Infrastructure",
@@ -909,8 +909,8 @@ const RU: LangContent = {
   },
   metrics: {
     eyebrow: "Результаты",
-    h2: "Почему операторы выбирают GramCrew.",
-    sub: "Реальные цифры от команд, которые уже работают в GramCrew. Консервативные оценки — у вас может быть лучше.",
+    h2: "Почему операторы выбирают GramFleet.",
+    sub: "Реальные цифры от команд, которые уже работают в GramFleet. Консервативные оценки — у вас может быть лучше.",
     items: [
       { value: "300%", label: "ROI за первый год", detail: "Большинство команд отбивают подписку в первый месяц — и продолжают копить выигрыш по мере подключения новых агентов." },
       { value: "24ч", label: "Время настройки", detail: "От звонка-знакомства до полностью настроенной AI-команды в твоей группе Telegram — двадцать четыре часа, без исключений." },
@@ -947,16 +947,16 @@ const RU: LangContent = {
     sub: "Короткие честные ответы. Остальное — на звонке.",
     items: [
       {
-        q: "Что такое GramCrew?",
-        a: "GramCrew — это Personal AI Infrastructure, которая живёт прямо в твоём Telegram. Каждая ветка форума в твоей группе бизнеса — отдельный AI-агент со своей памятью, своими навыками и своим контекстом. Твоя AI-команда без дашбордов, без новых приложений, без переключения контекста.",
+        q: "Что такое GramFleet?",
+        a: "GramFleet — это Personal AI Infrastructure, которая живёт прямо в твоём Telegram. Каждая ветка форума в твоей группе бизнеса — отдельный AI-агент со своей памятью, своими навыками и своим контекстом. Твоя AI-команда без дашбордов, без новых приложений, без переключения контекста.",
       },
       {
         q: "Нужны ли технические знания?",
-        a: "Нет. Если ты умеешь пользоваться Telegram — ты сможешь работать с GramCrew. Мы настраиваем всё за тебя на звонке-знакомстве и в течение 24-часового окна запуска. Ты и команда просто продолжаете пользоваться Telegram, как и раньше.",
+        a: "Нет. Если ты умеешь пользоваться Telegram — ты сможешь работать с GramFleet. Мы настраиваем всё за тебя на звонке-знакомстве и в течение 24-часового окна запуска. Ты и команда просто продолжаете пользоваться Telegram, как и раньше.",
       },
       {
         q: "Мои данные в безопасности?",
-        a: "Да. GramCrew работает на инфраструктуре Telegram с end-to-end шифрованием. Память топиков и твоя база знаний привязаны только к твоей группе, не передаются третьим сторонам и не используются для обучения публичных моделей. В любой момент можно экспортировать или удалить всё.",
+        a: "Да. GramFleet работает на инфраструктуре Telegram с end-to-end шифрованием. Память топиков и твоя база знаний привязаны только к твоей группе, не передаются третьим сторонам и не используются для обучения публичных моделей. В любой момент можно экспортировать или удалить всё.",
       },
       {
         q: "Какую AI-модель вы используете?",
@@ -994,7 +994,7 @@ const RU: LangContent = {
     submitting: "Отправляем…",
     success: "Записали.",
     successSub: "Подтвердим звонок в течение рабочего дня. Ждите письмо.",
-    error: "Что-то пошло не так. Напишите на hello@gramcrew.ai — разберёмся.",
+    error: "Что-то пошло не так. Напишите на hello@gramfleet.ai — разберёмся.",
     reassurance: [
       "30 минут, бесплатно, без презентации",
       "Запуск за 24 часа",
@@ -1043,14 +1043,14 @@ const RU: LangContent = {
       {
         title: "Контакты",
         links: [
-          { label: "hello@gramcrew.ai", href: "mailto:hello@gramcrew.ai" },
-          { label: "Telegram", href: "https://t.me/gramcrew_bot" },
+          { label: "hello@gramfleet.ai", href: "mailto:hello@gramfleet.ai" },
+          { label: "Telegram", href: "https://t.me/gramfleet_bot" },
           { label: "LinkedIn", href: "#" },
         ],
       },
     ],
-    rights: "© 2026 GramCrew · Все права защищены",
-    contact: "hello@gramcrew.ai",
+    rights: "© 2026 GramFleet · Все права защищены",
+    contact: "hello@gramfleet.ai",
   },
   mobileCta: "Начать",
   subscriptionPlan: {

@@ -60,7 +60,7 @@ function PageHeader() {
           Dashboard
         </h1>
         <p className="mt-1 text-sm text-slate-600">
-          Quick pulse on GramCrew pipeline activity.
+          Quick pulse on GramFleet pipeline activity.
         </p>
       </div>
       <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5 text-xs text-slate-600">

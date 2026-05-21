@@ -26,7 +26,7 @@ const LangContext = createContext<{
   setLang: (l: Lang) => void;
 }>({ lang: "en", setLang: () => {} });
 
-const STORAGE_KEY = "gramcrew.lang";
+const STORAGE_KEY = "gramfleet.lang";
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
