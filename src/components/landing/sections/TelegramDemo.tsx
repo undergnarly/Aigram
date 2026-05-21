@@ -58,6 +58,16 @@ const TOPICS: Record<"en" | "ru", DemoTopic[]> = {
       ],
     },
     {
+      id: "developer", emoji: "💻", name: "AI Developer",
+      messages: [
+        { id: "d1", from: "user", userTypingMs: 2000, text: "Build me a landing page for my coaching service — clean, mobile-first, with a booking form" },
+        { id: "d2", from: "bot", botTypingMs: 900, text: "On it. Starting build now ⚙️" },
+        { id: "d3", from: "bot", botTypingMs: 1400, text: "🔨 Scaffolding Next.js project...\n📦 Installing TailwindCSS + Framer Motion\n🎨 Designing layout from your brief" },
+        { id: "d4", from: "bot", botTypingMs: 1800, text: "⚙️ Adding booking form\n📅 Wiring Cal.com integration\n🚀 Deploying to Netlify..." },
+        { id: "d5", from: "bot", botTypingMs: 1600, text: "✅ Live!\n\n🔗 coach-flow.netlify.app\n📂 Private repo created\n\nWant me to add Stripe checkout next?" },
+      ],
+    },
+    {
       id: "analyst", emoji: "📊", name: "AI Analyst",
       messages: [
         { id: "an1", from: "user", userTypingMs: 1400, text: "Show last week metrics: leads, conversion, revenue" },
@@ -111,6 +121,16 @@ const TOPICS: Record<"en" | "ru", DemoTopic[]> = {
         { id: "a2", from: "bot", botTypingMs: 1100, text: "✅ Welcome отправлен. Лид в CRM.\n\nАлексей, задача: «Связаться с Мариной до пятницы»" },
         { id: "a3", from: "user", userTypingMs: 1000, text: "Тег «горячий», follow-up через 2 дня" },
         { id: "a4", from: "bot", botTypingMs: 700, text: "🏷️ Тег добавлен. Follow-up — четверг 11:00." },
+      ],
+    },
+    {
+      id: "developer", emoji: "💻", name: "AI Разработчик",
+      messages: [
+        { id: "d1", from: "user", userTypingMs: 2000, text: "Построй лендинг для моих коучинг-услуг — минимализм, mobile-first, с формой записи" },
+        { id: "d2", from: "bot", botTypingMs: 900, text: "Принял. Начинаю сборку ⚙️" },
+        { id: "d3", from: "bot", botTypingMs: 1400, text: "🔨 Создаю Next.js проект...\n📦 Ставлю TailwindCSS + Framer Motion\n🎨 Проектирую вёрстку по брифу" },
+        { id: "d4", from: "bot", botTypingMs: 1800, text: "⚙️ Добавляю форму записи\n📅 Подключаю Cal.com\n🚀 Деплою на Netlify..." },
+        { id: "d5", from: "bot", botTypingMs: 1600, text: "✅ Готово!\n\n🔗 coach-flow.netlify.app\n📂 Приватный репозиторий создан\n\nДобавить Stripe оплату следующим шагом?" },
       ],
     },
     {

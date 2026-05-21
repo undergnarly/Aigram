@@ -15,7 +15,8 @@ export type ProductSlug =
   | "researcher"
   | "automator"
   | "analyst"
-  | "concierge";
+  | "concierge"
+  | "developer";
 
 type SubscriptionPlan = {
   name: string;
@@ -42,6 +43,7 @@ export const PRODUCT_ORDER: ProductSlug[] = [
   "researcher",
   "automator",
   "analyst",
+  "developer",
   "concierge",
 ];
 
@@ -211,6 +213,7 @@ const PRICE_RANGES = {
   researcher: { from: "$199/mo", delivery: { en: "24h setup", ru: "24ч настройка" } },
   automator: { from: "$499/mo", delivery: { en: "24h setup", ru: "24ч настройка" } },
   analyst: { from: "$499/mo", delivery: { en: "24h setup", ru: "24ч настройка" } },
+  developer: { from: "$499/mo", delivery: { en: "24h setup", ru: "24ч настройка" } },
   concierge: { from: "$899/mo", delivery: { en: "48h setup", ru: "48ч настройка" } },
 };
 
@@ -259,9 +262,9 @@ const EN: LangContent = {
     ],
   },
   productsSection: {
-    eyebrow: "Five agents",
-    h2: "One Telegram group. Five AI agents.",
-    sub: "Each agent lives in its own forum topic with isolated memory, scoped skills, and a job to do. Mix and match — start with one, add the rest when you're ready.",
+    eyebrow: "Six agents + custom",
+    h2: "One Telegram group. Six AI agents. Plus your own.",
+    sub: "Each agent lives in its own forum topic with isolated memory, scoped skills, and a job to do. Premium plans include up to 3 custom agents we build for your specific business — marketing specialist, recruiter, ops analyst, whatever you need.",
     perCard: { from: "From", delivery: "Setup", learnMore: "Open details" },
   },
   products: {
@@ -417,8 +420,46 @@ const EN: LangContent = {
         },
       ],
     },
-    concierge: {
+    developer: {
       num: "05",
+      badge: "Builds for you",
+      badgeKind: "new",
+      name: "AI Developer",
+      tagline: "Code, websites, integrations — on demand.",
+      hook: "Ask in plain English. The agent scaffolds the project, writes the code, deploys it, and sends you the live link.",
+      bullets: [
+        "Builds landing pages, dashboards, internal tools from a single prompt",
+        "Writes integrations between your CRM, Telegram, Stripe, calendars",
+        "Live progress in the topic — you see what it's doing in real time",
+        "Final result delivered as a working URL + private repo",
+      ],
+      fromPrice: PRICE_RANGES.developer.from,
+      delivery: PRICE_RANGES.developer.delivery.en,
+      image: "/products/agent-4.webp",
+      tiers: [
+        {
+          name: "Lite",
+          price: "$199/mo",
+          delivery: "24h setup",
+          features: ["3 small tasks / month", "Landing pages + simple integrations", "1 user", "Public repo"],
+        },
+        {
+          name: "Standard",
+          price: "$499/mo",
+          delivery: "24h setup",
+          features: ["Everything in Lite", "Unlimited tasks", "3 users", "Private repo + Netlify deploys"],
+          highlight: true,
+        },
+        {
+          name: "Premium",
+          price: "$899/mo",
+          delivery: "48h setup",
+          features: ["Everything in Standard", "Unlimited users", "Custom infra (your domain, your DB)", "Priority engineer review"],
+        },
+      ],
+    },
+    concierge: {
+      num: "06",
       badge: "White-label",
       badgeKind: "new",
       name: "AI Concierge",
@@ -742,9 +783,9 @@ const RU: LangContent = {
     ],
   },
   productsSection: {
-    eyebrow: "Пять агентов",
-    h2: "Одна группа в Telegram. Пять AI-агентов.",
-    sub: "Каждый агент живёт в своей ветке форума — со своей памятью, своими навыками и своей задачей. Возьмите одного, добавьте остальных, когда будете готовы.",
+    eyebrow: "Шесть агентов + свой",
+    h2: "Одна группа в Telegram. Шесть AI-агентов. Плюс ваш кастомный.",
+    sub: "Каждый агент живёт в своей ветке форума — со своей памятью, своими навыками и своей задачей. Premium-план включает до 3 кастомных агентов, которых мы строим под ваш бизнес — маркетолог, рекрутер, аналитик, кто угодно.",
     perCard: { from: "От", delivery: "Запуск", learnMore: "Подробнее" },
   },
   products: {
@@ -900,8 +941,46 @@ const RU: LangContent = {
         },
       ],
     },
-    concierge: {
+    developer: {
       num: "05",
+      badge: "Строит за вас",
+      badgeKind: "new",
+      name: "AI Разработчик",
+      tagline: "Код, сайты, интеграции — по запросу.",
+      hook: "Опишите задачу простым языком. Агент создаст проект, напишет код, задеплоит и пришлёт живую ссылку.",
+      bullets: [
+        "Лендинги, дашборды, внутренние инструменты — по одному промпту",
+        "Интеграции между CRM, Telegram, Stripe, календарями",
+        "Видно прогресс в топике в реальном времени — что делает агент сейчас",
+        "Готовый результат: рабочая ссылка + приватный репозиторий",
+      ],
+      fromPrice: PRICE_RANGES.developer.from,
+      delivery: PRICE_RANGES.developer.delivery.ru,
+      image: "/products/agent-4.webp",
+      tiers: [
+        {
+          name: "Lite",
+          price: "$199/мес",
+          delivery: "24ч настройка",
+          features: ["3 небольшие задачи в месяц", "Лендинги и простые интеграции", "1 пользователь", "Публичный репозиторий"],
+        },
+        {
+          name: "Standard",
+          price: "$499/мес",
+          delivery: "24ч настройка",
+          features: ["Всё из Lite", "Без лимита задач", "3 пользователя", "Приватный репозиторий + Netlify-деплои"],
+          highlight: true,
+        },
+        {
+          name: "Premium",
+          price: "$899/мес",
+          delivery: "48ч настройка",
+          features: ["Всё из Standard", "Без лимита пользователей", "Кастомная инфраструктура (свой домен, своя БД)", "Приоритетное ревью инженера"],
+        },
+      ],
+    },
+    concierge: {
+      num: "06",
       badge: "White-label",
       badgeKind: "new",
       name: "AI Concierge",
