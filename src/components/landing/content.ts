@@ -546,7 +546,7 @@ const EN: LangContent = {
       },
       {
         q: "Is my data secure?",
-        a: "Yes. GramFleet runs on Telegram's end-to-end encrypted infrastructure. Topic memory and your knowledge base are scoped to your group, not shared with any third party, and never used to train public models. You can export or delete everything at any time.",
+        a: "Yes. GramFleet runs on your own server inside an encrypted Docker container — your data never leaves your infrastructure. Topic memory and your knowledge base are scoped to your group, not shared with any third party, and never used to train public models. You can export or delete everything at any time.",
       },
       {
         q: "What AI model do you use?",
@@ -1073,7 +1073,7 @@ const RU: LangContent = {
       },
       {
         q: "Мои данные в безопасности?",
-        a: "Да. GramFleet работает на инфраструктуре Telegram с end-to-end шифрованием. Память топиков и твоя база знаний привязаны только к твоей группе, не передаются третьим сторонам и не используются для обучения публичных моделей. В любой момент можно экспортировать или удалить всё.",
+        a: "Да. GramFleet работает на твоём собственном сервере в зашифрованном Docker-контейнере — данные не покидают твою инфраструктуру. Память топиков и твоя база знаний привязаны только к твоей группе, не передаются третьим сторонам и не используются для обучения публичных моделей. В любой момент можно экспортировать или удалить всё.",
       },
       {
         q: "Какую AI-модель вы используете?",
