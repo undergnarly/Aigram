@@ -221,10 +221,9 @@ export default function TelegramDemo() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [shownMsgs, setShownMsgs] = useState<DemoMsg[]>([]);
   const [botTyping, setBotTyping] = useState(false);
-  const [userTypingText, setUserTypingText] = useState<string | null>(null); // text visible in input while "typing"
+  const [userTypingText, setUserTypingText] = useState<string | null>(null);
   const [userInteracted, setUserInteracted] = useState(false);
   const chatRef = useRef<HTMLDivElement>(null);
-  const cancelRef = useRef(false);
   const autoRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const topic = topics[activeIdx]!;
@@ -234,40 +233,41 @@ export default function TelegramDemo() {
     setShownMsgs([]);
     setBotTyping(false);
     setUserTypingText(null);
-    cancelRef.current = false;
+
+    // Closure-scoped flag — immune to the ref race where the new effect
+    // resets cancelRef.current=false before the old async play() checks it.
+    let cancelled = false;
 
     const msgs = topics[activeIdx]!.messages;
 
     async function play() {
       await new Promise((r) => setTimeout(r, 350));
       for (const msg of msgs) {
-        if (cancelRef.current) break;
+        if (cancelled) break;
 
         if (msg.from === "user" && msg.userTypingMs) {
-          // Show typing in input bar, then send
           setUserTypingText(msg.text ?? "");
           await new Promise((r) => setTimeout(r, msg.userTypingMs));
-          if (cancelRef.current) break;
+          if (cancelled) break;
           setUserTypingText(null);
         }
 
         if (msg.from === "bot" && msg.botTypingMs) {
           setBotTyping(true);
           await new Promise((r) => setTimeout(r, msg.botTypingMs));
-          if (cancelRef.current) break;
+          if (cancelled) break;
           setBotTyping(false);
         }
 
-        if (!cancelRef.current) {
+        if (!cancelled) {
           setShownMsgs((prev) => [...prev, msg]);
-          // Pause after each message so reader can absorb it
           await new Promise((r) => setTimeout(r, msg.from === "user" ? 500 : 700));
         }
       }
     }
 
     play();
-    return () => { cancelRef.current = true; };
+    return () => { cancelled = true; };
   }, [activeIdx, lang]); // eslint-disable-line react-hooks/exhaustive-deps
 
   /* Auto-scroll */

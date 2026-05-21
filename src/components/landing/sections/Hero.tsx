@@ -51,30 +51,22 @@ export default function Hero() {
               opacity: i === activeIdx ? 1 : 0,
               filter: `blur(${i === activeIdx ? 0 : 16}px)`,
               maskImage:
-                "linear-gradient(to bottom, black 0%, black 62%, rgba(0,0,0,0.7) 82%, transparent 100%)",
+                "linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.5) 92%, transparent 100%)",
               WebkitMaskImage:
-                "linear-gradient(to bottom, black 0%, black 62%, rgba(0,0,0,0.7) 82%, transparent 100%)",
+                "linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.5) 92%, transparent 100%)",
             }}
           />
         ))}
-        {/* progressive blur overlay */}
+        {/* soft blur only at very bottom edge — no white fade */}
         <div
           className="absolute inset-0"
           style={{
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
+            backdropFilter: "blur(6px)",
+            WebkitBackdropFilter: "blur(6px)",
             maskImage:
-              "linear-gradient(to bottom, transparent 0%, transparent 52%, rgba(0,0,0,0.6) 68%, black 82%, black 100%)",
+              "linear-gradient(to bottom, transparent 0%, transparent 72%, rgba(0,0,0,0.4) 88%, black 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, transparent 0%, transparent 52%, rgba(0,0,0,0.6) 68%, black 82%, black 100%)",
-          }}
-        />
-        {/* white tint overlay — readability */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.95) 65%, rgba(255,255,255,1) 85%)",
+              "linear-gradient(to bottom, transparent 0%, transparent 72%, rgba(0,0,0,0.4) 88%, black 100%)",
           }}
         />
       </div>
