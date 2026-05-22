@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     canonical: "https://gramfleet.ai/",
     languages: {
       en: "https://gramfleet.ai/",
-      ru: "https://gramfleet.ai/",
+      ru: "https://gramfleet.ai/ru",
       "x-default": "https://gramfleet.ai/",
     },
   },

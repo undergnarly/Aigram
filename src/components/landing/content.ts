@@ -679,6 +679,7 @@ const EN: LangContent = {
           { label: "FAQ", href: "#faq" },
           { label: "Get Started", href: "#book" },
           { label: "Security & DPA", href: "/security" },
+          { label: "For Russia / Для России", href: "/ru" },
         ],
       },
       {
@@ -1255,6 +1256,7 @@ const RU: LangContent = {
           { label: "FAQ", href: "#faq" },
           { label: "Начать", href: "#book" },
           { label: "Безопасность и DPA", href: "/security" },
+          { label: "Для России (без VPN)", href: "/ru" },
         ],
       },
       {
