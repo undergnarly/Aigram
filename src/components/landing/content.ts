@@ -247,11 +247,11 @@ const EN: LangContent = {
     eyebrow: "AI Team Infrastructure for Telegram",
     h1Lines: ["Your AI team", "lives inside", "Telegram"],
     lead:
-      "Replace your research tools, task manager, lead tracker, and part-time VA — with six AI specialists who live inside your Telegram. Each forum topic is a different expert with isolated memory and real tools. Setup in 24 hours. Zero learning curve.",
+      "Replace a VA ($200/mo), a researcher ($300/mo), and automation tools ($400/mo) — with six AI specialists who live inside your Telegram. Each forum topic is a different expert with isolated memory and real tools. Setup in 24 hours. Your team keeps using Telegram.",
     primary: "Book Discovery Call",
-    secondary: "See Demo",
+    secondary: "Try 14 days free — no card",
     trustLabel: "Built for operators in",
-    trustItems: ["Replaces Notion + Zapier + VA", "Setup in 24 hours", "30-day money-back"],
+    trustItems: ["Replaces Notion + Zapier + VA", "Setup in 24 hours", "14-day free trial, no card"],
   },
   social: {
     label: "Replaces your SaaS stack — or plugs into it. Your team keeps using Telegram.",
@@ -535,9 +535,9 @@ const EN: LangContent = {
         body: "Every member of your authorized group works with the agents — no per-seat invites, no juggling logins. Owner gets DM-level controls. Unauthorized groups are blocked automatically so the bot can't be hijacked.",
       },
       {
-        tag: "Uptime",
-        title: "Updates without downtime",
-        body: "We push improvements through a safe-restart orchestrator that drains in-flight requests, swaps the process, and reattaches sessions. You never see a maintenance window — agents stay on the chat the whole time.",
+        tag: "Pipeline",
+        title: "Tasks that run while you sleep",
+        body: "Queue a task in the evening — wake up to results. The pipeline picks items one by one, runs critic → worker → QA, commits output, and reports back to your Telegram topic. Your agents don't wait for you to be online.",
       },
       {
         tag: "Languages",
@@ -560,7 +560,7 @@ const EN: LangContent = {
   pricing: {
     eyebrow: "Pricing",
     h2: "Three plans. Monthly. Cancel anytime.",
-    sub: "Most teams start on Standard. The $1,000 setup fee is waived when you prepay 3 months — most operators recover the cost in the first month from time saved alone.",
+    sub: "Most teams start on Standard at $499/mo — less than the cost of a part-time VA alone. The $1,000 setup fee is waived when you prepay 3 months. Most operators recover that in the first month from hours saved.",
     productTab: "Agent",
     chooseTier: "Choose plan",
     pickThis: "Choose this plan",
@@ -605,6 +605,10 @@ const EN: LangContent = {
       {
         q: "How is this different from Hermify or other Telegram AI bots?",
         a: "Hermify connects one AI model to one Telegram bot — one agent, one context, one job. GramFleet deploys a team: each forum topic is a different specialist with isolated memory and dedicated skills. The difference matters in practice — your Researcher doesn't bleed context into your Planner, your Automator doesn't slow down when the Analyst is running a report. Per-topic isolation is the architecture — no other managed product offers it.",
+      },
+      {
+        q: "Does it work in Russia or CIS countries?",
+        a: "Yes — and this is one of our core strengths. ChatGPT and Claude require a foreign phone number, VPN, and a non-Russian card. GramFleet runs entirely inside Telegram (which you already have), accepts payment via Telegram Stars, Stripe, and crypto, and needs nothing on your end but a Telegram account. Setup takes 24 hours, no additional infrastructure required.",
       },
     ],
   },
@@ -815,14 +819,14 @@ const RU: LangContent = {
     telegramHref: "https://t.me/gramfleet_bot",
   },
   hero: {
-    eyebrow: "AI-команда. Ваша инфраструктура в Telegram.",
+    eyebrow: "AI-команда в Telegram. Без VPN. Без зарубежных карт.",
     h1Lines: ["AI-команда", "живёт в вашем", "Telegram"],
     lead:
-      "Замените инструменты для задач, автоматизации, ресёрча и частичного ассистента — шестью AI-специалистами внутри вашего Telegram. Каждая ветка форума — отдельный эксперт со своей памятью и реальными инструментами. Запуск за 24 часа. Без кривой обучения.",
+      "Замените ассистента ($200/мес), ресёрчера ($300/мес) и инструменты автоматизации ($400/мес) — шестью AI-специалистами внутри вашего Telegram. Каждая ветка форума — отдельный эксперт со своей памятью и реальными инструментами. Запуск за 24 часа. Команда продолжает работать в Telegram.",
     primary: "Записаться на демо",
-    secondary: "Смотреть демо",
+    secondary: "Попробовать 14 дней — без карты",
     trustLabel: "Для операторов бизнеса в",
-    trustItems: ["Заменяет Notion + Zapier + ассистента", "Запуск за 24 часа", "30 дней возврат"],
+    trustItems: ["Заменяет Notion + Zapier + ассистента", "Запуск за 24 часа", "14 дней бесплатно — без карты"],
   },
   social: {
     label: "Заменяет SaaS-стек — или подключается к нему. Команда продолжает работать в Telegram.",
@@ -1106,9 +1110,9 @@ const RU: LangContent = {
         body: "С агентами работают все участники авторизованной группы — без приглашений по местам, без жонглирования логинами. Владелец управляет в личке. Неавторизованные группы автоматически блокируются — бот нельзя угнать в чужой чат.",
       },
       {
-        tag: "Аптайм",
-        title: "Обновления без даунтайма",
-        body: "Апдейты выкатываются через оркестратор безопасного рестарта — он дожидается завершения текущих запросов, подменяет процесс и переподключает сессии. Окна обслуживания не видно, агенты остаются в чате всё время.",
+        tag: "Пайплайн",
+        title: "Задачи выполняются пока вы спите",
+        body: "Поставьте задачу вечером — утром получите результат. Пайплайн забирает задачи из очереди по одной, прогоняет цикл критик → исполнитель → QA, фиксирует результат и отчитывается в вашем топике. Агенты не ждут, пока вы онлайн.",
       },
       {
         tag: "Языки",
@@ -1131,7 +1135,7 @@ const RU: LangContent = {
   pricing: {
     eyebrow: "Цены",
     h2: "Три тарифа. Ежемесячно. Отмена в любой момент.",
-    sub: "Большинство команд начинают на Standard. Разовая настройка $1,000 не платится при оплате 3 месяцев вперёд — большинство операторов отбивают её в первый же месяц за счёт сэкономленного времени.",
+    sub: "Большинство команд начинают на Standard — $499/мес против $900+/мес на ассистента, ресёрчера и автоматизацию по отдельности. Разовая настройка $1,000 не платится при оплате 3 месяцев вперёд. Большинство операторов отбивают её в первый месяц.",
     productTab: "Агент",
     chooseTier: "Выбрать тариф",
     pickThis: "Выбрать этот тариф",
@@ -1176,6 +1180,10 @@ const RU: LangContent = {
       {
         q: "Чем отличается от Hermify и других Telegram AI-ботов?",
         a: "Hermify подключает одну AI-модель к одному боту Telegram — один агент, один контекст, одна задача. GramFleet разворачивает команду: каждая ветка форума — отдельный специалист с изолированной памятью и выделенными навыками. На практике это важно: Researcher не смешивает контекст с Planner, Automator не замедляется когда Analyst строит отчёт. Per-topic isolation — это архитектура, которой нет ни у одного другого managed-продукта.",
+      },
+      {
+        q: "Работает ли в России и СНГ?",
+        a: "Да — и это одно из наших главных преимуществ. ChatGPT и Claude требуют иностранный номер телефона, VPN и зарубежную карту. GramFleet работает прямо в Telegram (который у вас уже есть), принимает оплату через Telegram Stars, Stripe и крипту, и не требует ничего, кроме аккаунта в Telegram. Запуск за 24 часа — никакой дополнительной инфраструктуры.",
       },
     ],
   },
