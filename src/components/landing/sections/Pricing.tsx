@@ -13,7 +13,7 @@ import { BlurFade, Magnetic, Spotlight } from "../motion";
 
 type PriceMode = "setup" | "both";
 
-const PLAN_KEYS = ["light", "standard", "premium"] as const;
+const PLAN_KEYS = ["starter", "standard", "pro", "agency"] as const;
 type PlanKey = (typeof PLAN_KEYS)[number];
 
 function shortName(s: string) {
@@ -60,7 +60,7 @@ type TierStyle = {
 };
 
 const TIERS: TierStyle[] = [
-  // 0 · Lite — minimal, airy, gray-on-white, soft float
+  // 0 · Starter — minimal, airy, gray-on-white, soft float
   {
     card: "border-white bg-white shadow-[0_40px_100px_-30px_rgba(27,27,66,0.22),0_15px_40px_-15px_rgba(42,171,238,0.18)]",
     inkStyle: INK_DARK,
@@ -80,7 +80,7 @@ const TIERS: TierStyle[] = [
   // 1 · Standard — recommended, Telegram blue glow
   {
     card:
-      "border-[var(--indigo)]/70 bg-white shadow-[0_0_0_1px_rgba(42,171,238,0.22),0_60px_140px_-30px_rgba(0,136,204,0.45),0_25px_60px_-15px_rgba(42,171,238,0.35)] md:-translate-y-3",
+      "border-[var(--indigo)]/70 bg-white shadow-[0_0_0_1px_rgba(42,171,238,0.22),0_60px_140px_-30px_rgba(0,136,204,0.45),0_25px_60px_-15px_rgba(42,171,238,0.35)] xl:-translate-y-3",
     inkStyle: INK_DARK,
     inkStyleMuted: INK_DARK_MUTED,
     inkStyleBody: INK_DARK_2,
@@ -88,7 +88,7 @@ const TIERS: TierStyle[] = [
     accentBar:
       "bg-[linear-gradient(90deg,transparent_0%,#2AABEE_30%,#0088CC_50%,#2AABEE_70%,transparent_100%)]",
     badge: {
-      label: "РЕКОМЕНДУЕМ",
+      label: "RECOMMENDED",
       className:
         "bg-[linear-gradient(135deg,#2AABEE,#0088CC)] shadow-[0_4px_14px_-3px_rgba(0,136,204,0.55)] ring-1 ring-white/30",
       style: INK_WHITE,
@@ -103,7 +103,7 @@ const TIERS: TierStyle[] = [
     shimmer: false,
     ctaVariant: "primary",
   },
-  // 2 · Premium — midnight gradient with shimmer + gold accents
+  // 2 · Pro — midnight gradient with shimmer + gold accents
   {
     card:
       "border-white/10 bg-[linear-gradient(135deg,#0E2A4A_0%,#13365E_40%,#1A4574_70%,#0F2D50_100%)] shadow-[0_30px_80px_-25px_rgba(14,42,74,0.55),inset_0_1px_0_rgba(255,255,255,0.14)]",
@@ -114,7 +114,7 @@ const TIERS: TierStyle[] = [
     accentBar:
       "bg-[linear-gradient(90deg,transparent_0%,#FFD27A_30%,#F0B756_50%,#FFD27A_70%,transparent_100%)]",
     badge: {
-      label: "PREMIUM",
+      label: "PRO",
       className:
         "bg-[linear-gradient(135deg,#FFE39A,#F0B756_55%,#D69540)] shadow-[0_4px_14px_-3px_rgba(240,183,86,0.55),inset_0_1px_0_rgba(255,255,255,0.5)] ring-1 ring-[#FFE39A]/40",
       style: INK_PREMIUM_DEEP,
@@ -129,6 +129,32 @@ const TIERS: TierStyle[] = [
     shimmer: true,
     ctaVariant: "premium",
   },
+  // 3 · Agency — deep slate / enterprise tone
+  {
+    card:
+      "border-[#1B1B42]/30 bg-[linear-gradient(135deg,#1B1B42_0%,#262656_45%,#1B1B42_100%)] shadow-[0_30px_80px_-25px_rgba(27,27,66,0.55),inset_0_1px_0_rgba(255,255,255,0.10)]",
+    inkStyle: INK_WHITE,
+    inkStyleMuted: INK_WHITE_70,
+    inkStyleBody: INK_WHITE_85,
+    priceStyle: INK_WHITE,
+    accentBar:
+      "bg-[linear-gradient(90deg,transparent_0%,#2AABEE_30%,#FFE39A_50%,#2AABEE_70%,transparent_100%)]",
+    badge: {
+      label: "AGENCY",
+      className:
+        "bg-white/10 backdrop-blur-sm shadow-[0_4px_12px_-3px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.20)] ring-1 ring-white/20",
+      style: INK_WHITE,
+    },
+    check:
+      "bg-white/12 ring-1 ring-white/25 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.25)]",
+    checkStroke: "#FFFFFF",
+    modulePill:
+      "bg-white/[0.08] ring-1 ring-white/15 backdrop-blur-sm",
+    modulePillTextStyle: INK_WHITE,
+    divider: "bg-white/15",
+    shimmer: false,
+    ctaVariant: "outline",
+  },
 ];
 
 /* ---------------------------------------------------------------- *
@@ -137,7 +163,7 @@ const TIERS: TierStyle[] = [
 
 function compatCellStyle(planKey: PlanKey, value: string) {
   if (value === "—") return null;
-  if (planKey === "light") {
+  if (planKey === "starter") {
     return {
       className: "bg-[var(--bg-soft)] ring-1 ring-[var(--rule-2)]",
       textStyle: INK_DARK_2,
@@ -150,11 +176,18 @@ function compatCellStyle(planKey: PlanKey, value: string) {
       textStyle: INK_WHITE,
     };
   }
-  // premium
+  if (planKey === "pro") {
+    return {
+      className:
+        "bg-[linear-gradient(135deg,#1B3A5C,#0E2A4A)] ring-1 ring-[#FFE39A]/30 shadow-[0_2px_6px_-2px_rgba(14,42,74,0.4)]",
+      textStyle: INK_GOLD,
+    };
+  }
+  // agency
   return {
     className:
-      "bg-[linear-gradient(135deg,#1B3A5C,#0E2A4A)] ring-1 ring-[#FFE39A]/30 shadow-[0_2px_6px_-2px_rgba(14,42,74,0.4)]",
-    textStyle: INK_GOLD,
+      "bg-[linear-gradient(135deg,#262656,#1B1B42)] ring-1 ring-white/20 shadow-[0_2px_6px_-2px_rgba(27,27,66,0.5)]",
+    textStyle: INK_WHITE,
   };
 }
 
@@ -164,6 +197,7 @@ export default function Pricing() {
   const [mode, setMode] = useState<PriceMode>("both");
   const RECOMMENDED = 1;
   const PREMIUM = 2;
+  const AGENCY = 3;
 
   const toggleOptions: { key: PriceMode; label: string }[] = [
     { key: "setup", label: sp.toggle.setupOnly },
@@ -227,10 +261,13 @@ export default function Pricing() {
                     {sp.plans.map((p, i) => {
                       const isPremium = i === PREMIUM;
                       const isStandard = i === RECOMMENDED;
+                      const isAgency = i === AGENCY;
                       const headerColor: CSSProperties = isPremium
                         ? { color: "#0E2A4A" }
                         : isStandard
                         ? { color: "#0088CC" }
+                        : isAgency
+                        ? { color: "#1B1B42" }
                         : INK_DARK_2;
                       return (
                         <th
@@ -268,6 +305,7 @@ export default function Pricing() {
                       </td>
                       {PLAN_KEYS.map((key, planIdx) => {
                         const isPremiumCol = planIdx === PREMIUM;
+                        const isAgencyCol = planIdx === AGENCY;
                         const value = row[key];
                         const pill = compatCellStyle(key, value);
                         return (
@@ -276,6 +314,7 @@ export default function Pricing() {
                             className={[
                               "px-3 py-3.5 text-center",
                               isPremiumCol && "bg-[#0E2A4A]/[0.025]",
+                              isAgencyCol && "bg-[#1B1B42]/[0.025]",
                             ].filter(Boolean).join(" ")}
                           >
                             {value === "—" || !pill ? (
@@ -330,10 +369,11 @@ export default function Pricing() {
         </BlurFade>
 
         {/* Plan cards */}
-        <div className="mt-12 grid items-stretch gap-5 md:mt-14 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-5 md:mt-14 md:grid-cols-2 xl:grid-cols-4">
           {sp.plans.map((plan, i) => {
             const isRecommended = i === RECOMMENDED;
             const isPremium = i === PREMIUM;
+            const isAgency = i === AGENCY;
             const tier = TIERS[i];
             const planKey = PLAN_KEYS[i];
             const moduleTags = sp.compatRows
@@ -349,6 +389,8 @@ export default function Pricing() {
                       ? "rgba(240,183,86,0.20)"
                       : isRecommended
                       ? "rgba(42,171,238,0.18)"
+                      : isAgency
+                      ? "rgba(255,255,255,0.10)"
                       : "rgba(42,171,238,0.06)"
                   }
                 >
@@ -357,7 +399,7 @@ export default function Pricing() {
                       "group relative flex h-full flex-col overflow-hidden rounded-3xl border p-6 transition-all duration-500 sm:p-7",
                       tier.card,
                       isPremium && "premium-card",
-                      !isRecommended && !isPremium &&
+                      !isRecommended && !isPremium && !isAgency &&
                         "hover:border-[rgba(42,171,238,0.3)] hover:shadow-[0_16px_40px_-16px_rgba(42,171,238,0.18)]",
                     ].filter(Boolean).join(" ")}
                   >
