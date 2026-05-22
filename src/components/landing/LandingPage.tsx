@@ -14,6 +14,8 @@ import FinalCTA from "./sections/FinalCTA";
 import Footer from "./sections/Footer";
 import MobileStickyCTA from "./sections/MobileStickyCTA";
 import TelegramDemo from "./sections/TelegramDemo";
+import TopicTemplates from "./sections/TopicTemplates";
+import TopicBundles from "./sections/TopicBundles";
 
 export default function LandingPage() {
   return (
@@ -22,12 +24,14 @@ export default function LandingPage() {
         <Nav />
         <main>
           <Hero />
+          <TopicTemplates />
+          <Process />
+          <TopicBundles />
           <TelegramDemo />
           <SocialProof />
           <Products />
           <Metrics />
           <Features />
-          <Process />
           <Pricing />
           <FAQ />
           <FinalCTA />

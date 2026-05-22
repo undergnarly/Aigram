@@ -32,7 +32,7 @@ export default function Nav() {
   }, [open]);
 
   const links = [
-    { href: "#products", label: c.nav.products },
+    { href: "#topics", label: c.nav.products },
     { href: "#pricing", label: c.nav.pricing },
     { href: "#process", label: c.nav.process },
     { href: "#faq", label: c.nav.faq },

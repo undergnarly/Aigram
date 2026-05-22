@@ -153,7 +153,7 @@ export default function Hero() {
                     <Arrow />
                   </Button>
                 </Magnetic>
-                <LinkButton href="#products" variant="ghost" size="lg" className="w-full sm:w-auto">
+                <LinkButton href="#topics" variant="ghost" size="lg" className="w-full sm:w-auto">
                   {c.hero.secondary}
                 </LinkButton>
               </div>

@@ -77,6 +77,37 @@ type ProductContent = {
   }[];
 };
 
+type TopicTemplate = {
+  slug: string;
+  icon: string;
+  name: string;
+  role: string;
+  desc: string;
+};
+
+type TopicTemplatesSection = {
+  eyebrow: string;
+  h2: string;
+  sub: string;
+  items: TopicTemplate[];
+  cta: string;
+  caption: string;
+};
+
+type TopicBundle = {
+  audience: string;
+  title: string;
+  topics: string[];
+  plan: string;
+};
+
+type TopicBundlesSection = {
+  eyebrow: string;
+  h2: string;
+  sub: string;
+  items: TopicBundle[];
+};
+
 type LangContent = {
   meta: {
     skipToContent: string;
@@ -205,6 +236,8 @@ type LangContent = {
     contact: string;
   };
   mobileCta: string;
+  topicTemplates: TopicTemplatesSection;
+  topicBundles: TopicBundlesSection;
   subscriptionPlan: SubscriptionPlanSection;
   differentiators: DifferentiatorsSection;
   demo: {
@@ -242,11 +275,11 @@ const EN: LangContent = {
     closeMenu: "Close menu",
     language: "Language",
     bookCta: "Get Started",
-    seeProductsCta: "See agents",
+    seeProductsCta: "Browse topic templates",
     yearTag: "Built for operators in 2026",
   },
   nav: {
-    products: "Agents",
+    products: "Topics",
     pricing: "Pricing",
     process: "Process",
     faq: "FAQ",
@@ -255,14 +288,14 @@ const EN: LangContent = {
     telegramHref: "https://t.me/gramfleet_bot",
   },
   hero: {
-    eyebrow: "AI Team Infrastructure for Telegram",
-    h1Lines: ["Six AI agents", "living inside", "your Telegram"],
+    eyebrow: "Working topics for Telegram — not just bots",
+    h1Lines: ["Build your AI HQ", "from working", "topic templates"],
     lead:
-      "Each topic is a specialist with memory, skills, and a job to do. 24-hour setup. Your data stays on your server. From $149/mo, recommended Standard at $399/mo.",
-    primary: "Start 14-day free trial",
-    secondary: "Book Discovery Call",
-    trustLabel: "Built for operators in",
-    trustItems: ["Per-topic isolation", "24-hour setup", "Your data, your server"],
+      "Pick from 25+ templates. Plans, Research, Leads, Calendar — every topic remembers everything and works 24/7. Each topic is a workspace with its own AI specialist inside.",
+    primary: "Try 14 days free",
+    secondary: "Browse topic templates",
+    trustLabel: "Trusted by operators in",
+    trustItems: ["25+ topic templates", "24/7 memory per topic", "Live inside your Telegram"],
   },
   social: {
     label: "Replaces your SaaS stack — or plugs into it. Your team keeps using Telegram.",
@@ -279,9 +312,9 @@ const EN: LangContent = {
     ],
   },
   productsSection: {
-    eyebrow: "Six agents + your own",
-    h2: "One Telegram group. Six AI agents. Plus a custom one we build for you.",
-    sub: "Each agent lives in its own forum topic with isolated memory, scoped skills, and a specific job. Standard includes one Custom Agent we build around your exact workflow — your industry, your clients, your processes. Premium scales to three.",
+    eyebrow: "Specialists inside the topics",
+    h2: "The specialists that ship with every topic template.",
+    sub: "Pick a topic template, get a specialist inside it. Each one has its own memory, its own skills, and one job to do — Planner runs your calendar, Researcher does deep research, Leads chases new business. Switch topics, switch context.",
     perCard: { from: "From", delivery: "Setup", learnMore: "Open details" },
   },
   products: {
@@ -558,21 +591,20 @@ const EN: LangContent = {
     ],
   },
   process: {
-    eyebrow: "Process",
-    h2: "Discovery → 24h Setup → Start Using → Support.",
-    sub: "Four steps. No long-tail onboarding. You leave with a working AI team — and we keep it running.",
+    eyebrow: "How it works",
+    h2: "Pick topics → Get specialists → Write in Telegram.",
+    sub: "Three steps. No new app to learn. You leave with an AI HQ inside the Telegram group you already use every day.",
     steps: [
-      { step: "01", title: "Discovery Call", body: "We study your workflow, map the right agents for your team, and design your Custom Agent from scratch. Free, thirty minutes, zero commitment." },
-      { step: "02", title: "24h Setup", body: "We deploy your AI infrastructure, connect your Telegram group, configure every agent, and load your knowledge base. You follow progress live." },
-      { step: "03", title: "Start Using", body: "Your team starts day one. The AI picks up your patterns, tone, and decisions in the first weeks — it gets sharper without manual tuning." },
-      { step: "04", title: "Ongoing Support", body: "Dedicated human support and regular tuning. We monitor your agents around the clock, fix edge cases, and keep everything at peak performance." },
+      { step: "01", title: "Pick the topics your business needs", body: "Choose from 25+ ready templates — Plans, Research, Leads, Calendar, Analytics, Content, Developer, Diary. Mix and match for your workflow. Add more anytime." },
+      { step: "02", title: "Each topic gets an AI specialist with memory", body: "Every topic is a workspace with one specialist inside. It remembers every message, file, and decision in that topic — forever. Switch topics, switch context — instantly." },
+      { step: "03", title: "Write in Telegram like you always do — AI handles the rest", body: "Drop a message in the Research topic — get a deep brief by lunch. Forward a lead into the Leads topic — qualified and followed up overnight. 24/7, no dashboards." },
     ],
   },
   pricing: {
     eyebrow: "Pricing",
-    h2: "Four plans. Monthly. Cancel anytime.",
-    sub: "Start free for 14 days, no card. Most teams land on Standard at $399/mo — less than a part-time VA. Pro at $699/mo and Agency at $1,299/mo add white-label, more users, and priority support. Setup fee is waived on Standard and Pro with a 3-month prepay.",
-    productTab: "Agent",
+    h2: "Priced by the number of topics. Monthly. Cancel anytime.",
+    sub: "Starter $149/mo — up to 5 topics (solo). Standard $399/mo — up to 12 topics (teams of 2-5). Pro $699/mo — up to 25 topics + Opus (mid-market). Agency $1,299/mo — unlimited topics + white-label. 14-day free trial, no card.",
+    productTab: "Topic",
     chooseTier: "Choose plan",
     pickThis: "Choose this plan",
     popular: "Recommended",
@@ -587,7 +619,7 @@ const EN: LangContent = {
     items: [
       {
         q: "What is GramFleet?",
-        a: "GramFleet is AI Team Infrastructure for Telegram. Every forum topic in your business group becomes an isolated AI agent with its own memory, skills, and context. Your AI team — without dashboards, without new apps, without context switching.",
+        a: "GramFleet turns your Telegram group into an AI HQ built out of topic templates. Each topic is a workspace with its own AI specialist inside — Plans, Research, Leads, Calendar, Analytics, Developer, and 20+ more. You pick the topics, the AI lives inside each one with full memory, and you keep working in Telegram.",
       },
       {
         q: "Do I need technical skills?",
@@ -606,8 +638,8 @@ const EN: LangContent = {
         a: "Yes. Month-to-month subscription, cancel anytime from the Telegram bot itself. We refund the last month within 30 days if it isn't working for you — no arbitration, no clawback.",
       },
       {
-        q: "What is a topic agent?",
-        a: "A topic agent is a dedicated AI assistant assigned to a single forum topic in your Telegram group. Each topic has its own isolated memory, its own scoped skills, and its own job — calendar, plans, research, analytics, or anything custom. Switch topics, switch context. No prompts to write.",
+        q: "What is a topic template?",
+        a: "A topic template is a ready-to-go workspace — like a 'cabinet' in your business — with an AI specialist already configured inside. Templates include Plans, Research, Leads, Calendar, Analytics, Developer, Content, Diary, Support and more. Pick a template, drop it into your Telegram, and you instantly have a dedicated workspace with memory and skills for that specific job. Switch topics, switch context — no prompts to write.",
       },
       {
         q: "Why not just use ChatGPT for $20/mo?",
@@ -639,7 +671,7 @@ const EN: LangContent = {
       dateHelp: "We'll confirm a slot within one business day.",
       contextLabel: "What are you trying to fix?",
       contextPh: "One sentence on the bottleneck. (Optional)",
-      productLabel: "Agent you're interested in",
+      productLabel: "Topic you're interested in",
     },
     submit: "Book Discovery Call",
     submitting: "Sending…",
@@ -662,7 +694,7 @@ const EN: LangContent = {
       eyebrow: "You're booking",
       title: "Lock your spot in 30 seconds.",
       sub: "Leave a Telegram handle or email and a time that suits — we'll confirm within one business day.",
-      backToProduct: "Browse other agents",
+      backToProduct: "Browse other topics",
       tierEyebrow: "You're choosing",
       regularPrice: "Regular",
       yourPrice: "Your price",
@@ -670,16 +702,17 @@ const EN: LangContent = {
     },
   },
   footer: {
-    tagline: "AI team inside your Telegram. AI Team Infrastructure for business.",
+    tagline: "Your AI HQ as topic templates inside Telegram. 25+ workspaces, one bot.",
     columns: [
       {
-        title: "Agents",
+        title: "Topics",
         links: [
-          { label: "AI Planner", href: "#products" },
-          { label: "AI Researcher", href: "#products" },
-          { label: "AI Automator", href: "#products" },
-          { label: "AI Analyst", href: "#products" },
-          { label: "AI Concierge", href: "#products" },
+          { label: "Plans", href: "#topics" },
+          { label: "Research", href: "#topics" },
+          { label: "Leads", href: "#topics" },
+          { label: "Analytics", href: "#topics" },
+          { label: "Developer", href: "#topics" },
+          { label: "Content", href: "#topics" },
         ],
       },
       {
@@ -706,6 +739,49 @@ const EN: LangContent = {
     contact: "hello@gramfleet.ai",
   },
   mobileCta: "Get Started",
+  topicTemplates: {
+    eyebrow: "Topic templates",
+    h2: "25+ topic templates. Pick the ones your business actually uses.",
+    sub: "Every template is a workspace with a specialist inside it — its own memory, its own skills, its own job. Drop one into your Telegram and it's running in minutes.",
+    items: [
+      { slug: "plans", icon: "🗂", name: "Plans", role: "Planner", desc: "Calendar, tasks, goals — tracked and nudged inside Telegram." },
+      { slug: "research", icon: "🔬", name: "Research", role: "Researcher", desc: "Scans competitors, analyzes the market, ships a research brief with citations." },
+      { slug: "leads", icon: "🎯", name: "Leads", role: "Lead generator", desc: "Qualifies inbound leads, drafts replies, never lets a follow-up slip." },
+      { slug: "calendar", icon: "📅", name: "Calendar", role: "Scheduler", desc: "Books, reschedules, and protects your focus blocks — without back-and-forth." },
+      { slug: "analytics", icon: "📊", name: "Analytics", role: "Analyst", desc: "Daily KPI digest from every connected tool — anomalies flagged in-chat." },
+      { slug: "developer", icon: "💻", name: "Developer", role: "Developer", desc: "Ships landings, internal tools, integrations from a plain-English brief." },
+      { slug: "diary", icon: "📓", name: "Diary", role: "Journal", desc: "Captures decisions, lessons, and mood — searchable, summarized weekly." },
+      { slug: "content", icon: "✍️", name: "Content", role: "Content writer", desc: "Drafts posts, scripts, and emails — in your voice, on your schedule." },
+      { slug: "support", icon: "🤝", name: "Support", role: "Customer support", desc: "Answers FAQ, triages tickets, escalates only what needs you." },
+    ],
+    cta: "See all 25+ templates",
+    caption: "Need a template that isn't here? Standard and above include custom topics we build for your exact workflow.",
+  },
+  topicBundles: {
+    eyebrow: "Popular bundles",
+    h2: "Popular topic bundles by role.",
+    sub: "Battle-tested combinations that operators wire up on day one. Mix and match — every plan lets you swap topics any time.",
+    items: [
+      {
+        audience: "For marketers",
+        title: "Growth HQ",
+        topics: ["Plans", "Content", "Research", "Leads"],
+        plan: "Fits Standard ($399/mo, up to 12 topics)",
+      },
+      {
+        audience: "For founders",
+        title: "Founder HQ",
+        topics: ["Plans", "Developer", "Analytics", "Calendar"],
+        plan: "Fits Standard ($399/mo, up to 12 topics)",
+      },
+      {
+        audience: "For agencies",
+        title: "Agency HQ",
+        topics: ["Leads × N", "Support", "Analytics"],
+        plan: "Fits Pro or Agency — scale per client",
+      },
+    ],
+  },
   subscriptionPlan: {
     toggle: {
       setupOnly: "Setup only",
@@ -719,18 +795,18 @@ const EN: LangContent = {
         monthlyPrice: "$149 / mo",
         buildTime: "24h",
         includes: [
+          "Up to 5 topics",
+          "Pick from 25+ topic templates",
           "GLM AI model",
           "1 user",
-          "5 default agents (Planner, Researcher, Analyst, Developer, Custom)",
           "20+ built-in skills",
           "Bilingual interface (EN + RU)",
           "Voice input — speak, get a text reply",
           "Encrypted storage, per-topic isolation",
           "AI support 24/7",
-          "2h human support / month",
           "14-day free trial — no card",
         ],
-        forWho: "Solo founders, freelancers, small operators getting started",
+        forWho: "Solo founders, freelancers — running a focused stack of topics",
         cta: "Start 14-day free trial",
         ctaStyle: "outline" as const,
       },
@@ -741,19 +817,19 @@ const EN: LangContent = {
         monthlyPrice: "$399 / mo",
         buildTime: "24h",
         includes: [
+          "Up to 12 topics",
+          "Pick from 25+ topic templates",
           "Claude Sonnet + GLM auto-fallback",
           "3 users",
-          "6 AI agents + 1 Custom Agent we build for you",
           "40+ built-in skills",
           "Full interface i18n (EN, RU, +1 on request)",
           "Voice messages — input and voice reply via /voice",
           "Encrypted storage, per-topic isolation, audit log, safe restart",
-          "Standard mini-app",
-          "5h human support / month",
-          "4h response SLA",
+          "1 custom topic we build for your workflow",
+          "5h human support / month, 4h response SLA",
           "14-day free trial — no card",
         ],
-        forWho: "Growing teams of 3-15 people, founders who want their hours back",
+        forWho: "Teams of 2-5. Marketing, ops, founders — multi-workflow stacks.",
         cta: "Start 14-day free trial",
         ctaStyle: "primary" as const,
       },
@@ -763,19 +839,18 @@ const EN: LangContent = {
         monthlyPrice: "$699 / mo",
         buildTime: "24h",
         includes: [
-          "Claude Sonnet + Opus + GLM",
+          "Up to 25 topics",
+          "All 25+ topic templates unlocked",
+          "Claude Opus + Sonnet + GLM",
           "10 users",
-          "All 6 agents + 1 Custom Agent (priority build)",
-          "Unlimited topics",
-          "1 custom skill per year included",
+          "1 custom topic per year included",
           "Voice messages everywhere + custom voice profile",
           "Hardened security: encryption, isolation, audit, custom retention",
           "Branded mini-app",
-          "8h human support / month",
-          "2h response SLA",
+          "8h human support / month, 2h response SLA",
           "Quarterly strategy session",
         ],
-        forWho: "SMBs scaling, ops-heavy teams, founders running multiple workflows",
+        forWho: "Mid-market and growing SMBs running many workflows in parallel",
         cta: "Book Discovery Call",
         ctaStyle: "primary" as const,
       },
@@ -785,34 +860,35 @@ const EN: LangContent = {
         monthlyPrice: "$1,299 / mo",
         buildTime: "48h",
         includes: [
+          "Unlimited topics",
+          "Unlimited custom topic templates",
           "Claude Opus primary + Sonnet + GLM",
           "Unlimited users",
-          "All 6 agents + up to 3 Custom Agents",
-          "Unlimited topics",
           "Full white-label — your domain, your bot, your colors",
           "SSO/SAML on request",
           "Multilingual interface — any language",
           "Custom branded mini-app",
-          "16h human support / month",
-          "1h response SLA",
+          "16h human support / month, 1h response SLA",
           "Dedicated success manager",
           "Priority bug fixes",
         ],
-        forWho: "Agencies, mid-market brands, multi-client white-label deployments",
+        forWho: "Agencies & multi-client white-label — one HQ per client, scoped topics",
         cta: "Talk to us",
         ctaStyle: "outline" as const,
       },
     ],
-    compatTitle: "What's included at each level",
+    compatTitle: "Topics & specialists at each level",
     compatCaption:
-      "Each plan includes a different combination of agents and skills. The recommended tier depends on your team size and bottlenecks. We help you pick on the Discovery Call.",
+      "Pick the plan that fits how many topics you'll run. Every plan unlocks the same 25+ templates — Starter caps the active workspaces, Agency removes the cap.",
     compatRows: [
-      { module: "AI Planner", starter: "Yes", standard: "Yes", pro: "Yes", agency: "Yes" },
-      { module: "AI Researcher", starter: "Basic", standard: "Full", pro: "Full", agency: "Full" },
-      { module: "AI Automator", starter: "—", standard: "10 workflows", pro: "Unlimited", agency: "Unlimited" },
-      { module: "AI Analyst", starter: "Daily digest", standard: "Anomaly alerts", pro: "Custom dashboard", agency: "Custom mini-app" },
-      { module: "AI Developer", starter: "3 tasks/mo", standard: "Unlimited", pro: "Unlimited + priority", agency: "Unlimited + priority" },
-      { module: "Custom Agent", starter: "—", standard: "1", pro: "1 (priority build)", agency: "Up to 3" },
+      { module: "Active topics", starter: "5", standard: "12", pro: "25", agency: "Unlimited" },
+      { module: "Topic templates", starter: "25+ available", standard: "25+ available", pro: "25+ available", agency: "25+ + your own" },
+      { module: "Plans topic", starter: "Yes", standard: "Yes", pro: "Yes", agency: "Yes" },
+      { module: "Research topic", starter: "Basic", standard: "Full", pro: "Full + OSINT", agency: "Full + dedicated analyst" },
+      { module: "Leads topic", starter: "—", standard: "10 workflows", pro: "Unlimited", agency: "Unlimited" },
+      { module: "Analytics topic", starter: "Daily digest", standard: "Anomaly alerts", pro: "Custom dashboard", agency: "Custom mini-app" },
+      { module: "Developer topic", starter: "3 tasks/mo", standard: "Unlimited", pro: "Unlimited + priority", agency: "Unlimited + priority" },
+      { module: "Custom topic", starter: "—", standard: "1", pro: "1 (priority build)", agency: "Unlimited" },
       { module: "White-label", starter: "—", standard: "—", pro: "—", agency: "Yes" },
     ],
   },
@@ -864,11 +940,11 @@ const RU: LangContent = {
     closeMenu: "Закрыть меню",
     language: "Язык",
     bookCta: "Начать",
-    seeProductsCta: "Смотреть агентов",
+    seeProductsCta: "Смотреть шаблоны топиков",
     yearTag: "Сделано для операторов 2026",
   },
   nav: {
-    products: "Агенты",
+    products: "Топики",
     pricing: "Цены",
     process: "Процесс",
     faq: "FAQ",
@@ -877,14 +953,14 @@ const RU: LangContent = {
     telegramHref: "https://t.me/gramfleet_bot",
   },
   hero: {
-    eyebrow: "AI-команда в Telegram. Без VPN. Без зарубежных карт.",
-    h1Lines: ["Шесть AI-агентов", "живут внутри", "вашего Telegram"],
+    eyebrow: "Рабочие топики для Telegram — не просто боты",
+    h1Lines: ["Создай свой AI-штаб", "из рабочих", "топиков в Telegram"],
     lead:
-      "Каждый топик — специалист со своей памятью, навыками и задачей. Запуск за 24 часа. Данные остаются на вашем сервере. От $149/мес, рекомендуемый Standard $399/мес.",
-    primary: "Начать 14 дней бесплатно",
-    secondary: "Записаться на демо",
+      "Выбери из 25+ шаблонов. Plans, Research, Leads, Calendar — каждый топик помнит всё и работает 24/7. Каждый топик — это рабочий кабинет со своим AI-специалистом внутри.",
+    primary: "Попробовать 14 дней бесплатно",
+    secondary: "Смотреть шаблоны топиков",
     trustLabel: "Для операторов бизнеса в",
-    trustItems: ["Изоляция по топикам", "Запуск за 24 часа", "Ваши данные — ваш сервер"],
+    trustItems: ["25+ шаблонов топиков", "Память 24/7 в каждом топике", "Живёт внутри твоего Telegram"],
   },
   social: {
     label: "Заменяет SaaS-стек — или подключается к нему. Команда продолжает работать в Telegram.",
@@ -901,9 +977,9 @@ const RU: LangContent = {
     ],
   },
   productsSection: {
-    eyebrow: "Шесть агентов + ваш собственный",
-    h2: "Одна группа в Telegram. Шесть AI-агентов. Плюс кастомный, которого строим мы.",
-    sub: "Каждый агент живёт в своей ветке форума — со своей памятью, своими навыками и своей задачей. Standard включает одного Кастомного агента, которого мы строим под ваш конкретный бизнес-процесс — вашу отрасль, ваших клиентов, ваши операции. Premium масштабируется до трёх.",
+    eyebrow: "Специалисты внутри топиков",
+    h2: "Специалисты, которые живут внутри шаблонов топиков.",
+    sub: "Выбираешь топик — получаешь специалиста внутри. У каждого своя память, свои навыки и одна задача — Планировщик ведёт календарь, Исследователь делает ресёрч, Лидогенератор гонит лиды. Переключаешь топик — переключаешь контекст.",
     perCard: { from: "От", delivery: "Запуск", learnMore: "Подробнее" },
   },
   products: {
@@ -1180,21 +1256,20 @@ const RU: LangContent = {
     ],
   },
   process: {
-    eyebrow: "Процесс",
-    h2: "Знакомство → Запуск 24ч → Работа → Поддержка.",
-    sub: "Четыре шага. Без долгого онбординга. Уходите с работающей AI-командой — а мы держим её в форме.",
+    eyebrow: "Как это работает",
+    h2: "Выбери топики → Получи специалистов → Пиши в Telegram.",
+    sub: "Три шага. Без нового приложения. Получаешь AI-штаб прямо в той Telegram-группе, которой ты уже пользуешься каждый день.",
     steps: [
-      { step: "01", title: "Звонок-знакомство", body: "Изучаем твой процесс, подбираем нужных агентов и с нуля проектируем твоего Кастомного агента. Бесплатно, тридцать минут, без обязательств." },
-      { step: "02", title: "Настройка за 24ч", body: "Разворачиваем AI-инфраструктуру, подключаем группу Telegram, настраиваем каждого агента и загружаем базу знаний. Ты следишь за прогрессом онлайн." },
-      { step: "03", title: "Начало работы", body: "Команда начинает в первый же день. ИИ осваивает твои паттерны, тон и решения за первые недели — становится точнее без ручной настройки." },
-      { step: "04", title: "Поддержка", body: "Персональная поддержка и регулярные аудиты. Мы мониторим агентов круглосуточно, устраняем баги и держим всё на пиковой эффективности." },
+      { step: "01", title: "Выбери топики, нужные твоему бизнесу", body: "25+ готовых шаблонов на выбор — Plans, Research, Leads, Calendar, Analytics, Content, Developer, Diary. Собирай свой набор под свой процесс. Добавлять можно в любой момент." },
+      { step: "02", title: "Каждый топик получает AI-специалиста с памятью", body: "Каждый топик — это кабинет с одним специалистом внутри. Он помнит каждое сообщение, файл и решение в этом топике — навсегда. Переключил топик — переключил контекст." },
+      { step: "03", title: "Пиши в Telegram как обычно — AI всё помнит и делает", body: "Кинул сообщение в топик Research — получил глубокий бриф к обеду. Переслал лид в топик Leads — квалифицирован и обработан ночью. 24/7, без дашбордов." },
     ],
   },
   pricing: {
     eyebrow: "Цены",
-    h2: "Четыре тарифа. Ежемесячно. Отмена в любой момент.",
-    sub: "Начните 14 дней бесплатно, без карты. Большинство команд останавливаются на Standard — $399/мес, меньше чем part-time ассистент. Pro $699/мес и Agency $1,299/мес добавляют white-label, больше пользователей и приоритетную поддержку. Разовая настройка не платится при оплате 3 месяцев вперёд на Standard и Pro.",
-    productTab: "Агент",
+    h2: "Цена — по количеству топиков. Ежемесячно. Отмена в любой момент.",
+    sub: "Starter $149/мес — до 5 топиков (solo). Standard $399/мес — до 12 топиков (команды 2-5). Pro $699/мес — до 25 топиков + Opus (mid-market). Agency $1,299/мес — без лимита топиков + white-label. 14 дней пробный период, без карты.",
+    productTab: "Топик",
     chooseTier: "Выбрать тариф",
     pickThis: "Выбрать этот тариф",
     popular: "Рекомендуем",
@@ -1209,7 +1284,7 @@ const RU: LangContent = {
     items: [
       {
         q: "Что такое GramFleet?",
-        a: "GramFleet — это AI-инфраструктура команды для Telegram. Каждая ветка форума в твоей группе бизнеса — отдельный AI-агент со своей памятью, своими навыками и своим контекстом. Твоя AI-команда без дашбордов, без новых приложений, без переключения контекста.",
+        a: "GramFleet превращает твою Telegram-группу в AI-штаб, собранный из шаблонов топиков. Каждый топик — это рабочий кабинет со своим AI-специалистом внутри: Plans, Research, Leads, Calendar, Analytics, Developer и ещё 20+. Ты выбираешь нужные топики, AI живёт внутри каждого с полной памятью, а ты продолжаешь работать в Telegram.",
       },
       {
         q: "Нужны ли технические знания?",
@@ -1228,8 +1303,8 @@ const RU: LangContent = {
         a: "Да. Подписка месячная, отмена в один клик из самого бота Telegram. Если в первые 30 дней не подошло — возвращаем деньги за последний месяц, без споров, без удержаний.",
       },
       {
-        q: "Что такое 'агент топика'?",
-        a: "Агент топика — это выделенный AI-ассистент, привязанный к одной ветке форума в твоей группе Telegram. У каждого топика своя изолированная память, свои навыки и своя задача — календарь, планы, ресёрч, аналитика или что-то кастомное. Переключаешь топик — переключаешь контекст. Без промптов.",
+        q: "Что такое 'шаблон топика'?",
+        a: "Шаблон топика — это готовый рабочий кабинет с AI-специалистом внутри. Шаблоны включают Plans, Research, Leads, Calendar, Analytics, Developer, Content, Diary, Support и другие. Выбираешь шаблон, кидаешь в свой Telegram — мгновенно получаешь выделенный кабинет с памятью и навыками под конкретную задачу. Переключаешь топик — переключаешь контекст. Без промптов.",
       },
       {
         q: "Зачем платить $499, если есть ChatGPT за $20?",
@@ -1261,7 +1336,7 @@ const RU: LangContent = {
       dateHelp: "Подтвердим слот в течение рабочего дня.",
       contextLabel: "Что хотите починить?",
       contextPh: "Одно предложение про узкое место. (По желанию)",
-      productLabel: "Какой агент интересует",
+      productLabel: "Какой топик интересует",
     },
     submit: "Записаться на звонок",
     submitting: "Отправляем…",
@@ -1284,7 +1359,7 @@ const RU: LangContent = {
       eyebrow: "Записываетесь на",
       title: "Забронируем место за 30 секунд.",
       sub: "Оставьте Telegram или почту и удобное время — подтвердим в течение рабочего дня.",
-      backToProduct: "Посмотреть других агентов",
+      backToProduct: "Посмотреть другие топики",
       tierEyebrow: "Вы выбираете",
       regularPrice: "Обычная",
       yourPrice: "Ваша цена",
@@ -1292,16 +1367,17 @@ const RU: LangContent = {
     },
   },
   footer: {
-    tagline: "AI-команда внутри вашего Telegram. AI-инфраструктура для бизнеса.",
+    tagline: "Твой AI-штаб из шаблонов топиков прямо в Telegram. 25+ кабинетов, один бот.",
     columns: [
       {
-        title: "Агенты",
+        title: "Топики",
         links: [
-          { label: "AI Planner", href: "#products" },
-          { label: "AI Researcher", href: "#products" },
-          { label: "AI Automator", href: "#products" },
-          { label: "AI Analyst", href: "#products" },
-          { label: "AI Concierge", href: "#products" },
+          { label: "Plans", href: "#topics" },
+          { label: "Research", href: "#topics" },
+          { label: "Leads", href: "#topics" },
+          { label: "Analytics", href: "#topics" },
+          { label: "Developer", href: "#topics" },
+          { label: "Content", href: "#topics" },
         ],
       },
       {
@@ -1328,6 +1404,49 @@ const RU: LangContent = {
     contact: "hello@gramfleet.ai",
   },
   mobileCta: "Начать",
+  topicTemplates: {
+    eyebrow: "Шаблоны топиков",
+    h2: "25+ шаблонов топиков. Бери те, что реально нужны твоему бизнесу.",
+    sub: "Каждый шаблон — это рабочий кабинет со специалистом внутри. Своя память, свои навыки, одна задача. Открыл топик — он уже работает.",
+    items: [
+      { slug: "plans", icon: "🗂", name: "Plans", role: "Плановик", desc: "Календарь, задачи, цели — ведутся и напоминают прямо в Telegram." },
+      { slug: "research", icon: "🔬", name: "Research", role: "Исследователь", desc: "Ищет конкурентов, анализирует рынок, пишет ресёрч со ссылками." },
+      { slug: "leads", icon: "🎯", name: "Leads", role: "Лидогенератор", desc: "Квалифицирует входящие лиды, пишет ответы, не теряет follow-up." },
+      { slug: "calendar", icon: "📅", name: "Calendar", role: "Планировщик", desc: "Бронирует встречи, переносит, защищает focus-блоки — без переписки." },
+      { slug: "analytics", icon: "📊", name: "Analytics", role: "Аналитик", desc: "Дайджест KPI из всех подключённых инструментов — аномалии в чат." },
+      { slug: "developer", icon: "💻", name: "Developer", role: "Разработчик", desc: "Лендинги, внутренние тулы, интеграции — по описанию на человеческом." },
+      { slug: "diary", icon: "📓", name: "Diary", role: "Дневник", desc: "Записывает решения, уроки, настроение — поиск, недельная сводка." },
+      { slug: "content", icon: "✍️", name: "Content", role: "Контент", desc: "Драфтит посты, сценарии, письма — твоим голосом, по графику." },
+      { slug: "support", icon: "🤝", name: "Support", role: "Поддержка", desc: "Отвечает на FAQ, разводит тикеты, эскалирует только важное." },
+    ],
+    cta: "Все 25+ шаблонов",
+    caption: "Нужен шаблон, которого нет? На Standard и выше — строим кастомные топики под ваш процесс.",
+  },
+  topicBundles: {
+    eyebrow: "Популярные наборы",
+    h2: "Популярные наборы топиков по ролям.",
+    sub: "Обкатанные комбинации, которые операторы собирают в первый день. Переключай и микшируй — на каждом тарифе топики можно менять в любой момент.",
+    items: [
+      {
+        audience: "Для маркетолога",
+        title: "Growth HQ",
+        topics: ["Plans", "Content", "Research", "Leads"],
+        plan: "Подходит под Standard ($399/мес, до 12 топиков)",
+      },
+      {
+        audience: "Для фаундера",
+        title: "Founder HQ",
+        topics: ["Plans", "Developer", "Analytics", "Calendar"],
+        plan: "Подходит под Standard ($399/мес, до 12 топиков)",
+      },
+      {
+        audience: "Для агентства",
+        title: "Agency HQ",
+        topics: ["Leads × N", "Support", "Analytics"],
+        plan: "Подходит под Pro или Agency — масштабирование на клиента",
+      },
+    ],
+  },
   subscriptionPlan: {
     toggle: {
       setupOnly: "Только настройка",
@@ -1341,18 +1460,18 @@ const RU: LangContent = {
         monthlyPrice: "$149 / мес",
         buildTime: "24ч",
         includes: [
+          "До 5 топиков",
+          "Выбор из 25+ шаблонов топиков",
           "AI-модель GLM",
           "1 пользователь",
-          "5 базовых агентов (Planner, Researcher, Analyst, Developer, Custom)",
           "20+ готовых навыков",
           "Двуязычный интерфейс (РУС + АНГ)",
           "Голосовой ввод — наговорил, получил ответ текстом",
-          "Шифрованное хранилище, изолированная память по топикам",
+          "Шифрованное хранилище, изоляция по топикам",
           "AI-поддержка 24/7",
-          "2ч человеческой поддержки/мес",
           "14 дней пробный период — без карты",
         ],
-        forWho: "Соло-фаундеры, фрилансеры, маленькие команды на старте",
+        forWho: "Соло-фаундеры, фрилансеры — фокусированный набор топиков",
         cta: "Начать 14 дней бесплатно",
         ctaStyle: "outline" as const,
       },
@@ -1363,19 +1482,19 @@ const RU: LangContent = {
         monthlyPrice: "$399 / мес",
         buildTime: "24ч",
         includes: [
+          "До 12 топиков",
+          "Выбор из 25+ шаблонов топиков",
           "Claude Sonnet + GLM (авто-fallback)",
           "3 пользователя",
-          "6 AI-агентов + 1 Кастомный (строим под вас)",
           "40+ готовых навыков",
           "Полный i18n интерфейс (РУС, АНГ, +1 по запросу)",
           "Голосовые сообщения — вход и голосовой ответ через /voice",
           "Шифрование, изоляция по топикам, audit log, безопасный рестарт",
-          "Стандартное мини-приложение",
-          "5ч человеческой поддержки/мес",
-          "SLA ответа 4ч",
+          "1 кастомный топик строим под ваш процесс",
+          "5ч человеческой поддержки/мес, SLA ответа 4ч",
           "14 дней пробный период — без карты",
         ],
-        forWho: "Растущие команды от 3 до 15 человек, фаундеры, которые хотят вернуть свои часы",
+        forWho: "Команды 2-5. Маркетинг, ops, фаундеры — несколько процессов параллельно.",
         cta: "Начать 14 дней бесплатно",
         ctaStyle: "primary" as const,
       },
@@ -1385,19 +1504,18 @@ const RU: LangContent = {
         monthlyPrice: "$699 / мес",
         buildTime: "24ч",
         includes: [
-          "Claude Sonnet + Opus + GLM",
+          "До 25 топиков",
+          "Все 25+ шаблонов топиков открыты",
+          "Claude Opus + Sonnet + GLM",
           "10 пользователей",
-          "Все 6 агентов + 1 Кастомный (приоритетный билд)",
-          "Без лимита топиков",
-          "1 кастомный скилл в год включён",
+          "1 кастомный топик в год включён",
           "Голосовые сообщения везде + кастомный голос",
           "Усиленная безопасность: шифрование, изоляция, audit, кастомный retention",
           "Брендированное мини-приложение",
-          "8ч человеческой поддержки/мес",
-          "SLA ответа 2ч",
+          "8ч человеческой поддержки/мес, SLA ответа 2ч",
           "Квартальная стратегическая встреча",
         ],
-        forWho: "Растущий SMB, ops-команды, фаундеры с несколькими процессами",
+        forWho: "Mid-market и растущий SMB — много процессов одновременно",
         cta: "Записаться на демо",
         ctaStyle: "primary" as const,
       },
@@ -1407,34 +1525,35 @@ const RU: LangContent = {
         monthlyPrice: "$1,299 / мес",
         buildTime: "48ч",
         includes: [
+          "Без лимита топиков",
+          "Без лимита кастомных шаблонов",
           "Claude Opus как основная + Sonnet + GLM",
           "Без лимита пользователей",
-          "Все 6 агентов + до 3 Кастомных",
-          "Без лимита топиков",
           "Полный white-label — ваш домен, ваш бот, ваши цвета",
           "SSO/SAML по запросу",
           "Мультиязычный интерфейс — любой язык",
           "Кастомное брендированное мини-приложение",
-          "16ч человеческой поддержки/мес",
-          "SLA ответа 1ч",
+          "16ч человеческой поддержки/мес, SLA ответа 1ч",
           "Персональный success-менеджер",
           "Приоритетный фикс багов",
         ],
-        forWho: "Агентства, средний бизнес, мульти-клиентские white-label развёртывания",
+        forWho: "Агентства, мульти-клиентский white-label — один штаб на клиента",
         cta: "Обсудить",
         ctaStyle: "outline" as const,
       },
     ],
-    compatTitle: "Что входит в каждый тариф",
+    compatTitle: "Топики и специалисты по тарифам",
     compatCaption:
-      "Каждый тариф включает свою комбинацию агентов и навыков. Подходящий тариф зависит от размера команды и узких мест. На звонке помогаем выбрать.",
+      "Выбирай тариф под количество активных топиков. Все 25+ шаблонов открыты на каждом тарифе — Starter ограничивает количество активных, Agency снимает лимит.",
     compatRows: [
-      { module: "AI Planner", starter: "Да", standard: "Да", pro: "Да", agency: "Да" },
-      { module: "AI Researcher", starter: "Базовый", standard: "Полный", pro: "Полный", agency: "Полный" },
-      { module: "AI Automator", starter: "—", standard: "10 процессов", pro: "Без лимита", agency: "Без лимита" },
-      { module: "AI Analyst", starter: "Дайджест", standard: "Алерты", pro: "Кастомный дашборд", agency: "Кастомное приложение" },
-      { module: "AI Developer", starter: "3 задачи/мес", standard: "Без лимита", pro: "Без лимита + приоритет", agency: "Без лимита + приоритет" },
-      { module: "Кастомный агент", starter: "—", standard: "1", pro: "1 (приоритетный билд)", agency: "До 3" },
+      { module: "Активных топиков", starter: "5", standard: "12", pro: "25", agency: "Без лимита" },
+      { module: "Шаблоны топиков", starter: "25+ доступны", standard: "25+ доступны", pro: "25+ доступны", agency: "25+ + ваши" },
+      { module: "Топик Plans", starter: "Да", standard: "Да", pro: "Да", agency: "Да" },
+      { module: "Топик Research", starter: "Базовый", standard: "Полный", pro: "Полный + OSINT", agency: "Полный + аналитик" },
+      { module: "Топик Leads", starter: "—", standard: "10 процессов", pro: "Без лимита", agency: "Без лимита" },
+      { module: "Топик Analytics", starter: "Дайджест", standard: "Алерты", pro: "Кастомный дашборд", agency: "Кастомное приложение" },
+      { module: "Топик Developer", starter: "3 задачи/мес", standard: "Без лимита", pro: "Без лимита + приоритет", agency: "Без лимита + приоритет" },
+      { module: "Кастомный топик", starter: "—", standard: "1", pro: "1 (приоритетный билд)", agency: "Без лимита" },
       { module: "White-label", starter: "—", standard: "—", pro: "—", agency: "Да" },
     ],
   },
