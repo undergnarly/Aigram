@@ -678,6 +678,7 @@ const EN: LangContent = {
           { label: "Pricing", href: "#pricing" },
           { label: "FAQ", href: "#faq" },
           { label: "Get Started", href: "#book" },
+          { label: "Security & DPA", href: "/security" },
         ],
       },
       {
@@ -1253,6 +1254,7 @@ const RU: LangContent = {
           { label: "Цены", href: "#pricing" },
           { label: "FAQ", href: "#faq" },
           { label: "Начать", href: "#book" },
+          { label: "Безопасность и DPA", href: "/security" },
         ],
       },
       {
