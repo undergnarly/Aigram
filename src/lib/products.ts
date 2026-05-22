@@ -212,9 +212,9 @@ export const PRODUCTS: Record<string, Product> = {
     num: "05",
     badge: "White-label",
     name: "AI Concierge",
-    tagline: "Your brand. Your assistant.",
-    hero: "A custom AI assistant trained on your brand voice, your knowledge base, and your workflows — deployed under your domain, your bot, your colors.",
-    problem: "Generic AI sounds like generic AI. Your customers don't want a chatbot — they want you, scaled.",
+    tagline: "Your brand. Your agent.",
+    hero: "A custom AI agent trained on your brand voice, your knowledge base, and your workflows — deployed under your domain, your bot, your colors.",
+    problem: "Generic AI sounds like generic AI. Your customers don't want a generic reply box — they want you, scaled.",
     outcome: "A concierge agent indistinguishable from a senior team member — trained on your voice, your decisions, your library.",
     deliverables: [
       "Brand voice tuning",
@@ -226,13 +226,13 @@ export const PRODUCTS: Record<string, Product> = {
     ],
     impact: [
       { metric: "1:1", label: "Sounds like you", detail: "Trained on transcripts and docs you provide. The voice is yours, not ours." },
-      { metric: "24/7", label: "Senior coverage", detail: "Your assistant answers like your top operator, around the clock, in every timezone." },
+      { metric: "24/7", label: "Senior coverage", detail: "Your agent answers like your top operator, around the clock, in every timezone." },
       { metric: "100%", label: "White-label", detail: "Customers see your brand. No GramFleet logo, no shared infrastructure visible." },
     ],
     howItWorks: [
       { step: "01", title: "Discovery", body: "90-min deep dive. We collect transcripts, docs, and brand guidelines." },
       { step: "02", title: "Setup", body: "Brand voice tuning (3–5 days). Knowledge base load. White-label deployment." },
-      { step: "03", title: "Run", body: "Assistant ships under your brand. Tuning continues for the first month based on real conversations." },
+      { step: "03", title: "Run", body: "Agent ships under your brand. Tuning continues for the first month based on real conversations." },
     ],
     case: {
       client: "Boutique consultancy",

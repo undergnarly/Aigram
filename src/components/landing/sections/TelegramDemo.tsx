@@ -81,7 +81,7 @@ const TOPICS: Record<"en" | "ru", DemoTopic[]> = {
     {
       id: "researcher", emoji: "🔍", name: "AI Researcher",
       messages: [
-        { id: "r1", from: "user", userTypingMs: 1800, text: "Analyze competitors in the Telegram AI assistant niche. Pricing, weak spots." },
+        { id: "r1", from: "user", userTypingMs: 1800, text: "Analyze competitors in the Telegram AI agents niche. Pricing, weak spots." },
         { id: "r2", from: "bot", botTypingMs: 2200, voice: true },
         { id: "r3", from: "bot", botTypingMs: 300, text: "Report in 3 sections:\n\n1. Top-5 competitors with pricing\n2. Their weaknesses (4/5 lack per-topic isolation)\n3. Your advantages\n\nWhat format?", buttons: [
           { label: "📄 PDF", primary: true, accent: "blue" },
@@ -174,7 +174,7 @@ const TOPICS: Record<"en" | "ru", DemoTopic[]> = {
     {
       id: "researcher", emoji: "🔍", name: "AI Исследователь",
       messages: [
-        { id: "r1", from: "user", userTypingMs: 1800, text: "Проанализируй конкурентов в нише AI-ассистентов для Telegram. Цены, слабые места." },
+        { id: "r1", from: "user", userTypingMs: 1800, text: "Проанализируй конкурентов в нише AI-агентов для Telegram. Цены, слабые места." },
         { id: "r2", from: "bot", botTypingMs: 2200, voice: true },
         { id: "r3", from: "bot", botTypingMs: 300, text: "Отчёт в 3 блоках:\n\n1. Топ-5 конкурентов с ценами\n2. Слабые места (у 4 из 5 нет per-topic изоляции)\n3. Ваши преимущества\n\nВ каком формате?", buttons: [
           { label: "📄 PDF", primary: true, accent: "blue" },

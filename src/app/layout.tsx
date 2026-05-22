@@ -27,20 +27,20 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gramfleet.ai"),
-  title: "GramFleet — AI Team Inside Your Telegram",
+  title: "GramFleet — Six AI Agents Inside Your Telegram",
   description:
-    "GramFleet is Personal AI Infrastructure for business that lives inside your Telegram. Every forum topic becomes an isolated AI agent with its own memory, skills, and context. 24-hour setup. No new apps, no dashboards. From $199/month.",
+    "Six AI agents living inside your Telegram. Each topic is a specialist with memory, skills, and a job to do. 24-hour setup. Your data stays on your server. From $149/mo.",
   keywords: [
     "GramFleet",
     "Personal AI Infrastructure",
-    "AI in Telegram",
+    "AI agents in Telegram",
     "Telegram AI agent",
-    "AI assistant for business",
+    "AI agents for business",
     "AI team",
-    "Telegram automation",
+    "Telegram AI specialists",
     "AI bot Telegram",
-    "small business AI",
-    "white-label AI assistant",
+    "small business AI agents",
+    "white-label AI agent",
   ],
   authors: [{ name: "GramFleet" }],
   robots: {
@@ -58,9 +58,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "GramFleet — AI Team Inside Your Telegram",
+    title: "GramFleet — Six AI Agents Inside Your Telegram",
     description:
-      "Personal AI Infrastructure for business that lives inside your Telegram. Topic agents with memory, skills, and context. From $199/month.",
+      "Six AI agents living inside your Telegram. Each topic is a specialist with memory, skills, and a job to do. 24-hour setup. From $149/mo.",
     type: "website",
     url: "https://gramfleet.ai/",
     images: ["https://gramfleet.ai/og-image.png"],
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GramFleet — AI Team Inside Your Telegram",
+    title: "GramFleet — Six AI Agents Inside Your Telegram",
     description:
-      "Personal AI Infrastructure for business that lives inside your Telegram. From $199/month.",
+      "Six specialists with memory, skills, and a job to do — all living inside your Telegram. From $149/mo.",
     images: ["https://gramfleet.ai/og-image.png"],
   },
   other: {
@@ -106,7 +106,7 @@ const jsonLd = {
         { "@type": "Question", name: "Is my data secure?", acceptedAnswer: { "@type": "Answer", text: "Yes. GramFleet runs on Telegram's end-to-end encrypted infrastructure. Your topic memory and knowledge base are scoped to your group and not shared with any third party." } },
         { "@type": "Question", name: "What AI model do you use?", acceptedAnswer: { "@type": "Answer", text: "Lite uses GLM. Standard uses Claude Sonnet with automatic GLM fallback. Premium uses Claude Opus with Sonnet and GLM as fallback tiers." } },
         { "@type": "Question", name: "Can I cancel anytime?", acceptedAnswer: { "@type": "Answer", text: "Yes. Month-to-month subscription, cancel anytime. 30-day money-back guarantee on every plan." } },
-        { "@type": "Question", name: "What is a topic agent?", acceptedAnswer: { "@type": "Answer", text: "A topic agent is a dedicated AI assistant assigned to a single forum topic in your Telegram group. Each topic has isolated memory, scoped skills, and a job to do — calendar, plans, research, analytics, or anything custom." } },
+        { "@type": "Question", name: "What is a topic agent?", acceptedAnswer: { "@type": "Answer", text: "A topic agent is a dedicated AI specialist assigned to a single forum topic in your Telegram group. Each topic has isolated memory, scoped skills, and a job to do — calendar, plans, research, analytics, or anything custom." } },
       ],
     },
     {

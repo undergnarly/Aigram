@@ -288,14 +288,14 @@ const EN: LangContent = {
     telegramHref: "https://t.me/gramfleet_bot",
   },
   hero: {
-    eyebrow: "Working topics for Telegram — not just bots",
-    h1Lines: ["Build your AI HQ", "from working", "topic templates"],
+    eyebrow: "Six specialists. One Telegram group.",
+    h1Lines: ["Six AI agents", "living inside", "your Telegram"],
     lead:
-      "Pick from 25+ templates. Plans, Research, Leads, Calendar — every topic remembers everything and works 24/7. Each topic is a workspace with its own AI specialist inside.",
-    primary: "Try 14 days free",
-    secondary: "Browse topic templates",
+      "Each topic is a specialist with memory, skills, and a job to do. 24-hour setup. Your data stays on your server. From $149/mo.",
+    primary: "Start 14-day free trial",
+    secondary: "See the six agents",
     trustLabel: "Trusted by operators in",
-    trustItems: ["25+ topic templates", "24/7 memory per topic", "Live inside your Telegram"],
+    trustItems: ["24-hour setup", "Per-topic memory & skills", "Your data, your server"],
   },
   social: {
     label: "Replaces your SaaS stack — or plugs into it. Your team keeps using Telegram.",
@@ -953,14 +953,14 @@ const RU: LangContent = {
     telegramHref: "https://t.me/gramfleet_bot",
   },
   hero: {
-    eyebrow: "Рабочие топики для Telegram — не просто боты",
-    h1Lines: ["Создай свой AI-штаб", "из рабочих", "топиков в Telegram"],
+    eyebrow: "Шесть специалистов. Одна Telegram-группа.",
+    h1Lines: ["Шесть AI-агентов", "живут внутри", "вашего Telegram"],
     lead:
-      "Выбери из 25+ шаблонов. Plans, Research, Leads, Calendar — каждый топик помнит всё и работает 24/7. Каждый топик — это рабочий кабинет со своим AI-специалистом внутри.",
-    primary: "Попробовать 14 дней бесплатно",
-    secondary: "Смотреть шаблоны топиков",
+      "Каждый топик — специалист со своей памятью, навыками и одной задачей. Запуск за 24 часа. Данные остаются на вашем сервере. От $149/мес.",
+    primary: "Начать 14 дней бесплатно",
+    secondary: "Посмотреть шестёрку агентов",
     trustLabel: "Для операторов бизнеса в",
-    trustItems: ["25+ шаблонов топиков", "Память 24/7 в каждом топике", "Живёт внутри твоего Telegram"],
+    trustItems: ["Запуск за 24 часа", "Память и скиллы в каждом топике", "Ваши данные на вашем сервере"],
   },
   social: {
     label: "Заменяет SaaS-стек — или подключается к нему. Команда продолжает работать в Telegram.",
