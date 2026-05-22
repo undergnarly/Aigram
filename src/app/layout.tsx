@@ -27,16 +27,17 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gramfleet.ai"),
-  title: "GramFleet — Six AI Agents Inside Your Telegram",
+  title: "GramFleet — Build Your AI HQ from Topic Templates in Telegram",
   description:
-    "Six AI agents living inside your Telegram. Each topic is a specialist with memory, skills, and a job to do. 24-hour setup. Your data stays on your server. From $149/mo.",
+    "Pick from 25+ topic templates — Plans, Research, Leads, Calendar, Analytics, Developer. Each topic is a workspace with an AI specialist inside. 24-hour setup. From $149/mo.",
   keywords: [
     "GramFleet",
+    "AI topic templates",
+    "Telegram AI HQ",
     "Personal AI Infrastructure",
     "AI agents in Telegram",
     "Telegram AI agent",
-    "AI agents for business",
-    "AI team",
+    "AI workspace templates",
     "Telegram AI specialists",
     "AI bot Telegram",
     "small business AI agents",
@@ -58,9 +59,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "GramFleet — Six AI Agents Inside Your Telegram",
+    title: "GramFleet — Build Your AI HQ from Topic Templates in Telegram",
     description:
-      "Six AI agents living inside your Telegram. Each topic is a specialist with memory, skills, and a job to do. 24-hour setup. From $149/mo.",
+      "25+ topic templates. Plans, Research, Leads, Calendar — each topic remembers everything and runs 24/7. 24-hour setup. From $149/mo.",
     type: "website",
     url: "https://gramfleet.ai/",
     images: ["https://gramfleet.ai/og-image.png"],
@@ -69,9 +70,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GramFleet — Six AI Agents Inside Your Telegram",
+    title: "GramFleet — Build Your AI HQ from Topic Templates in Telegram",
     description:
-      "Six specialists with memory, skills, and a job to do — all living inside your Telegram. From $149/mo.",
+      "Pick from 25+ topic templates. Each topic is a workspace with an AI specialist inside — memory, skills, one job. From $149/mo.",
     images: ["https://gramfleet.ai/og-image.png"],
   },
   other: {
