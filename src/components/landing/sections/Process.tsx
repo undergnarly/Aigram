@@ -131,7 +131,7 @@ export default function Process() {
           />
           <div
             aria-hidden
-            className="absolute left-0 top-[27px] hidden h-px w-[24%] bg-gradient-to-r from-white via-white/60 to-transparent lg:block"
+            className={`absolute left-0 top-[27px] hidden h-px bg-gradient-to-r from-white via-white/60 to-transparent lg:block ${c.process.steps.length === 4 ? "w-[24%]" : "w-[33%]"}`}
           />
 
           <div className={`grid gap-5 lg:gap-6 ${c.process.steps.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>

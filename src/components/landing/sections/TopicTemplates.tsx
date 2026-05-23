@@ -8,7 +8,7 @@ import {
   Arrow,
   useContent,
 } from "../lib";
-import { BlurFade, Spotlight } from "../motion";
+import { BlurFade, Spotlight, Tilt } from "../motion";
 
 export default function TopicTemplates() {
   const c = useContent();
@@ -49,7 +49,8 @@ export default function TopicTemplates() {
           {t.items.map((item, i) => (
             <BlurFade key={item.slug} delay={i * 0.05} className="h-full">
               <Spotlight className="h-full rounded-3xl" color="rgba(42,171,238,0.12)">
-                <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white bg-white p-6 shadow-[0_30px_80px_-30px_rgba(27,27,66,0.22),0_15px_40px_-15px_rgba(42,171,238,0.18),0_0_0_1px_rgba(255,255,255,0.6)_inset] transition-all duration-500 hover:-translate-y-1 hover:border-[rgba(42,171,238,0.3)] hover:shadow-[0_40px_100px_-30px_rgba(27,27,66,0.30),0_20px_50px_-15px_rgba(42,171,238,0.30)] md:p-7">
+                <Tilt max={4} className="h-full">
+                <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white bg-white p-6 shadow-[0_30px_80px_-30px_rgba(27,27,66,0.22),0_15px_40px_-15px_rgba(42,171,238,0.18),0_0_0_1px_rgba(255,255,255,0.6)_inset] transition-[border-color,box-shadow] duration-500 hover:border-[rgba(42,171,238,0.3)] hover:shadow-[0_40px_100px_-30px_rgba(27,27,66,0.30),0_20px_50px_-15px_rgba(42,171,238,0.30)] md:p-7">
                   <div
                     aria-hidden
                     className="pointer-events-none absolute -right-6 -top-6 h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(42,171,238,0.14),transparent_70%)] opacity-70 transition-opacity duration-500 group-hover:opacity-100"
@@ -71,6 +72,7 @@ export default function TopicTemplates() {
                     {item.desc}
                   </p>
                 </article>
+                </Tilt>
               </Spotlight>
             </BlurFade>
           ))}

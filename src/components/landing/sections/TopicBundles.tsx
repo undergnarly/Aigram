@@ -6,7 +6,7 @@ import {
   Section,
   useContent,
 } from "../lib";
-import { BlurFade, Spotlight } from "../motion";
+import { BlurFade, Spotlight, Tilt } from "../motion";
 
 const ACCENTS = [
   {
@@ -63,7 +63,8 @@ export default function TopicBundles() {
             return (
               <BlurFade key={bundle.title} delay={i * 0.07} className="h-full">
                 <Spotlight className="h-full rounded-3xl" color={accent.halo}>
-                  <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white bg-white p-6 shadow-[0_30px_80px_-30px_rgba(27,27,66,0.22),0_15px_40px_-15px_rgba(42,171,238,0.18),0_0_0_1px_rgba(255,255,255,0.6)_inset] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_40px_100px_-30px_rgba(27,27,66,0.32),0_20px_50px_-15px_rgba(42,171,238,0.28)] md:p-7">
+                  <Tilt max={4} className="h-full">
+                  <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white bg-white p-6 shadow-[0_30px_80px_-30px_rgba(27,27,66,0.22),0_15px_40px_-15px_rgba(42,171,238,0.18),0_0_0_1px_rgba(255,255,255,0.6)_inset] transition-[box-shadow] duration-500 hover:shadow-[0_40px_100px_-30px_rgba(27,27,66,0.32),0_20px_50px_-15px_rgba(42,171,238,0.28)] md:p-7">
                     <span
                       className={[
                         "inline-flex w-fit items-center rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em]",
@@ -95,6 +96,7 @@ export default function TopicBundles() {
                       {bundle.plan}
                     </p>
                   </article>
+                  </Tilt>
                 </Spotlight>
               </BlurFade>
             );

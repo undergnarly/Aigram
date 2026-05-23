@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Container, useContent, useLang } from "../lib";
+import { Container, Section, useContent, useLang } from "../lib";
 import { BlurFade, GlowDot } from "../motion";
 
 /* ── Types ── */
@@ -437,7 +437,7 @@ export default function TelegramDemo() {
   const d = c.demo;
 
   return (
-    <section id="demo" className="py-16 md:py-24 bg-[var(--bg-soft)]">
+    <Section id="demo" className="bg-[var(--bg-soft)]">
       <Container>
         <div className="mx-auto max-w-[680px] text-center mb-10">
           <BlurFade delay={0.06}>
@@ -590,6 +590,6 @@ export default function TelegramDemo() {
           </div>
         </BlurFade>
       </Container>
-    </section>
+    </Section>
   );
 }
