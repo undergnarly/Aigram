@@ -47,13 +47,9 @@ function IconSupport({ className }: { className?: string }) {
 }
 
 const STEP_ICONS = [IconDiscovery, IconBuild, IconTrain, IconSupport];
-const STEP_META_RU = ["30 минут", "Два дня", "Живые сессии", "7–90 дней"];
-const STEP_META_EN = ["30 min", "Two days", "Live sessions", "7–90 days"];
 
 export default function Process() {
   const c = useContent();
-  const isRu = c.process.eyebrow.toLowerCase().startsWith("проц");
-  const meta = isRu ? STEP_META_RU : STEP_META_EN;
 
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -138,7 +134,7 @@ export default function Process() {
             className="absolute left-0 top-[27px] hidden h-px w-[24%] bg-gradient-to-r from-white via-white/60 to-transparent lg:block"
           />
 
-          <div className="grid gap-5 lg:grid-cols-4 lg:gap-6">
+          <div className={`grid gap-5 lg:gap-6 ${c.process.steps.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
             {c.process.steps.map((s, i) => {
               const Icon = STEP_ICONS[i] ?? IconDiscovery;
               const isActive = i === activeIndex;

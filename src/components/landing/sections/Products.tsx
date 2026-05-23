@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import {
   Container,
+  Eyebrow,
   Section,
   Arrow,
   useContent,
@@ -50,6 +51,9 @@ export default function Products() {
       />
       <Container>
         <div className="mx-auto max-w-[760px] text-center">
+          <BlurFade>
+            <Eyebrow>{c.productsSection.eyebrow}</Eyebrow>
+          </BlurFade>
           <BlurFade delay={0.08}>
             <h2 className="mt-5 text-balance text-[clamp(32px,5.5vw,60px)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[var(--ink)]">
               {c.productsSection.h2}
