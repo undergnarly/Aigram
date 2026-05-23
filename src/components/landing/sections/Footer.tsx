@@ -13,14 +13,14 @@ export default function Footer() {
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2fr] lg:gap-16">
           <div>
-            <Link href="/" className="inline-flex items-center gap-2.5 text-[17px] font-bold tracking-tight text-[var(--ink)]">
+            <Link href="/" className="group inline-flex items-center gap-2.5 text-[17px] font-bold tracking-tight text-[var(--ink)]">
               <svg
                 width="28"
                 height="28"
                 viewBox="0 0 24 24"
                 fill="#2AABEE"
                 aria-hidden="true"
-                className="shrink-0"
+                className="shrink-0 transition-transform duration-300 group-hover:scale-[1.06]"
               >
                 <path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-17 7.571a2.244 2.244 0 00.243 4.199l3.795 1.058 1.427 4.436a.5.5 0 00.851.162l2.294-2.515 4.433 3.267a2.244 2.244 0 003.438-1.347l3.046-14.96a2.24 2.24 0 00-2.505-2.086z" />
               </svg>

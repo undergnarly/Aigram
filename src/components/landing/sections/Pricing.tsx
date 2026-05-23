@@ -9,7 +9,7 @@ import {
   Arrow,
   useContent,
 } from "../lib";
-import { BlurFade, Magnetic, Spotlight } from "../motion";
+import { BlurFade, Magnetic, Spotlight, Tilt } from "../motion";
 
 type PriceMode = "setup" | "both";
 
@@ -394,9 +394,10 @@ export default function Pricing() {
                       : "rgba(42,171,238,0.06)"
                   }
                 >
+                  <Tilt max={3} className="h-full">
                   <article
                     className={[
-                      "group relative flex h-full flex-col overflow-hidden rounded-3xl border p-6 transition-all duration-500 sm:p-7",
+                      "group relative flex h-full flex-col overflow-hidden rounded-3xl border p-6 transition-[border-color,box-shadow] duration-500 sm:p-7",
                       tier.card,
                       isPremium && "premium-card",
                       !isRecommended && !isPremium && !isAgency &&
@@ -604,6 +605,7 @@ export default function Pricing() {
                       )}
                     </div>
                   </article>
+                  </Tilt>
                 </Spotlight>
               </BlurFade>
             );
