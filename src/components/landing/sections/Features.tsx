@@ -10,58 +10,67 @@ import { BlurFade, Spotlight } from "../motion";
 
 const BLUE = "#2AABEE";
 
-function IconVoice() {
+/** Templates — 2×2 grid of squares */
+function IconGrid() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke={BLUE} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-full w-full" aria-hidden>
-      <rect x="9" y="3" width="6" height="11" rx="3" />
-      <path d="M5 11a7 7 0 0 0 14 0" />
-      <path d="M12 18v3" />
+      <rect x="3" y="3" width="7" height="7" rx="1.5" />
+      <rect x="14" y="3" width="7" height="7" rx="1.5" />
+      <rect x="3" y="14" width="7" height="7" rx="1.5" />
+      <rect x="14" y="14" width="7" height="7" rx="1.5" />
     </svg>
   );
 }
 
-function IconBolt() {
+/** Flexible — person + plus (solo → team) */
+function IconFlexible() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke={BLUE} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-full w-full" aria-hidden>
-      <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" />
+      <circle cx="9" cy="7" r="3.5" />
+      <path d="M2 21v-1.5a5.5 5.5 0 0 1 9.78-3.44" />
+      <circle cx="18" cy="15" r="3" />
+      <path d="M18 12v6M15 15h6" />
     </svg>
   );
 }
 
-function IconUsers() {
+/** Integrations — plug connector */
+function IconPlug() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke={BLUE} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-full w-full" aria-hidden>
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      <path d="M14 2v4M10 2v4" />
+      <rect x="7" y="6" width="10" height="6" rx="2" />
+      <path d="M12 12v3" />
+      <path d="M9 15h6" />
+      <path d="M12 18v4" />
     </svg>
   );
 }
 
-function IconRefresh() {
+/** Marketplace — store / shop bag */
+function IconStore() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke={BLUE} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-full w-full" aria-hidden>
-      <path d="M21 12a9 9 0 0 1-15.5 6.36L3 16" />
-      <path d="M3 12a9 9 0 0 1 15.5-6.36L21 8" />
-      <path d="M21 3v5h-5" />
-      <path d="M3 21v-5h5" />
+      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+      <path d="M3 6h18" />
+      <path d="M16 10a4 4 0 0 1-8 0" />
     </svg>
   );
 }
 
-function IconGlobe() {
+/** Pipeline — clock with arrow (24/7 autonomous) */
+function IconPipeline() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke={BLUE} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-full w-full" aria-hidden>
       <circle cx="12" cy="12" r="9" />
-      <path d="M3 12h18" />
-      <path d="M12 3a14 14 0 0 1 0 18" />
-      <path d="M12 3a14 14 0 0 0 0 18" />
+      <path d="M12 7v5l3 2" />
+      <path d="M18.5 20 21 22" />
+      <circle cx="20" cy="19" r="2" />
     </svg>
   );
 }
 
-const ICONS = [IconVoice, IconBolt, IconUsers, IconRefresh, IconGlobe];
+const ICONS = [IconGrid, IconFlexible, IconPlug, IconStore, IconPipeline];
 
 export default function Features() {
   const c = useContent();
@@ -90,9 +99,10 @@ export default function Features() {
 
         <div className="mt-[clamp(40px,5vw,72px)] grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {c.features.items.map((f, i) => {
-            const Icon = ICONS[i] ?? IconBolt;
+            const Icon = ICONS[i] ?? IconGrid;
+            const isLast = i === c.features.items.length - 1;
             return (
-              <BlurFade key={f.title} delay={i * 0.06} className="h-full">
+              <BlurFade key={f.title} delay={i * 0.06} className={`h-full${isLast ? " sm:col-span-2 lg:col-span-1" : ""}`}>
                 <Spotlight className="h-full rounded-3xl" color="rgba(255,255,255,0.20)">
                   <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/12 bg-white/[0.06] backdrop-blur-2xl p-5 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-500 hover:bg-white/[0.10] hover:border-white/20 hover:-translate-y-1 md:p-6">
                     <div

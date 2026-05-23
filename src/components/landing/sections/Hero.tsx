@@ -7,6 +7,7 @@ import {
   Button,
   LinkButton,
   Arrow,
+  Eyebrow,
   Grad,
   useContent,
 } from "../lib";
@@ -117,8 +118,12 @@ export default function Hero() {
         <div className="grid items-center gap-[clamp(40px,6vw,72px)] lg:grid-cols-[1.15fr_1fr]">
           {/* TEXT COLUMN */}
           <div className="max-w-[640px]">
+            <BlurFade delay={0.04}>
+              <Eyebrow>{c.hero.eyebrow}</Eyebrow>
+            </BlurFade>
+
             <BlurFade delay={0.08}>
-              <h1 className="text-balance text-[clamp(40px,7.2vw,84px)] font-extrabold leading-[1.02] tracking-[-0.035em] text-[var(--ink)]">
+              <h1 className="mt-5 text-balance text-[clamp(40px,7.2vw,84px)] font-extrabold leading-[1.02] tracking-[-0.035em] text-[var(--ink)]">
                 {c.hero.h1Lines.slice(0, -1).map((line, i) => (
                   <span key={i} className="block">
                     {line}
@@ -156,6 +161,19 @@ export default function Hero() {
                 <LinkButton href="#topics" variant="ghost" size="lg" className="w-full sm:w-auto">
                   {c.hero.secondary}
                 </LinkButton>
+              </div>
+
+              {/* Trust chips */}
+              <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+                {c.hero.trustItems.map((item) => (
+                  <span key={item} className="flex items-center gap-1.5 text-[13px] text-[var(--muted)]">
+                    <svg viewBox="0 0 16 16" fill="none" className="h-3.5 w-3.5 shrink-0" aria-hidden>
+                      <circle cx="8" cy="8" r="7" stroke="var(--indigo)" strokeWidth="1.4" />
+                      <path d="M5 8.5l2 2 4-4" stroke="var(--indigo)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    {item}
+                  </span>
+                ))}
               </div>
             </BlurFade>
 

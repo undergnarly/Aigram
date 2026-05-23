@@ -602,8 +602,8 @@ const EN: LangContent = {
   },
   pricing: {
     eyebrow: "Pricing",
-    h2: "Three plans. Monthly. Cancel anytime.",
-    sub: "Most teams start on Standard at $499/mo — less than the cost of a part-time VA alone. The $1,000 setup fee is waived when you prepay 3 months. Most operators recover that in the first month from hours saved.",
+    h2: "Four plans. Priced by topics. Cancel anytime.",
+    sub: "Start free for 14 days — no card. Starter $149/mo (5 topics, solo). Standard $399/mo (12 topics, 3 users). Pro $699/mo (25 topics + Opus). Agency $1,299/mo (unlimited + white-label).",
     productTab: "Topic",
     chooseTier: "Choose plan",
     pickThis: "Choose this plan",
@@ -1267,8 +1267,8 @@ const RU: LangContent = {
   },
   pricing: {
     eyebrow: "Цены",
-    h2: "Три тарифа. Ежемесячно. Отмена в любой момент.",
-    sub: "Большинство команд начинают на Standard — $499/мес против $900+/мес на ассистента, ресёрчера и автоматизацию по отдельности. Разовая настройка $1,000 не платится при оплате 3 месяцев вперёд. Большинство операторов отбивают её в первый месяц.",
+    h2: "Четыре тарифа. По числу топиков. Отмена в любой момент.",
+    sub: "14 дней бесплатно — без карты. Starter $149/мес (5 топиков, соло). Standard $399/мес (12 топиков, 3 пользователя). Pro $699/мес (25 топиков + Opus). Agency $1 299/мес (без лимита + white-label).",
     productTab: "Топик",
     chooseTier: "Выбрать тариф",
     pickThis: "Выбрать этот тариф",
