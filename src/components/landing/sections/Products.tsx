@@ -2,14 +2,16 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import { AnimatePresence, motion } from "motion/react";
 import {
   Container,
   Eyebrow,
   Section,
   Arrow,
+  LinkButton,
   useContent,
 } from "../lib";
-import { BlurFade } from "../motion";
+import { BlurFade, Spotlight, Tilt } from "../motion";
 import { PRODUCT_ORDER, type ProductSlug } from "../content";
 
 const DEFAULT_SLUG: ProductSlug = "researcher";
@@ -96,7 +98,9 @@ export default function Products() {
         </div>
 
         {/* Active product card */}
-        <ProductDetail slug={activeSlug} />
+        <AnimatePresence mode="wait">
+          <ProductDetail key={activeSlug} slug={activeSlug} />
+        </AnimatePresence>
       </Container>
     </Section>
   );
@@ -108,7 +112,16 @@ function ProductDetail({ slug }: { slug: ProductSlug }) {
   const per = c.productsSection.perCard;
 
   return (
-    <article className="relative mx-auto mt-8 flex max-w-[960px] flex-col overflow-hidden rounded-3xl border border-white bg-white shadow-[0_50px_120px_-30px_rgba(27,27,66,0.30),0_20px_50px_-15px_rgba(42,171,238,0.25),0_0_0_1px_rgba(255,255,255,0.6)_inset] md:flex-row">
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -8 }}
+      transition={{ duration: 0.22, ease: [0.25, 0.1, 0.25, 1] }}
+      className="mx-auto mt-8 max-w-[960px]"
+    >
+    <Spotlight className="rounded-3xl" color="rgba(42,171,238,0.14)">
+    <Tilt max={2}>
+    <article className="relative flex flex-col overflow-hidden rounded-3xl border border-white bg-white shadow-[0_50px_120px_-30px_rgba(27,27,66,0.30),0_20px_50px_-15px_rgba(42,171,238,0.25),0_0_0_1px_rgba(255,255,255,0.6)_inset] transition-[box-shadow] duration-500 hover:shadow-[0_60px_140px_-30px_rgba(27,27,66,0.38),0_25px_60px_-15px_rgba(42,171,238,0.32)] md:flex-row">
       {/* Image */}
       <div
         className="relative h-[220px] shrink-0 overflow-hidden md:h-auto md:w-[380px] lg:w-[440px]"
@@ -177,15 +190,15 @@ function ProductDetail({ slug }: { slug: ProductSlug }) {
 
         {/* CTA */}
         <div className="mt-auto pt-6">
-          <a
-            href="#pricing"
-            className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--indigo)] transition-colors hover:text-[var(--indigo-2)]"
-          >
+          <LinkButton href="#pricing" variant="primary" size="md">
             {per.learnMore}
             <Arrow />
-          </a>
+          </LinkButton>
         </div>
       </div>
     </article>
+    </Tilt>
+    </Spotlight>
+    </motion.div>
   );
 }
