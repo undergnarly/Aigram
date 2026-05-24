@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Container,
@@ -61,16 +62,13 @@ export default function Nav() {
             aria-label="GramFleet"
             className="group flex min-w-0 items-center gap-2.5 text-[17px] font-bold tracking-tight text-[var(--ink)]"
           >
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="#2AABEE"
-              aria-hidden="true"
+            <Image
+              src="/logo.png"
+              alt=""
+              width={28}
+              height={28}
               className="shrink-0 transition-transform duration-300 group-hover:scale-[1.06]"
-            >
-              <path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-17 7.571a2.244 2.244 0 00.243 4.199l3.795 1.058 1.427 4.436a.5.5 0 00.851.162l2.294-2.515 4.433 3.267a2.244 2.244 0 003.438-1.347l3.046-14.96a2.24 2.24 0 00-2.505-2.086z" />
-            </svg>
+            />
             <span className="truncate">GramFleet</span>
           </Link>
 
@@ -128,9 +126,7 @@ export default function Nav() {
               rel="noopener noreferrer"
               className="hidden items-center gap-2 rounded-full border border-[var(--rule-2)] bg-[var(--bg-soft)] px-4 py-2 text-[13px] font-semibold text-[var(--ink-2)] transition-colors hover:bg-[var(--indigo-soft)] hover:text-[var(--indigo-2)] md:inline-flex"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-17 7.571a2.244 2.244 0 00.243 4.199l3.795 1.058 1.427 4.436a.5.5 0 00.851.162l2.294-2.515 4.433 3.267a2.244 2.244 0 003.438-1.347l3.046-14.96a2.24 2.24 0 00-2.505-2.086z" />
-              </svg>
+              <Image src="/logo.png" alt="" width={14} height={14} />
               {c.nav.telegram}
             </a>
             <LinkButton
