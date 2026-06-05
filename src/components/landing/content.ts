@@ -30,12 +30,25 @@ type SubscriptionPlan = {
   ctaStyle?: "primary" | "outline";
 };
 
+type CompatDataRow = {
+  kind?: undefined;
+  module: string;
+  starter: string;
+  standard: string;
+  pro: string;
+  agency: string;
+};
+type CompatSectionRow = { kind: "section"; label: string };
+type CompatRow = CompatDataRow | CompatSectionRow;
+
 type SubscriptionPlanSection = {
   toggle: { setupOnly: string; setupMonthly: string; monthlyOnly: string };
   plans: SubscriptionPlan[];
   compatTitle: string;
   compatCaption: string;
-  compatRows: { module: string; starter: string; standard: string; pro: string; agency: string }[];
+  compatModuleHeader: string;
+  agentsSectionLabel: string;
+  compatRows: CompatRow[];
 };
 
 type DifferentiatorsSection = {
@@ -877,19 +890,44 @@ const EN: LangContent = {
         ctaStyle: "outline" as const,
       },
     ],
-    compatTitle: "Topics & specialists at each level",
+    compatTitle: "What's included at each level",
     compatCaption:
-      "Pick the plan that fits how many topics you'll run. Every plan unlocks the same 25+ templates — Starter caps the active workspaces, Agency removes the cap.",
+      "Each plan bundles a different mix of agents, topics, and support. Most teams start on Standard. We help you pick on the Discovery Call.",
+    compatModuleHeader: "Module",
+    agentsSectionLabel: "Agents",
     compatRows: [
-      { module: "Active topics", starter: "5", standard: "12", pro: "25", agency: "Unlimited" },
-      { module: "Topic templates", starter: "25+ available", standard: "25+ available", pro: "25+ available", agency: "25+ + your own" },
-      { module: "Plans topic", starter: "Yes", standard: "Yes", pro: "Yes", agency: "Yes" },
-      { module: "Research topic", starter: "Basic", standard: "Full", pro: "Full + OSINT", agency: "Full + dedicated analyst" },
-      { module: "Leads topic", starter: "—", standard: "10 workflows", pro: "Unlimited", agency: "Unlimited" },
-      { module: "Analytics topic", starter: "Daily digest", standard: "Anomaly alerts", pro: "Custom dashboard", agency: "Custom mini-app" },
-      { module: "Developer topic", starter: "3 tasks/mo", standard: "Unlimited", pro: "Unlimited + priority", agency: "Unlimited + priority" },
-      { module: "Custom topic", starter: "—", standard: "1", pro: "1 (priority build)", agency: "Unlimited" },
-      { module: "White-label", starter: "—", standard: "—", pro: "—", agency: "Yes" },
+      { kind: "section", label: "Agents" },
+      { module: "AI Planner", starter: "Yes", standard: "Yes", pro: "Yes", agency: "Yes" },
+      { module: "AI Researcher", starter: "Basic", standard: "Full", pro: "Full + OSINT", agency: "Full + dedicated analyst" },
+      { module: "AI Automator", starter: "—", standard: "10 workflows", pro: "Unlimited", agency: "Unlimited" },
+      { module: "AI Analyst", starter: "Daily digest", standard: "Anomaly alerts", pro: "Custom dashboard", agency: "Custom mini-app" },
+      { module: "AI Developer", starter: "3 tasks/mo", standard: "Unlimited", pro: "Unlimited + priority", agency: "Unlimited + priority" },
+      { module: "AI Concierge (white-label)", starter: "—", standard: "—", pro: "—", agency: "Yes" },
+      { module: "Custom topics (we build)", starter: "—", standard: "1", pro: "1 (priority)", agency: "Unlimited" },
+
+      { kind: "section", label: "Team & limits" },
+      { module: "Users", starter: "1", standard: "3", pro: "10", agency: "Unlimited" },
+      { module: "Topics", starter: "5", standard: "12", pro: "25", agency: "Unlimited" },
+      { module: "Custom skills / year", starter: "—", standard: "—", pro: "1 included", agency: "2+ included" },
+
+      { kind: "section", label: "AI & interface" },
+      { module: "AI model", starter: "GLM", standard: "Claude Sonnet + GLM", pro: "Claude Opus + Sonnet + GLM", agency: "Claude Opus + Sonnet + GLM" },
+      { module: "Built-in skills", starter: "20+", standard: "40+", pro: "40+", agency: "40+" },
+      { module: "Voice messages", starter: "Input → text", standard: "Input + /voice reply", pro: "Everywhere + custom voice", agency: "Everywhere + custom voice" },
+      { module: "Interface languages", starter: "EN + RU", standard: "EN, RU, +1 on request", pro: "EN, RU, +1 on request", agency: "Any on request" },
+      { module: "Mini-app", starter: "Basic", standard: "Standard", pro: "Branded", agency: "Custom branded" },
+
+      { kind: "section", label: "Security" },
+      { module: "Encrypted storage", starter: "Yes", standard: "Yes", pro: "Yes", agency: "Yes" },
+      { module: "Per-topic isolation", starter: "Yes", standard: "Yes", pro: "Yes", agency: "Yes" },
+      { module: "Audit log", starter: "—", standard: "Yes", pro: "Yes", agency: "Yes" },
+      { module: "SSO / SAML", starter: "—", standard: "—", pro: "—", agency: "On request" },
+
+      { kind: "section", label: "Support" },
+      { module: "Human support / month", starter: "2h", standard: "5h", pro: "8h", agency: "16h" },
+      { module: "Response SLA", starter: "—", standard: "4h", pro: "2h", agency: "1h" },
+      { module: "Strategy session", starter: "—", standard: "—", pro: "Quarterly", agency: "Quarterly + success manager" },
+      { module: "Priority bug fixes", starter: "—", standard: "—", pro: "—", agency: "Yes" },
     ],
   },
   differentiators: {
@@ -1542,19 +1580,44 @@ const RU: LangContent = {
         ctaStyle: "outline" as const,
       },
     ],
-    compatTitle: "Топики и специалисты по тарифам",
+    compatTitle: "Что входит в каждый тариф",
     compatCaption:
-      "Выбирай тариф под количество активных топиков. Все 25+ шаблонов открыты на каждом тарифе — Starter ограничивает количество активных, Agency снимает лимит.",
+      "Каждый тариф — своя комбинация агентов, топиков и поддержки. Большинство команд начинают на Standard. Помогаем выбрать на звонке.",
+    compatModuleHeader: "Модуль",
+    agentsSectionLabel: "Агенты",
     compatRows: [
-      { module: "Активных топиков", starter: "5", standard: "12", pro: "25", agency: "Без лимита" },
-      { module: "Шаблоны топиков", starter: "25+ доступны", standard: "25+ доступны", pro: "25+ доступны", agency: "25+ + ваши" },
-      { module: "Топик Plans", starter: "Да", standard: "Да", pro: "Да", agency: "Да" },
-      { module: "Топик Research", starter: "Базовый", standard: "Полный", pro: "Полный + OSINT", agency: "Полный + аналитик" },
-      { module: "Топик Leads", starter: "—", standard: "10 процессов", pro: "Без лимита", agency: "Без лимита" },
-      { module: "Топик Analytics", starter: "Дайджест", standard: "Алерты", pro: "Кастомный дашборд", agency: "Кастомное приложение" },
-      { module: "Топик Developer", starter: "3 задачи/мес", standard: "Без лимита", pro: "Без лимита + приоритет", agency: "Без лимита + приоритет" },
-      { module: "Кастомный топик", starter: "—", standard: "1", pro: "1 (приоритетный билд)", agency: "Без лимита" },
-      { module: "White-label", starter: "—", standard: "—", pro: "—", agency: "Да" },
+      { kind: "section", label: "Агенты" },
+      { module: "AI Planner", starter: "Да", standard: "Да", pro: "Да", agency: "Да" },
+      { module: "AI Researcher", starter: "Базовый", standard: "Полный", pro: "Полный + OSINT", agency: "Полный + аналитик" },
+      { module: "AI Automator", starter: "—", standard: "10 процессов", pro: "Без лимита", agency: "Без лимита" },
+      { module: "AI Analyst", starter: "Дайджест", standard: "Алерты", pro: "Кастомный дашборд", agency: "Кастомное приложение" },
+      { module: "AI Developer", starter: "3 задачи/мес", standard: "Без лимита", pro: "Без лимита + приоритет", agency: "Без лимита + приоритет" },
+      { module: "AI Concierge (white-label)", starter: "—", standard: "—", pro: "—", agency: "Да" },
+      { module: "Кастомные топики (строим мы)", starter: "—", standard: "1", pro: "1 (приоритетный)", agency: "Без лимита" },
+
+      { kind: "section", label: "Команда и лимиты" },
+      { module: "Пользователи", starter: "1", standard: "3", pro: "10", agency: "Без лимита" },
+      { module: "Топики", starter: "5", standard: "12", pro: "25", agency: "Без лимита" },
+      { module: "Кастомные навыки в год", starter: "—", standard: "—", pro: "1 в год", agency: "2+ в год" },
+
+      { kind: "section", label: "ИИ и интерфейс" },
+      { module: "AI-модель", starter: "GLM", standard: "Claude Sonnet + GLM", pro: "Claude Opus + Sonnet + GLM", agency: "Claude Opus + Sonnet + GLM" },
+      { module: "Готовые навыки", starter: "20+", standard: "40+", pro: "40+", agency: "40+" },
+      { module: "Голосовые сообщения", starter: "Голос → текст", standard: "Вход + /voice ответ", pro: "Везде + кастомный голос", agency: "Везде + кастомный голос" },
+      { module: "Языки интерфейса", starter: "РУС + АНГ", standard: "РУС, АНГ, +1 по запросу", pro: "РУС, АНГ, +1 по запросу", agency: "Любой по запросу" },
+      { module: "Мини-приложение", starter: "Базовое", standard: "Стандартное", pro: "Брендированное", agency: "Кастомное брендированное" },
+
+      { kind: "section", label: "Безопасность" },
+      { module: "Шифрованное хранилище", starter: "Да", standard: "Да", pro: "Да", agency: "Да" },
+      { module: "Изоляция по топикам", starter: "Да", standard: "Да", pro: "Да", agency: "Да" },
+      { module: "Audit log", starter: "—", standard: "Да", pro: "Да", agency: "Да" },
+      { module: "SSO / SAML", starter: "—", standard: "—", pro: "—", agency: "По запросу" },
+
+      { kind: "section", label: "Поддержка" },
+      { module: "Поддержка / мес", starter: "2ч", standard: "5ч", pro: "8ч", agency: "16ч" },
+      { module: "SLA ответа", starter: "—", standard: "4ч", pro: "2ч", agency: "1ч" },
+      { module: "Стратегические встречи", starter: "—", standard: "—", pro: "Раз в квартал", agency: "Раз в квартал + менеджер" },
+      { module: "Приоритетный фикс багов", starter: "—", standard: "—", pro: "—", agency: "Да" },
     ],
   },
   differentiators: {

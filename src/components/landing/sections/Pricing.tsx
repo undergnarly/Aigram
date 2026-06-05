@@ -256,7 +256,7 @@ export default function Pricing() {
                 <thead>
                   <tr className="border-b border-[var(--rule)] bg-[var(--bg-soft)]/40">
                     <th className="w-48 px-6 py-3 text-left text-[10px] font-bold uppercase tracking-[0.08em]" style={INK_DARK_MUTED}>
-                      Module
+                      {sp.compatModuleHeader}
                     </th>
                     {sp.plans.map((p, i) => {
                       const isPremium = i === PREMIUM;
@@ -295,46 +295,64 @@ export default function Pricing() {
                   </tr>
                 </thead>
                 <tbody>
-                  {sp.compatRows.map((row) => (
-                    <tr
-                      key={row.module}
-                      className="border-b border-[var(--rule)] last:border-0 transition-colors hover:bg-[var(--bg-soft)]/60"
-                    >
-                      <td className="px-6 py-3.5 text-[13px] font-semibold" style={INK_DARK_2}>
-                        {shortName(row.module)}
-                      </td>
-                      {PLAN_KEYS.map((key, planIdx) => {
-                        const isPremiumCol = planIdx === PREMIUM;
-                        const isAgencyCol = planIdx === AGENCY;
-                        const value = row[key];
-                        const pill = compatCellStyle(key, value);
-                        return (
+                  {sp.compatRows.map((row, idx) => {
+                    if ("kind" in row && row.kind === "section") {
+                      return (
+                        <tr
+                          key={`section-${idx}`}
+                          className="border-b border-[var(--rule)] bg-[linear-gradient(180deg,rgba(42,171,238,0.06),rgba(42,171,238,0.02))]"
+                        >
                           <td
-                            key={key}
-                            className={[
-                              "px-3 py-3.5 text-center",
-                              isPremiumCol && "bg-[#0E2A4A]/[0.025]",
-                              isAgencyCol && "bg-[#1B1B42]/[0.025]",
-                            ].filter(Boolean).join(" ")}
+                            colSpan={5}
+                            className="px-6 py-2.5 text-[10px] font-extrabold uppercase tracking-[0.14em]"
+                            style={{ color: "#0088CC" }}
                           >
-                            {value === "—" || !pill ? (
-                              <span className="inline-block text-[14px]" style={INK_DARK_MUTED}>—</span>
-                            ) : (
-                              <span
-                                style={pill.textStyle}
-                                className={[
-                                  "inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-bold tracking-[-0.005em]",
-                                  pill.className,
-                                ].join(" ")}
-                              >
-                                {value}
-                              </span>
-                            )}
+                            {row.label}
                           </td>
-                        );
-                      })}
-                    </tr>
-                  ))}
+                        </tr>
+                      );
+                    }
+                    return (
+                      <tr
+                        key={row.module}
+                        className="border-b border-[var(--rule)] last:border-0 transition-colors hover:bg-[var(--bg-soft)]/60"
+                      >
+                        <td className="px-6 py-3.5 text-[13px] font-semibold" style={INK_DARK_2}>
+                          {shortName(row.module)}
+                        </td>
+                        {PLAN_KEYS.map((key, planIdx) => {
+                          const isPremiumCol = planIdx === PREMIUM;
+                          const isAgencyCol = planIdx === AGENCY;
+                          const value = row[key];
+                          const pill = compatCellStyle(key, value);
+                          return (
+                            <td
+                              key={key}
+                              className={[
+                                "px-3 py-3.5 text-center",
+                                isPremiumCol && "bg-[#0E2A4A]/[0.025]",
+                                isAgencyCol && "bg-[#1B1B42]/[0.025]",
+                              ].filter(Boolean).join(" ")}
+                            >
+                              {value === "—" || !pill ? (
+                                <span className="inline-block text-[14px]" style={INK_DARK_MUTED}>—</span>
+                              ) : (
+                                <span
+                                  style={pill.textStyle}
+                                  className={[
+                                    "inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-bold tracking-[-0.005em]",
+                                    pill.className,
+                                  ].join(" ")}
+                                >
+                                  {value}
+                                </span>
+                              )}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -376,9 +394,19 @@ export default function Pricing() {
             const isAgency = i === AGENCY;
             const tier = TIERS[i];
             const planKey = PLAN_KEYS[i];
-            const moduleTags = sp.compatRows
-              .map((row) => ({ label: shortName(row.module), value: row[planKey as PlanKey] }))
-              .filter((m) => m.value !== "—");
+            const moduleTags: { label: string; value: string }[] = [];
+            let inAgentsSection = false;
+            for (const row of sp.compatRows) {
+              if ("kind" in row && row.kind === "section") {
+                inAgentsSection = row.label === sp.agentsSectionLabel;
+                continue;
+              }
+              if (!inAgentsSection) continue;
+              const value = row[planKey as PlanKey];
+              if (value !== "—") {
+                moduleTags.push({ label: shortName(row.module), value });
+              }
+            }
 
             return (
               <BlurFade key={plan.name} delay={i * 0.06}>
