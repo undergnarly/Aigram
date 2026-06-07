@@ -573,8 +573,8 @@ const EN: LangContent = {
   },
   features: {
     eyebrow: "What makes it different",
-    h2: "Five killer features you won't find anywhere else.",
-    sub: "Each is live in production today — not a roadmap promise.",
+    h2: "Six killer features you won't find anywhere else.",
+    sub: "Five are live in production today. One is launching Q3 2026.",
     items: [
       {
         tag: "Templates",
@@ -600,6 +600,11 @@ const EN: LangContent = {
         tag: "Pipeline",
         title: "Tasks that run while you sleep",
         body: "Queue a task in the evening — wake up to results. The pipeline picks items one by one, runs critic → worker → QA, commits output, and reports back to your Telegram topic. Your agents don't wait for you to be online.",
+      },
+      {
+        tag: "Founder OS",
+        title: "Founder OS — your live view across all topics",
+        body: "One command shows the status of every topic in your AI HQ — what's running, what's blocked, what needs your attention. Monitor your own workspace and your team side by side. No dashboards. No status meetings. Launching Q3 2026.",
       },
     ],
   },
@@ -766,8 +771,14 @@ const EN: LangContent = {
       { slug: "diary", icon: "📓", name: "Diary", role: "Journal", desc: "Captures decisions, lessons, and mood — searchable, summarized weekly." },
       { slug: "content", icon: "✍️", name: "Content", role: "Content writer", desc: "Drafts posts, scripts, and emails — in your voice, on your schedule." },
       { slug: "support", icon: "🤝", name: "Support", role: "Customer support", desc: "Answers FAQ, triages tickets, escalates only what needs you." },
+      { slug: "finance", icon: "💰", name: "Finance", role: "Finance tracker", desc: "Tracks income, expenses, invoices, and subscriptions — weekly digest in chat." },
+      { slug: "health", icon: "🏃", name: "Health", role: "Health coach", desc: "Logs workouts, tracks metrics, builds habits — without a separate app." },
+      { slug: "travel", icon: "✈️", name: "Travel", role: "Trip planner", desc: "Plans trips, tracks bookings, builds itineraries — synced to your calendar." },
+      { slug: "shopping", icon: "🛒", name: "Shopping", role: "Shopping assistant", desc: "Wishlists, price tracking, order monitoring — fewer browser tabs." },
+      { slug: "habits", icon: "⚡", name: "Habits", role: "Habit coach", desc: "Daily check-ins, streaks, and reflection prompts — accountability without another app." },
+      { slug: "contracts", icon: "📋", name: "Contracts", role: "Legal assistant", desc: "Reviews documents, flags risky clauses, tracks deadlines and renewal dates." },
     ],
-    cta: "See all 25+ templates",
+    cta: "Browse 30+ templates",
     caption: "Need a template that isn't here? Standard and above include custom topics we build for your exact workflow.",
   },
   topicBundles: {
@@ -792,6 +803,12 @@ const EN: LangContent = {
         title: "Agency HQ",
         topics: ["Leads × N", "Support", "Analytics"],
         plan: "Fits Pro or Agency — scale per client",
+      },
+      {
+        audience: "For solo founders",
+        title: "Personal HQ",
+        topics: ["Plans", "Finance", "Health", "Habits", "Diary"],
+        plan: "Fits Starter ($149/mo, up to 5 topics)",
       },
     ],
   },
@@ -1263,8 +1280,8 @@ const RU: LangContent = {
   },
   features: {
     eyebrow: "Чем мы отличаемся",
-    h2: "Пять киллер-фич, которых нет больше нигде.",
-    sub: "Каждая работает в проде прямо сейчас — не обещание из roadmap.",
+    h2: "Шесть киллер-фич, которых нет больше нигде.",
+    sub: "Пять работают в проде прямо сейчас. Одна — выходит в Q3 2026.",
     items: [
       {
         tag: "Шаблоны",
@@ -1290,6 +1307,11 @@ const RU: LangContent = {
         tag: "Пайплайн",
         title: "Задачи выполняются пока вы спите",
         body: "Поставьте задачу вечером — утром получите результат. Пайплайн забирает задачи из очереди по одной, прогоняет цикл критик → исполнитель → QA, фиксирует результат и отчитывается в вашем топике. Агенты не ждут, пока вы онлайн.",
+      },
+      {
+        tag: "Founder OS",
+        title: "Founder OS — видишь все свои топики сразу",
+        body: "Одна команда покажет, над чем работает каждый топик, что заблокировано, где нужно твоё внимание. Мониторинг своего пространства и работы команды в одном месте — без дашбордов, без статус-звонков. Выходит в Q3 2026.",
       },
     ],
   },
@@ -1456,8 +1478,14 @@ const RU: LangContent = {
       { slug: "diary", icon: "📓", name: "Diary", role: "Дневник", desc: "Записывает решения, уроки, настроение — поиск, недельная сводка." },
       { slug: "content", icon: "✍️", name: "Content", role: "Контент", desc: "Драфтит посты, сценарии, письма — твоим голосом, по графику." },
       { slug: "support", icon: "🤝", name: "Support", role: "Поддержка", desc: "Отвечает на FAQ, разводит тикеты, эскалирует только важное." },
+      { slug: "finance", icon: "💰", name: "Finance", role: "Финансист", desc: "Расходы, доходы, счета, подписки — еженедельный дайджест прямо в чат." },
+      { slug: "health", icon: "🏃", name: "Health", role: "Здоровье", desc: "Тренировки, метрики, привычки — без отдельного приложения." },
+      { slug: "travel", icon: "✈️", name: "Travel", role: "Трипплановщик", desc: "Планирует поездки, бронирования, маршруты — синхронизируется с календарём." },
+      { slug: "shopping", icon: "🛒", name: "Shopping", role: "Шопинг", desc: "Вишлисты, отслеживание цен, контроль заказов — меньше вкладок в браузере." },
+      { slug: "habits", icon: "⚡", name: "Habits", role: "Привычки", desc: "Ежедневные чекины, серии, рефлексия — дисциплина без отдельного приложения." },
+      { slug: "contracts", icon: "📋", name: "Contracts", role: "Юридик", desc: "Проверяет документы, флагует риски, отслеживает дедлайны и продления." },
     ],
-    cta: "Все 25+ шаблонов",
+    cta: "Все 30+ шаблонов",
     caption: "Нужен шаблон, которого нет? На Standard и выше — строим кастомные топики под ваш процесс.",
   },
   topicBundles: {
@@ -1482,6 +1510,12 @@ const RU: LangContent = {
         title: "Agency HQ",
         topics: ["Leads × N", "Support", "Analytics"],
         plan: "Подходит под Pro или Agency — масштабирование на клиента",
+      },
+      {
+        audience: "Для соло-фаундера",
+        title: "Personal HQ",
+        topics: ["Plans", "Finance", "Health", "Habits", "Diary"],
+        plan: "Подходит под Starter ($149/мес, до 5 топиков)",
       },
     ],
   },

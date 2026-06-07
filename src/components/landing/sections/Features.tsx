@@ -70,7 +70,18 @@ function IconPipeline() {
   );
 }
 
-const ICONS = [IconGrid, IconFlexible, IconPlug, IconStore, IconPipeline];
+/** Founder OS — eye (see everything across all topics) */
+function IconFounderOS() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke={BLUE} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-full w-full" aria-hidden>
+      <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z" />
+      <circle cx="12" cy="12" r="2.5" />
+      <path d="M12 4V2M12 22v-2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41" />
+    </svg>
+  );
+}
+
+const ICONS = [IconGrid, IconFlexible, IconPlug, IconStore, IconPipeline, IconFounderOS];
 
 export default function Features() {
   const c = useContent();
@@ -100,9 +111,10 @@ export default function Features() {
         <div className="mt-[clamp(40px,5vw,72px)] grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {c.features.items.map((f, i) => {
             const Icon = ICONS[i] ?? IconGrid;
-            const isLast = i === c.features.items.length - 1;
+            const total = c.features.items.length;
+            const isOddLast = total % 2 !== 0 && i === total - 1;
             return (
-              <BlurFade key={f.title} delay={i * 0.06} className={`h-full${isLast ? " sm:col-span-2 lg:col-span-1" : ""}`}>
+              <BlurFade key={f.title} delay={i * 0.06} className={`h-full${isOddLast ? " sm:col-span-2 lg:col-span-1" : ""}`}>
                 <Spotlight className="h-full rounded-3xl" color="rgba(255,255,255,0.20)">
                   <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/12 bg-white/[0.06] backdrop-blur-2xl p-5 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-500 hover:bg-white/[0.10] hover:border-white/20 hover:-translate-y-1 md:p-6">
                     <div
