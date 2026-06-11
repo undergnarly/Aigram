@@ -568,13 +568,13 @@ const EN: LangContent = {
       { value: "5", label: "SaaS tools replaced", detail: "Notion for tasks, Zapier for automation, ChatGPT for research, a research subscription, and a part-time VA — all running in one Telegram group." },
       { value: "24h", label: "Setup time", detail: "From Discovery Call to a fully wired AI team in your Telegram group — twenty-four hours, no exceptions." },
       { value: "15h", label: "Saved per week", detail: "Research, reporting, lead follow-ups, task tracking — the routine work that eats founder hours moves to your agents automatically." },
-      { value: "47%", label: "Leads lost to slow follow-up", detail: "Almost half of small teams lose clients because no one responded fast enough. Your AI Automator responds in 30 seconds, every time." },
+      { value: "~50%", label: "Leads go to whoever replies first", detail: "Studies of lead response time show nearly half of buyers pick the vendor that answers first. Your AI Automator responds in 30 seconds, every time." },
     ],
   },
   features: {
     eyebrow: "What makes it different",
-    h2: "Six killer features you won't find anywhere else.",
-    sub: "Five are live in production today. One is launching Q3 2026.",
+    h2: "Killer features you won't find anywhere else.",
+    sub: "Five are live in production today. Founder OS is launching Q3 2026.",
     items: [
       {
         tag: "Templates",
@@ -916,7 +916,7 @@ const EN: LangContent = {
       { kind: "section", label: "Agents" },
       { module: "AI Planner", starter: "Yes", standard: "Yes", pro: "Yes", agency: "Yes" },
       { module: "AI Researcher", starter: "Basic", standard: "Full", pro: "Full + OSINT", agency: "Full + dedicated analyst" },
-      { module: "AI Automator", starter: "—", standard: "10 workflows", pro: "Unlimited", agency: "Unlimited" },
+      { module: "AI Automator", starter: "3 workflows", standard: "10 workflows", pro: "Unlimited", agency: "Unlimited" },
       { module: "AI Analyst", starter: "Daily digest", standard: "Anomaly alerts", pro: "Custom dashboard", agency: "Custom mini-app" },
       { module: "AI Developer", starter: "3 tasks/mo", standard: "Unlimited", pro: "Unlimited + priority", agency: "Unlimited + priority" },
       { module: "AI Concierge (white-label)", starter: "—", standard: "—", pro: "—", agency: "Yes" },
@@ -1120,7 +1120,7 @@ const RU: LangContent = {
       badgeKind: "default",
       name: "AI Automator",
       tagline: "Лиды, follow-ups, автоматизация.",
-      hook: "Лиды, follow-ups и повторяющиеся процессы — всё через ваш топик в Telegram.",
+      hook: "Лиды, дожимы и повторяющиеся процессы — всё через твой топик в Telegram.",
       bullets: [
         "Автоматизация рутинных процессов от начала до конца",
         "Обработка лидов от формы до CRM без кликов",
@@ -1196,7 +1196,7 @@ const RU: LangContent = {
       badgeKind: "new",
       name: "AI Разработчик",
       tagline: "Код, лендинги, интеграции.",
-      hook: "Опишите задачу простым языком. Агент создаст проект, напишет код, задеплоит и пришлёт живую ссылку.",
+      hook: "Опиши задачу простым языком. Агент создаст проект, напишет код, задеплоит и пришлёт живую ссылку.",
       bullets: [
         "Лендинги, дашборды, внутренние инструменты — по одному промпту",
         "Интеграции между CRM, Telegram, Stripe, календарями",
@@ -1234,9 +1234,9 @@ const RU: LangContent = {
       badgeKind: "new",
       name: "Кастомный агент",
       tagline: "Создай агента под свою задачу.",
-      hook: "Агент под ваш бизнес-процесс — вашу отрасль, ваших клиентов, ваши операции. Кастомный AGENT.md, кастомные скиллы, кастомный голос. Включён в Standard/Pro (1) и Agency (3).",
+      hook: "Агент под твой бизнес-процесс — твою отрасль, твоих клиентов, твои операции. Кастомный AGENT.md, кастомные скиллы, кастомный голос. Включён в Standard/Pro (1) и Agency (3).",
       bullets: [
-        "Спроектирован под ваш конкретный процесс",
+        "Спроектирован под твой конкретный процесс",
         "Кастомный AGENT.md, кастомные скиллы, кастомный голос",
         "1 включён в Standard и Pro, 3 в Agency",
         "Дополнение к любому тарифу — обсудим",
@@ -1275,13 +1275,13 @@ const RU: LangContent = {
       { value: "5", label: "SaaS-инструментов заменяет", detail: "Notion для задач, Zapier для автоматизации, ChatGPT для ресёрча, подписка на аналитику и частичный ассистент — всё работает в одной Telegram-группе." },
       { value: "24ч", label: "Время запуска", detail: "От звонка-знакомства до полностью настроенной AI-команды в вашей группе Telegram — двадцать четыре часа, без исключений." },
       { value: "15ч", label: "Экономится в неделю", detail: "Ресёрч, отчёты, обработка лидов, ведение задач — рутина которая съедает фаундерские часы уходит к агентам автоматически." },
-      { value: "47%", label: "Лидов теряет медленный ответ", detail: "Почти половина малого бизнеса теряет клиентов потому что никто не ответил вовремя. AI Automator отвечает за 30 секунд, каждый раз." },
+      { value: "~50%", label: "Лидов уходит к тому, кто ответил первым", detail: "Исследования времени реакции на лиды показывают: почти половина клиентов выбирает того, кто ответил первым. AI Automator отвечает за 30 секунд, каждый раз." },
     ],
   },
   features: {
     eyebrow: "Чем мы отличаемся",
-    h2: "Шесть киллер-фич, которых нет больше нигде.",
-    sub: "Пять работают в проде прямо сейчас. Одна — выходит в Q3 2026.",
+    h2: "Киллер-фичи, которых нет больше нигде.",
+    sub: "Пять работают в проде прямо сейчас. Founder OS выходит в Q3 2026.",
     items: [
       {
         tag: "Шаблоны",
@@ -1305,8 +1305,8 @@ const RU: LangContent = {
       },
       {
         tag: "Пайплайн",
-        title: "Задачи выполняются пока вы спите",
-        body: "Поставьте задачу вечером — утром получите результат. Пайплайн забирает задачи из очереди по одной, прогоняет цикл критик → исполнитель → QA, фиксирует результат и отчитывается в вашем топике. Агенты не ждут, пока вы онлайн.",
+        title: "Задачи выполняются, пока ты спишь",
+        body: "Поставь задачу вечером — утром получишь результат. Пайплайн забирает задачи из очереди по одной, прогоняет цикл критик → исполнитель → QA, фиксирует результат и отчитывается в твоём топике. Агенты не ждут, пока ты онлайн.",
       },
       {
         tag: "Founder OS",
@@ -1623,7 +1623,7 @@ const RU: LangContent = {
       { kind: "section", label: "Агенты" },
       { module: "AI Planner", starter: "Да", standard: "Да", pro: "Да", agency: "Да" },
       { module: "AI Researcher", starter: "Базовый", standard: "Полный", pro: "Полный + OSINT", agency: "Полный + аналитик" },
-      { module: "AI Automator", starter: "—", standard: "10 процессов", pro: "Без лимита", agency: "Без лимита" },
+      { module: "AI Automator", starter: "3 процесса", standard: "10 процессов", pro: "Без лимита", agency: "Без лимита" },
       { module: "AI Analyst", starter: "Дайджест", standard: "Алерты", pro: "Кастомный дашборд", agency: "Кастомное приложение" },
       { module: "AI Developer", starter: "3 задачи/мес", standard: "Без лимита", pro: "Без лимита + приоритет", agency: "Без лимита + приоритет" },
       { module: "AI Concierge (white-label)", starter: "—", standard: "—", pro: "—", agency: "Да" },
@@ -1678,8 +1678,8 @@ const RU: LangContent = {
   },
   demo: {
     eyebrow: "Интерактивное демо",
-    h2: "Ваша AI-команда живёт в Telegram",
-    sub: "Нажмите на любой топик и посмотрите, как это работает. Именно так выглядит ваш рабочий Telegram.",
+    h2: "Твоя AI-команда живёт в Telegram",
+    sub: "Нажми на любой топик и посмотри, как это работает. Именно так выглядит твой рабочий Telegram.",
     botOnline: "бот онлайн",
     setupIn: "24ч",
     setupInLabel: "Настройка за",

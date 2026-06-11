@@ -251,11 +251,15 @@ export default function Pricing() {
                 {sp.compatCaption}
               </p>
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-[13px]">
+            {/* mobile scroll affordance — the table scrolls horizontally on narrow screens */}
+            <p className="px-6 pt-3 text-[11px] font-medium tracking-wide text-[var(--muted)] md:hidden" aria-hidden>
+              ←&nbsp;&nbsp;scroll&nbsp;&nbsp;→
+            </p>
+            <div className="overflow-x-auto [scrollbar-width:thin] [-webkit-overflow-scrolling:touch]">
+              <table className="w-full min-w-[600px] text-[13px] md:min-w-0">
                 <thead>
                   <tr className="border-b border-[var(--rule)] bg-[var(--bg-soft)]/40">
-                    <th className="w-48 px-6 py-3 text-left text-[10px] font-bold uppercase tracking-[0.08em]" style={INK_DARK_MUTED}>
+                    <th className="sticky left-0 z-20 w-40 bg-white px-4 py-3 text-left text-[10px] font-bold uppercase tracking-[0.08em] md:w-48 md:px-6" style={INK_DARK_MUTED}>
                       {sp.compatModuleHeader}
                     </th>
                     {sp.plans.map((p, i) => {
@@ -317,7 +321,7 @@ export default function Pricing() {
                         key={row.module}
                         className="border-b border-[var(--rule)] last:border-0 transition-colors hover:bg-[var(--bg-soft)]/60"
                       >
-                        <td className="px-6 py-3.5 text-[13px] font-semibold" style={INK_DARK_2}>
+                        <td className="sticky left-0 z-10 bg-white px-4 py-3.5 text-[13px] font-semibold md:px-6" style={INK_DARK_2}>
                           {shortName(row.module)}
                         </td>
                         {PLAN_KEYS.map((key, planIdx) => {

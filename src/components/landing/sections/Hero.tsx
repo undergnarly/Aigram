@@ -37,7 +37,7 @@ export default function Hero() {
       {/* MOBILE bg hero image */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[58vw] max-h-[440px] lg:hidden"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[48vw] max-h-[360px] lg:hidden"
       >
         {HERO_IMAGES.map((src, i) => (
           <Image
@@ -114,7 +114,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <Container className="relative z-10 pt-[clamp(220px,46vw,360px)] pb-[clamp(48px,8vh,96px)] lg:pt-[clamp(56px,9vh,120px)]">
+      <Container className="relative z-10 pt-[clamp(150px,38vw,300px)] pb-[clamp(48px,8vh,96px)] lg:pt-[clamp(56px,9vh,120px)]">
         <div className="grid items-center gap-[clamp(40px,6vw,72px)] lg:grid-cols-[1.15fr_1fr]">
           {/* TEXT COLUMN */}
           <div className="max-w-[640px]">

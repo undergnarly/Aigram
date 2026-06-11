@@ -27,9 +27,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gramfleet.ai"),
-  title: "GramFleet — Build Your AI HQ from Topic Templates in Telegram",
+  title: "GramFleet — Your AI Team of Specialists, Inside Telegram",
   description:
-    "Pick from 25+ topic templates — Plans, Research, Leads, Calendar, Analytics, Developer. Each topic is a workspace with an AI specialist inside. 24-hour setup. From $149/mo.",
+    "A team of AI specialists inside your Telegram — Plans, Research, Leads, Calendar and 25+ ready workspaces. Each remembers everything and runs 24/7. Live on your server in 24h. No foreign card, no VPN. From $189/mo.",
   keywords: [
     "GramFleet",
     "AI topic templates",
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "GramFleet — Build Your AI HQ from Topic Templates in Telegram",
+    title: "GramFleet — Your AI Team of Specialists, Inside Telegram",
     description:
-      "25+ topic templates. Plans, Research, Leads, Calendar — each topic remembers everything and runs 24/7. 24-hour setup. From $149/mo.",
+      "A team of AI specialists inside your Telegram. Plans, Research, Leads, Calendar — each remembers everything and runs 24/7. 24-hour setup, no VPN, no foreign card. From $189/mo.",
     type: "website",
     url: "https://gramfleet.ai/",
     images: ["https://gramfleet.ai/og-image.png"],
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GramFleet — Build Your AI HQ from Topic Templates in Telegram",
+    title: "GramFleet — Your AI Team of Specialists, Inside Telegram",
     description:
-      "Pick from 25+ topic templates. Each topic is a workspace with an AI specialist inside — memory, skills, one job. From $149/mo.",
+      "A team of AI specialists inside your Telegram — 25+ ready workspaces, each with its own memory, skills, and one job. From $189/mo.",
     images: ["https://gramfleet.ai/og-image.png"],
   },
   other: {
@@ -93,9 +93,10 @@ const jsonLd = {
       operatingSystem: "Telegram",
       url: "https://gramfleet.ai/",
       offers: [
-        { "@type": "Offer", name: "Lite", price: "199", priceCurrency: "USD", description: "GLM AI model, 1 user, 6 default topics, 20+ skills, 24/7 AI support, 2h human support/month." },
-        { "@type": "Offer", name: "Standard", price: "499", priceCurrency: "USD", description: "Claude Sonnet + GLM fallback, 3 users, 11 topics, 40+ skills, voice messages, 5h support, 4h SLA." },
-        { "@type": "Offer", name: "Premium", price: "899", priceCurrency: "USD", description: "Claude Opus + Sonnet + GLM, unlimited users, unlimited topics, 2 custom skills/year, white-label mini-app, 10h support, 2h SLA." },
+        { "@type": "Offer", name: "Starter", price: "189", priceCurrency: "USD", description: "GLM AI model, 2 users, up to 5 topics, 20+ skills, voice (30/mo), 24/7 AI support. 14-day free trial, no card." },
+        { "@type": "Offer", name: "Standard", price: "449", priceCurrency: "USD", description: "Claude Sonnet + Haiku + GLM fallback, 5 users, up to 12 topics, 40+ skills, unlimited voice, 1 custom topic, 5h human support, 4h SLA." },
+        { "@type": "Offer", name: "Pro", price: "799", priceCurrency: "USD", description: "Claude Opus + Sonnet + Haiku + GLM, 15 users, up to 25 topics, 6 custom skills, branded mini-app, 8h support, 2h SLA, quarterly strategy session." },
+        { "@type": "Offer", name: "Agency", price: "1499", priceCurrency: "USD", description: "All models, unlimited users and topics, full white-label, SSO/SAML on request, dedicated success manager, 16h support, 1h SLA." },
       ],
     },
     {
@@ -104,8 +105,8 @@ const jsonLd = {
       mainEntity: [
         { "@type": "Question", name: "What is GramFleet?", acceptedAnswer: { "@type": "Answer", text: "GramFleet is Personal AI Infrastructure that lives entirely inside your Telegram. Every forum topic in your business group is an isolated AI agent with its own memory, skills, and context — your AI team without dashboards or new apps to learn." } },
         { "@type": "Question", name: "Do I need technical skills?", acceptedAnswer: { "@type": "Answer", text: "No. If you can use Telegram, you can use GramFleet. Setup takes 24 hours and we configure everything for you on a Discovery Call." } },
-        { "@type": "Question", name: "Is my data secure?", acceptedAnswer: { "@type": "Answer", text: "Yes. GramFleet runs on Telegram's end-to-end encrypted infrastructure. Your topic memory and knowledge base are scoped to your group and not shared with any third party." } },
-        { "@type": "Question", name: "What AI model do you use?", acceptedAnswer: { "@type": "Answer", text: "Lite uses GLM. Standard uses Claude Sonnet with automatic GLM fallback. Premium uses Claude Opus with Sonnet and GLM as fallback tiers." } },
+        { "@type": "Question", name: "Is my data secure?", acceptedAnswer: { "@type": "Answer", text: "Yes. GramFleet runs on your own server inside an encrypted Docker container — your data never leaves your infrastructure. Topic memory and your knowledge base are scoped to your group, never shared with third parties, and never used to train public models. Export or delete everything anytime." } },
+        { "@type": "Question", name: "What AI model do you use?", acceptedAnswer: { "@type": "Answer", text: "Starter runs on GLM. Standard adds Claude Sonnet with Haiku and GLM fallback. Pro and Agency unlock Claude Opus as the primary model, with Sonnet, Haiku, and GLM beneath it." } },
         { "@type": "Question", name: "Can I cancel anytime?", acceptedAnswer: { "@type": "Answer", text: "Yes. Month-to-month subscription, cancel anytime. 30-day money-back guarantee on every plan." } },
         { "@type": "Question", name: "What is a topic agent?", acceptedAnswer: { "@type": "Answer", text: "A topic agent is a dedicated AI specialist assigned to a single forum topic in your Telegram group. Each topic has isolated memory, scoped skills, and a job to do — calendar, plans, research, analytics, or anything custom." } },
       ],
@@ -117,7 +118,7 @@ const jsonLd = {
       name: "GramFleet",
       publisher: { "@id": "https://gramfleet.ai/#org" },
       inLanguage: ["en", "ru"],
-      dateModified: "2026-05-20",
+      dateModified: "2026-06-11",
     },
   ],
 };
